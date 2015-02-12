@@ -1710,9 +1710,11 @@ $(function() {
 		var t = $(".bir_txt").index($(this));
 		var tt = $(".bir_txt").eq(t).text();
 		$(".birthdaycar>input").val(tt);
+		$(".birthdaycar ul").toggle()
 	})
 	$("#zd02").click(function() {
 		var t = $("#zd01").val();
+		$(".birthdaycar ul").toggle()
 		if (t == "") {
 			alert('请输入自定义内容')
 		} else {
