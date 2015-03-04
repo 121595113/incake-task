@@ -22,8 +22,10 @@
   content: attr(data-content);
   white-space: nowrap;
   position: absolute;
-  margin-left: -25px;
-  margin-top: -20px;
+  left: -50px;
+  right: -50px;
+  margin: auto;
+  top: -20px;
 }
 .zhaohui .jindutiao span.shoujihao {
   left: 0;
