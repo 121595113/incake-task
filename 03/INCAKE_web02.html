@@ -164,7 +164,7 @@
 										<label>你的手机号：</label>
 										<div class="mobile_phone">
 											<span>138****1234</span>
-											<a href="javascript:">免费获取验证码</a>
+											<a href="javascript:" id="send">免费获取验证码</a>
 										</div>
 									</div>
 									<div class="from_btn">
@@ -201,7 +201,29 @@
 				<img border="0" src="./INCAKE_web_files/21.gif" width="20" height="20">
 			</a>
 		</div>
-
+		<script type="text/javascript">
+			window.onload=function(){
+	    var send=document.getElementById('send'),
+	        times=60,
+	        timer=null;
+	    send.onclick=function(){
+	      // 计时开始 
+           timer=setInterval(function(){
+            times--;
+	        if(times<=0){
+	            send.text='发送验证码';
+	            clearInterval(timer);
+	            times=10;
+	            send.disabled=false;
+	        }else{
+	            send.text=times+'秒后重试';
+	            send.disabled=true;
+	        }console.log(times)
+	    },1000)
+       
+	    } 
+	}
+		</script>
 	</body>
 
 </html>

@@ -28,7 +28,7 @@
 		<link rel="apple-touch-startup-image" href="http://wap.incake.net/Icake/images/startup.png">
 		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
 		<!--自定义样式-->
-		<link rel="stylesheet" type="text/css" href="css/style2.css?v25111211" />
+		<link rel="stylesheet" type="text/css" href="css/style2.css?v251311" />
 		<title>INCAKE</title>
 	</head>
 
@@ -119,35 +119,6 @@
 		</h3>
 			</nav>
 			<section>
-				<!--<table id="form" class="form" cellspacing="0" cellpadding="0" border="0">
-			<tbody>
-				<tr>
-					<td height="56" width="35" align="right" valign="middle">用户名：</td>
-					<td>
-						<input type="text" id="loginName" class="ui_input_text ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
-					</td>
-				</tr>
-				<tr>
-					<td height="56" width="35" align="right" valign="middle">密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
-					<td>
-						<input type="password" id="loginPass" class="ui_input_text ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
-					</td>
-				</tr>
-				
-				<tr>
-					<td> </td>
-					<td align="left">
-						<div class="goods_page">
-							<a href="javascript:;" class="go_buy ui-link" id="userlogin" rel="external">&nbsp;&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;&nbsp;</a>
-							<a href="http://wap.incake.net/Register.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9" rel="external" class="cblue f14 ui-link">注册新用户</a>
-                           &nbsp;&nbsp;
-                           
-						</div>
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>-->
 				<div class="zhaohui page02">
 					<div class="jindutiao">
 						<span class="shoujihao active" data-content="输入手机号码"></span>
@@ -163,7 +134,7 @@
 								<label>你的手机号：</label>
 								<div class="mobile_phone">
 									<span>138****1234</span>
-									<a href="javascript:">免费获取验证码</a>
+									<a href="javascript:" id="send">免费获取验证码</a>
 								</div>
 							</div>
 							<div class="from_btn">
@@ -240,6 +211,29 @@
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
 			<h1>loading</h1>
 		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+	    var send=document.getElementById('send'),
+	        times=60,
+	        timer=null;
+	    send.onclick=function(){
+	      // 计时开始 
+           timer=setInterval(function(){
+            times--;
+	        if(times<=0){
+	            send.text='发送验证码';
+	            clearInterval(timer);
+	            times=10;
+	            send.disabled=false;
+	        }else{
+	            send.text=times+'秒后重试';
+	            send.disabled=true;
+	        }console.log(times)
+	    },1000)
+       
+	    } 
+	}
+		</script>
 	</body>
 
 </html>
