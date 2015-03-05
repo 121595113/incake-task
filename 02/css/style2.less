@@ -1,0 +1,236 @@
+.zhaohui{
+  width: 80%;  
+  margin: 0 auto;
+  .jindutiao{
+      position: relative;
+      margin-top: 4em;
+      margin-bottom: 3em;
+      span{
+          &:before{
+              content: attr(data-content);
+              white-space: nowrap;
+              position: absolute;
+              left: -30px;
+              right: -30px;
+              margin: auto;
+              top: -20px;
+              font-size: 12px;
+          }
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+          text-align: center;
+          border-radius: 50%;
+          background: #cdcdcd;
+          color: #cccccc;
+          position: absolute;
+          margin-top: -5px;
+          z-index: 2;
+          &.shoujihao{
+              left: 0;
+          }
+          &.shenfen{
+              left: 33%;
+          }
+          &.reset_password{
+              left: 66%;
+          }
+          &.xiugai_success{
+              right: 0;
+          }
+          &.active{
+            background: #3ea5e7;  
+            color: #272a1d;
+          }
+      }
+      &>div{
+          height: 2px;
+      }
+      .progress_up{
+          position: absolute;
+          left: 0;
+          background: #3ea5e7;
+      }
+      .progress_bottom{
+          background: #cdcdcd;
+      }
+  }
+  .from_content{
+      .from_btn{
+          white-space: nowrap;
+          margin-bottom: 25px;
+          line-height: 30px;
+          label{
+              display: inline-block;
+              color: #7c7c7c;
+          }
+          >div{
+              display: inline-block;
+              input{
+                  height: 30px;
+                  width: 100%;
+                  text-indent: 5px;
+                  border: 1px solid #d2d2d2;
+              }
+              .huantu{
+                  display: inline-block;
+                  vertical-align: bottom;
+                  font-size: 12px;
+                  position: relative;
+                  cursor: pointer;
+                  top: 5px;
+                  left: 5px;
+              }
+          }
+          .btn{
+              line-height: 30px;
+              display: inline-block;
+              background: #46acea;
+              text-align: center;
+              color: #ffffff;
+              border: 1px solid #d9d2ce;
+              &:active{
+                  background: #2491db;
+              }
+          }
+      }
+      
+  }
+//用户登录
+  &.page00{
+      .progress_up{
+          width: 0%;
+      }
+      .user_header{
+          width: 100px;
+          height: 100px;
+          margin: 30px auto 10px;
+          img{
+              width: 100%;
+          }
+      }
+      h1{
+          text-align: center;
+          margin-bottom: 20px;
+          color: #434343;
+      }
+      label{
+          width: 20%;
+      }
+      .from_btn{
+          div{
+          width: 80%;
+          input.sm_text{
+              width: 60%;
+              margin-right: 5px;
+              +a{
+                  color: #ff2c2d;
+              }
+          }
+          }
+          .btn{
+              width: 80%;
+          }
+      }
+  }
+//输入手机号码页面
+  &.page01{
+      .progress_up{
+          width: 0%;
+      }
+      label{
+          width: 20%;
+      }
+      .from_btn{
+          div{
+          width: 80%;
+          input.sm_text{
+              width: 40%;
+              margin-right: 10px;
+              +span{
+                  width: 50px;
+                  height: 25px;
+                  display: inline-block;
+                  vertical-align: bottom;
+                  background: red;
+                  img{
+                      width: 100%;
+                      height: 100%;
+                  }
+                }
+              }
+          }
+          .btn{
+              width: 80%;
+          }
+      }
+  }
+//输入验证码页面
+  &.page02{
+      .progress_up{
+          width: 33%;
+      }
+      label{
+          width: 30%;
+      }
+      .from_btn{
+          .mobile_phone{
+              span{
+                  color: #ff0000;
+              }
+              a{
+                  float: right;
+                  color: #3ea7e8;
+              }
+          }
+          div{
+          width: 70%;
+          }
+          .btn{
+              width: 70%;
+          }
+      }
+  }
+//重置页面
+  &.page03{
+      .progress_up{
+          width: 66%;
+      }
+      label{
+          width: 30%;
+      }
+      .from_btn{
+          div{
+          width: 70%;
+          }
+          .btn{
+              width: 70%;
+          }
+      }
+  }
+// 修改成功页面
+&.page04{
+      .progress_up{
+          width: 100%;
+      }
+      .success_meg{
+          margin-top: 120px;
+          margin-bottom: 120px;
+          color: #666666;
+          text-align: center;
+          a{
+              color: #191919;
+          }
+          &:before{
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 10px;
+             content: url(../img/success_meg.png); 
+          }
+      }
+  }
+}
+//底部导航栏的样式
+menu .menu_content .btn{
+    float: left;
+}
