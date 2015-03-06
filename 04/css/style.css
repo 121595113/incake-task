@@ -1,21 +1,46 @@
-.swiper-slide ul {
+.data_time {
+  height: 80px;
+  margin: 0 auto;
+  margin-top: 25px;
+  overflow: hidden;
+}
+.data_time .tabs {
+  padding: 0 25px;
+}
+.data_time .tabs a {
+  color: #5d5d5d;
+  font-size: 1.5em;
+}
+.data_time .tabs a + a {
+  margin-left: 20px;
+}
+.data_time .tabs a.active {
+  color: #2274ca;
+}
+.data_time .swiper-slide ul {
   padding: 0;
   margin: 0;
 }
-.swiper-slide ul li {
+.data_time .swiper-slide ul li {
   display: table-cell;
   padding: 10px;
 }
-.swiper-slide ul li span {
+.data_time .swiper-slide ul li span {
   display: block;
   text-align: center;
   white-space: nowrap;
 }
-.swiper-slide ul li.active {
-  color: red;
+.data_time .swiper-slide ul li.active {
+  color: #2274ca;
 }
-.visible {
+.data_time .visible {
   opacity: 1 !important;
   z-index: 2 !important;
+}
+.ui-select .ui-btn-icon-right .ui-icon {
+  right: 0;
+}
+.tab_content .tabnav li {
+  float: left;
 }
 /*# sourceMappingURL=style.css.map */
