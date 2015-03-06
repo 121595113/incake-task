@@ -1,0 +1,21 @@
+.swiper-slide ul {
+  padding: 0;
+  margin: 0;
+}
+.swiper-slide ul li {
+  display: table-cell;
+  padding: 10px;
+}
+.swiper-slide ul li span {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+.swiper-slide ul li.active {
+  color: red;
+}
+.visible {
+  opacity: 1 !important;
+  z-index: 2 !important;
+}
+/*# sourceMappingURL=style.css.map */

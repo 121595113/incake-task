@@ -207,8 +207,12 @@
 					times = 60,
 					timer = null;
 				send.onclick = function() {
-					// 计时开始 
-					timer = setInterval(function() {
+					if (send.disabled) {
+						return;
+					}
+					send.disabled = true;
+					send.innerHTML = times + '秒后重试';
+					var timer = setInterval(function() {
 						times--;
 						if (times <= 0) {
 							send.innerHTML = '免费获取验证码';
@@ -220,7 +224,6 @@
 							send.disabled = true;
 						}
 					}, 1000)
-					timer()
 				}
 			})
 		</script>
