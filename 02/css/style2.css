@@ -57,35 +57,49 @@
   background: #cdcdcd;
 }
 .zhaohui .from_content .from_btn {
-  white-space: nowrap;
-  margin-bottom: 25px;
+  display: table;
+  width: 100%;
   line-height: 30px;
+  margin-bottom: 20px;
 }
 .zhaohui .from_content .from_btn label {
-  display: inline-block;
+  display: table-cell;
   color: #7c7c7c;
+  width: 20%;
+  padding-right: 5px;
+  white-space: nowrap;
+  vertical-align: middle;
 }
-.zhaohui .from_content .from_btn > div {
-  display: inline-block;
-}
-.zhaohui .from_content .from_btn > div input {
-  height: 30px;
+.zhaohui .from_content .from_btn input {
   width: 100%;
+  height: 30px;
   text-indent: 5px;
+  box-sizing: border-box;
   border: 1px solid #d2d2d2;
 }
-.zhaohui .from_content .from_btn > div .huantu {
+.zhaohui .from_content .from_btn span {
+  width: 50px;
+  height: 30px;
+  padding-left: 5px;
+  display: table-cell;
+  vertical-align: bottom;
+}
+.zhaohui .from_content .from_btn span img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+.zhaohui .from_content .from_btn .huantu {
   display: inline-block;
+  white-space: nowrap;
   vertical-align: bottom;
   font-size: 12px;
-  position: relative;
   cursor: pointer;
-  top: 5px;
-  left: 5px;
 }
 .zhaohui .from_content .from_btn .btn {
   line-height: 30px;
-  display: inline-block;
+  display: table-cell;
+  width: 100%;
   background: #46acea;
   text-align: center;
   color: #ffffff;
@@ -112,79 +126,28 @@
   margin-bottom: 20px;
   color: #434343;
 }
-.zhaohui.page00 label {
-  width: 20%;
-}
-.zhaohui.page00 .from_btn div {
-  width: 80%;
-}
-.zhaohui.page00 .from_btn div input.sm_text {
-  width: 60%;
-  margin-right: 5px;
-}
-.zhaohui.page00 .from_btn div input.sm_text + a {
-  color: #ff2c2d;
-}
-.zhaohui.page00 .from_btn .btn {
-  width: 80%;
+.zhaohui.page00 .from_btn #send {
+  display: table-cell;
+  width: 90px;
+  text-align: center;
+  white-space: nowrap;
+  padding-left: 10px;
 }
 .zhaohui.page01 .progress_up {
   width: 0%;
 }
-.zhaohui.page01 label {
-  width: 20%;
-}
-.zhaohui.page01 .from_btn div {
-  width: 80%;
-}
-.zhaohui.page01 .from_btn div input.sm_text {
-  width: 40%;
-  margin-right: 10px;
-}
-.zhaohui.page01 .from_btn div input.sm_text + span {
-  width: 50px;
-  height: 25px;
-  display: inline-block;
-  vertical-align: bottom;
-}
-.zhaohui.page01 .from_btn div input.sm_text + span img {
-  width: 100%;
-  height: 100%;
-}
-.zhaohui.page01 .from_btn .btn {
-  width: 80%;
-}
 .zhaohui.page02 .progress_up {
   width: 33%;
 }
-.zhaohui.page02 label {
-  width: 30%;
-}
-.zhaohui.page02 .from_btn .mobile_phone span {
-  color: #ff0000;
-}
-.zhaohui.page02 .from_btn .mobile_phone a {
-  cursor: pointer;
+.zhaohui.page02 .from_btn #send {
   float: right;
-  color: #3ea7e8;
+  cursor: pointer;
 }
-.zhaohui.page02 .from_btn div {
-  width: 70%;
-}
-.zhaohui.page02 .from_btn .btn {
-  width: 70%;
+.zhaohui.page02 .from_btn #send + span {
+  float: left;
 }
 .zhaohui.page03 .progress_up {
   width: 66%;
-}
-.zhaohui.page03 label {
-  width: 30%;
-}
-.zhaohui.page03 .from_btn div {
-  width: 70%;
-}
-.zhaohui.page03 .from_btn .btn {
-  width: 70%;
 }
 .zhaohui.page04 .progress_up {
   width: 100%;
