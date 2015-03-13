@@ -1,0 +1,413 @@
+<!-- saved from url=(0038)http://wap.incake.net/ICake/index.aspx -->
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/ICake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./mobile_index_files/jquery-1.8.2.min.js"></script>
+		<script src="./mobile_index_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./mobile_index_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/ICake/css/style.css">
+		<script src="./mobile_index_files/script.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<title>INCAKE</title>
+		<!--用户自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/zidingyi.css" />
+		<link rel="stylesheet" type="text/css" href="scrollbar.css" />
+		<script type="text/javascript" src="iscroll.js"></script>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c">
+		<section data-role="page" data-url="/ICake/index.aspx" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 593px;">
+			<header>
+				<a href="javascript:;" class="logo fn_left ui-link">
+					<img src="./mobile_index_files/logo.png" alt="">
+				</a>
+				<a href="javascript:;" class="fn_right ui-link">
+					<div class="select_city">
+						上 海
+					</div>
+				</a>
+				<a href="javascript:;" class="fn_right ui-link">
+					<div class="select_weixin">
+					</div>
+				</a>
+				<div id="showerweima" style="width:100%;display:none;">
+					<img src="./mobile_index_files/weixincode.jpg" style="position:absolute; z-index:99998; width:200px;top:45px;right:10px;">
+					<img src="./mobile_index_files/popup_close.png" class="gb" style="position:absolute; z-index:99999; width:16px;top:50px;right:20px;">
+				</div>
+			</header>
+
+			<script src="./mobile_index_files/iplookup.php" type="text/ecmascript"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#select_city a").click(function() {
+						//清空购物车
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: {
+								"Action": "ClearCookie",
+								"Type": "icake",
+								"Name": "shopcart"
+							}
+						});
+						var _data = {
+							"Action": "City",
+							"Cvalue": $(this).attr("cityId")
+						};
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: _data,
+							success: function(data) {
+								if (data.errcode == "0") {
+									location.reload();
+								}
+							}
+						});
+					});
+				});
+			</script>
+			<section id="select_city" style="display:none;">
+				<a href="javascript:;" class="link ui-link" cityname="上海市" cityid="021">上海市</a>
+				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
+			</section>
+
+			<nav class="site_nav">
+
+				<div class="btn_list">
+					<div class="btn nav_line">
+						<div class="menu_ul cake_ul" style="display:none;">
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>芝士系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=qiaokeli&dname=%e5%b7%a7%e5%85%8b%e5%8a%9b%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>巧克力系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=napolun&dname=%e6%8b%bf%e7%a0%b4%e4%bb%91%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>拿破仑系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=mushi&dname=%e6%85%95%e6%96%af%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>慕斯系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=ruzhi&dname=%e4%b9%b3%e8%84%82%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>乳脂系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=xianping&dname=%e9%80%89%e6%8b%bc%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>选拼系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" class="li ui-link" rel="external"><i class="arr">▶</i>所有系列</a>
+						</div>
+						<a href="javascript:;" class="link cake ui-link">蛋糕馆</a>
+					</div>
+					<div class="btn nav_line">
+						<a href="http://incafe.incake.net/" rel="external" class="link in ui-link"> INCAFE</a>
+					</div>
+					<div class="btn nav_line">
+						<div class="menu_ul user_ul" style="display:none;">
+							<a href="http://wap.incake.net/user/myinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>我的信息</a>
+							<a href="http://wap.incake.net/user/userinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>订购信息</a>
+							<a href="http://wap.incake.net/Login.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>登  录</a>
+						</div>
+						<a href="javascript:;" class="link user ui-link">会员专区</a>
+					</div>
+					<div class="btn nav_line"> <i class="num">0</i>
+						<a href="http://wap.incake.net/ICake/order/ShopCart.aspx" rel="external" class="link car ui-link">购物车</a>
+					</div>
+				</div>
+
+			</nav>
+			<script type="text/javascript">
+				$(function() {
+					$(".zhuxiao.li").click(function() {
+						if (confirm("确定退出?")) {
+							$.ajax({
+								url: "/Icake/cookie/cookiemanage.aspx",
+								dataType: "json",
+								type: "post",
+								data: {
+									"Action": "ZhuXiao"
+								},
+								success: function(data) {
+									if (data.errcode == "0") {
+										location.reload();
+									}
+								}
+							});
+						}
+					});
+				});
+			</script>
+
+			<menu>
+				<a href="javascript:;" class="menu_btn ui-link" style="display: block;"></a>
+				<div class="menu_content " style="display: none;">
+					<div class="menu_c_btn fn_clear">
+						<div class="btn_list">
+							<div class="btn nav_line"><a href="./mobile_index_files/mobile_index.htm" rel="external" class="link home ui-link">首&nbsp;&nbsp;页</a>
+							</div>
+							<div class="btn nav_line">
+								<div class="menu_ul cake_ul" style="display:none;">
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>芝士系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=qiaokeli&dname=%e5%b7%a7%e5%85%8b%e5%8a%9b%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>巧克力系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=napolun&dname=%e6%8b%bf%e7%a0%b4%e4%bb%91%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>拿破仑系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=mushi&dname=%e6%85%95%e6%96%af%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>慕斯系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=ruzhi&dname=%e4%b9%b3%e8%84%82%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>乳脂系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=xianping&dname=%e9%80%89%e6%8b%bc%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>选拼系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" class="li ui-link" rel="external"><i class="arr">▶</i>所有系列</a>
+								</div>
+								<div class="menu_ul user_ul" style="display:none;">
+									<a href="http://wap.incake.net/user/userinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>订购信息</a>
+									<a href="http://wap.incake.net/user/myinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>我的信息</a>
+								</div>
+
+								<a href="javascript:;" rel="external" class="link cake ui-link">蛋糕馆</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%e5%8d%88%e5%90%8e%e8%8c%b6%e7%82%b9&dc=%e7%94%9c%e5%93%81" rel="external" class="link di ui-link">午后茶点</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://incafe.incake.net/" rel="external" class="link incake ui-link"> INCAFE</a>
+							</div>
+						</div>
+						<i class="arrow"><a href="javascript:;" class="link car ui-link"> 收起菜单</a></i>
+					</div>
+				</div>
+			</menu>
+
+			<!---Banner开始--->
+			<section class="play_banner index_play_banner" id="sl_img_play" style="overflow: hidden; height: 671.5px; width: 1343px;">
+				<ul class="con fn-clear" style="width: 6715px; transition: -webkit-transform 0ms; -webkit-transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(0, 0);">
+					<li class="" style="height: 671.5px; width: 1343px;">
+						<a href="http://wap.incake.net/ICake/mrz/" target="_blank" class="ui-link" rel="external">
+							<img src="./mobile_index_files/2015031014145663659.jpg" width="340" height="auto" style="height: 671.5px; width: 1343px;">
+						</a>
+					</li>
+					<li style="height: 671.5px; width: 1343px;" class="">
+						<a href="http://wap.incake.net/flashsale.aspx" target="_blank" class="ui-link" rel="external">
+							<img src="./mobile_index_files/2015030611241727511.jpg" width="340" height="auto" style="height: 671.5px; width: 1343px;">
+						</a>
+					</li>
+					<li style="height: 671.5px; width: 1343px;" class="">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=400" target="_blank" class="ui-link" rel="external">
+							<img src="./mobile_index_files/2015020414441490571.jpg" width="340" height="auto" style="height: 671.5px; width: 1343px;">
+						</a>
+					</li>
+					<li style="height: 671.5px; width: 1343px;" class="">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=155" target="_blank" class="ui-link" rel="external">
+							<img src="./mobile_index_files/2014123011491798755.jpg" width="340" height="auto" style="height: 671.5px; width: 1343px;">
+						</a>
+					</li>
+					<li style="height: 671.5px; width: 1343px;" class="on">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=183" target="_blank" class="ui-link" rel="external">
+							<img src="./mobile_index_files/n-1.jpg" width="340" height="auto" style="height: 671.5px; width: 1343px;">
+						</a>
+					</li>
+				</ul>
+				<ul class="pagination fn-clear" id="indicator">
+					<li class="li_first on"></li>
+					<li class=""></li>
+					<li class=""></li>
+					<li class=""></li>
+					<li class="li_last"></li>
+				</ul>
+
+			</section>
+			<!---Banner结束--->
+			<!---产品展示区--->
+			<div class="index_goods">
+				<!---皇室推荐开始--->
+				<div class="index_tui_goods index_h2_01">
+					<a href="http://wap.incake.net/Icake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" rel="external" class="ui-link"><h2>
+				<img src="./mobile_index_files/h2_01.png">
+				皇室推荐</h2></a>
+					<!--上拉刷新组件start-->
+					<div class="scroll_box">
+						<div id="wrapper">
+							<div id="scroller">
+								<div id="pullDown">
+									<span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+								</div>
+								<ul id="thelist">
+									<li>Pretty row 1</li>
+									<li id="aaa">Pretty row 2</li>
+									<li>Pretty row 3</li>
+									<li>Pretty row 4</li>
+									<li>Pretty row 5</li>
+									<li>Pretty row 6</li>
+									<li>Pretty row 7</li>
+									<li>Pretty row 8</li>
+									<li>Pretty row 9</li>
+									<li>Pretty row 10</li>
+									<li>Pretty row 11</li>
+									<li>Pretty row 12</li>
+									<li>Pretty row 13</li>
+									<li>Pretty row 14</li>
+									<li>Pretty row 15</li>
+									<li>Pretty row 16</li>
+									<li>Pretty row 17</li>
+									<li>Pretty row 18</li>
+									<li>Pretty row 19</li>
+									<li>Pretty row 20</li>
+									<li>Pretty row 21</li>
+								</ul>
+								<div id="pullUp">
+									<span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--上拉刷新组件end-->
+				</div>
+				<div style="background-color:#E6E6E6; font-weight:bold; font-size:14PX; text-align:center; padding:5px 0px; margin-top:-1px;">
+					<a href="http://wap.incake.net/Icake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" rel="external" style=" color:#727171;" class="ui-link">更多选择 MORE</a>
+				</div>
+				<!---皇室推荐结束--->
+				<!---午后茶点开始--->
+
+				<div class="index_tui_goods index_h2_02">
+					<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%e5%8d%88%e5%90%8e%e8%8c%b6%e7%82%b9&dc=%e7%94%9c%e5%93%81" rel="external" class="ui-link">
+						<h2>
+							<img src="./mobile_index_files/h2_02.png">午后茶点
+						</h2>
+					</a>
+				</div>
+				<div style="background-color:#E6E6E6; font-weight:bold; font-size:14PX; text-align:center; padding:5px 3px; margin-top:-1px;">
+					<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%e5%8d%88%e5%90%8e%e8%8c%b6%e7%82%b9&dc=%e7%94%9c%e5%93%81" rel="external" style=" color:#727171;" class="ui-link">更多选择 MORE</a>
+				</div>
+				<!---限时抢购结束--->
+			</div>
+
+			<!---产品展示区--->
+
+			<footer>
+				<section class="gray_footer fn_clear">
+					<i class="fn_left time">(周一至周日)<br>8:30 ~ 21:00</i>
+					<i class="fn_left other">客服热线:<b><a href="tel:400-921-5757" class="ui-link">400-921-5757</a></b> </i>
+					<a href="http://wap.incake.net/ICake/index.aspx#" class="fn_right go_top other ui-link">返回顶部</a>
+				</section>
+				<p class="p" style=" font-size:14px; padding:5px 0px 2px 0px;">
+					<a href="http://www.incake.net/?source=mobile" class="ui-link">电脑版</a>&nbsp;&nbsp;<span style=" border-left:2px solid #ccc;"></span>&nbsp;&nbsp;<a href="http://wap.incake.net/" rel="external" class="ui-link">触屏版</a>
+				</p>
+				<p class="p">
+					沪ICP备12045835号
+					<br> Copyright © 2014 INCAKE Company All Right Reserved
+				</p>
+			</footer>
+			<!--遮罩层-->
+			<div class="ui_mask"></div>
+		</section>
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+		<!--上拉加载更多组件js-->
+		<script type="text/javascript">
+			var myScroll,
+				pullDownEl, pullDownOffset,
+				pullUpEl, pullUpOffset,
+				generatedCount = 0;
+			/**
+			 * 下拉刷新 （自定义实现此方法）
+			 * myScroll.refresh();		// 数据加载完成后，调用界面更新方法
+			 */
+			function pullDownAction() {
+					setTimeout(function() { // <-- Simulate network congestion, remove setTimeout from production!
+						var el, li, i;
+						el = document.getElementById('thelist');
+						for (i = 0; i < 3; i++) {
+							li = document.createElement('li');
+							li.innerText = 'Generated row ' + (++generatedCount);
+							el.insertBefore(li, el.childNodes[0]);
+						}
+						myScroll.refresh(); //数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
+					}, 1000); // <-- Simulate network congestion, remove setTimeout from production!
+				}
+				/**
+				 * 滚动翻页 （自定义实现此方法）
+				 * myScroll.refresh();		// 数据加载完成后，调用界面更新方法
+				 */
+
+			function pullUpAction() {
+					setTimeout(function() { // <-- Simulate network congestion, remove setTimeout from production!
+						var el, li, i;
+						el = document.getElementById('thelist');
+						for (i = 0; i < 3; i++) {
+							li = document.createElement('li');
+							li.innerText = 'Generated row ' + (++generatedCount);
+							el.appendChild(li, el.childNodes[0]);
+						}
+						myScroll.refresh(); // 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
+					}, 1000); // <-- Simulate network congestion, remove setTimeout from production!
+				}
+				/**
+				 * 初始化iScroll控件
+				 */
+
+			function loaded() {
+					pullDownEl = document.getElementById('pullDown');
+					pullDownOffset = pullDownEl.offsetHeight;
+					pullUpEl = document.getElementById('pullUp');
+					pullUpOffset = pullUpEl.offsetHeight;
+					myScroll = new iScroll('wrapper', {
+						scrollbarClass: 'myScrollbar',
+						/* 重要样式 */
+						useTransition: false,
+						/* 此属性不知用意，本人从true改为false */
+						topOffset: pullDownOffset,
+						onRefresh: function() {
+							if (pullDownEl.className.match('loading')) {
+								pullDownEl.className = '';
+								pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+							} else if (pullUpEl.className.match('loading')) {
+								pullUpEl.className = '';
+								pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+							}
+						},
+						onScrollMove: function() {
+							if (this.y > 5 && !pullDownEl.className.match('flip')) {
+								pullDownEl.className = 'flip';
+								pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+								this.minScrollY = 0;
+							} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+								pullDownEl.className = '';
+								pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+								this.minScrollY = -pullDownOffset;
+							} else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+								pullUpEl.className = 'flip';
+								pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+								this.maxScrollY = this.maxScrollY;
+							} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+								pullUpEl.className = '';
+								pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+								this.maxScrollY = pullUpOffset;
+							}
+						},
+						onScrollEnd: function() {
+							if (pullDownEl.className.match('flip')) {
+								pullDownEl.className = 'loading';
+								pullDownEl.querySelector('.pullDownLabel').innerHTML = '加载中...';
+								pullDownAction(); // Execute custom function (ajax call?)
+							} else if (pullUpEl.className.match('flip')) {
+								pullUpEl.className = 'loading';
+								pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';
+								pullUpAction(); // Execute custom function (ajax call?)
+							}
+						}
+					});
+					setTimeout(function() {
+						document.getElementById('wrapper').style.left = '0';
+					}, 800);
+				}
+				//初始化绑定iScroll控件 
+			document.getElementById('wrapper').addEventListener('touchmove', function(e) {
+				e.preventDefault();
+			}, false);
+			document.addEventListener('DOMContentLoaded', loaded, false);
+		</script>
+
+	</body>
+
+</html>
