@@ -29,6 +29,7 @@
 			.swiper-container {
 				width: 100%;
 				/*height: 352px;*/
+				
 				padding-bottom: 20px;
 			}
 			.swiper-slide {
@@ -36,6 +37,7 @@
 				font-size: 18px;
 				background: #fff;
 				/* Center slide text vertically */
+				
 				display: -webkit-box;
 				display: -ms-flexbox;
 				display: -webkit-flex;
@@ -394,12 +396,22 @@
 		<!--滑动组件js-->
 		<script type="text/javascript" src="js/swiper.min.js"></script>
 		<script>
-			var swiper = new Swiper('.swiper-container', {
-				loop:true,
-				centeredSlides: true,
-				autoplay: 2500,
-				autoplayDisableOnInteraction: false
-			});
+			window.onload = function() {
+				var count = document.getElementsByClassName("swiper-slide");
+				if (count.length > 1) {
+					swiperinit(3000);
+				} else {
+					swiperinit(false);
+				}
+				function swiperinit (arguments) {
+					var swiper = new Swiper('.swiper-container', {
+						loop: true,
+						centeredSlides: true,
+						autoplay: arguments,
+						autoplayDisableOnInteraction: false,
+					});
+				}
+			}
 		</script>
 	</body>
 
