@@ -79,7 +79,7 @@ body {
   overflow: hidden;
   text-decoration: none;
 }
-.container .content .btn_group a + a {
+.container .content .btn_group a.margin_left {
   margin-left: 18px;
 }
 .long_shadow {
