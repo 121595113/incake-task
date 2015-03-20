@@ -1,0 +1,50 @@
+.btn_list {
+  overflow: hidden;
+}
+.site_nav .btn {
+  float: left;
+}
+menu .menu_content .btn {
+  float: left;
+}
+.love_data .goods_img {
+  text-align: center;
+}
+.love_data .goods_page h3 {
+  text-align: left;
+}
+.love_data .goods_page h3.female {
+  color: #ed0000;
+}
+.love_data .goods_page h3.female:before {
+  background-position: -3px -1px;
+}
+.love_data .goods_page h3:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 22px;
+  position: relative;
+  margin-right: 10px;
+  top: 3px;
+  background: url(../img/yf.png);
+  background-size: 45px 25px;
+  background-position: -24px -1px;
+}
+.love_data .sweent {
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+.love_data .chan_list {
+  text-align: center;
+}
+.love_data .chan_list a {
+  display: block;
+}
+.love_data .chan_list a.female {
+  margin-top: -35px;
+}
+.love_data .chan_list a.male {
+  margin-top: -65px;
+}
+/*# sourceMappingURL=style02.css.map */

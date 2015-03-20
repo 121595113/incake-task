@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://wap.incake.net/Icake/Detail.aspx?CommodityID=405 -->
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base href="http://wap.incake.net/Icake/Detail.aspx?CommodityID=405">-->
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./aizhichu_files/jquery-1.8.2.min.js"></script>
+		<script src="./aizhichu_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./aizhichu_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/css/style.css">
+		<script src="./aizhichu_files/script.js" type="text/javascript"></script>
+		<script src="./aizhichu_files/Detail.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<link rel="apple-touch-icon-precomposed" href="http://wap.incake.net/Icake/images/icon@2x.png">
+		<link rel="apple-touch-startup-image" href="http://wap.incake.net/Icake/images/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
+		<!--自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/style02.css" />
+		<title>INCAKE</title>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c love_data" data-role="no-content" style="max-width: 750px; margin: 0 auto;">
+		<section data-role="page" data-url="/Icake/Detail.aspx?CommodityID=405" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 496px; position:static;">
+
+			<script src="./aizhichu_files/iplookup.php" type="text/ecmascript"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#select_city a").click(function() {
+						//清空购物车
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: {
+								"Action": "ClearCookie",
+								"Type": "icake",
+								"Name": "shopcart"
+							}
+						});
+						var _data = {
+							"Action": "City",
+							"Cvalue": $(this).attr("cityId")
+						};
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: _data,
+							success: function(data) {
+								if (data.errcode == "0") {
+									location.reload();
+								}
+							}
+						});
+					});
+				});
+			</script>
+			<section id="select_city" style="display:none;">
+				<a href="javascript:;" class="link ui-link" cityname="上海市" cityid="021">上海市</a>
+				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
+			</section>
+			<nav class="site_nav">
+				<div class="btn_list">
+					<div class="btn nav_line">
+						<div class="menu_ul cake_ul" style="display:none;">
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>芝士系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=qiaokeli&dname=%e5%b7%a7%e5%85%8b%e5%8a%9b%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>巧克力系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=napolun&dname=%e6%8b%bf%e7%a0%b4%e4%bb%91%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>拿破仑系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=mushi&dname=%e6%85%95%e6%96%af%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>慕斯系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=ruzhi&dname=%e4%b9%b3%e8%84%82%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>乳脂系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=xianping&dname=%e9%80%89%e6%8b%bc%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>选拼系列</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" class="li ui-link" rel="external"><i class="arr">▶</i>所有系列</a>
+						</div>
+						<a href="javascript:;" class="link cake ui-link">蛋糕馆</a>
+					</div>
+					<div class="btn nav_line">
+						<a href="http://incafe.incake.net/" rel="external" class="link in ui-link"> INCAFE</a>
+					</div>
+					<div class="btn nav_line">
+						<div class="menu_ul user_ul" style="display:none;">
+							<a href="http://wap.incake.net/user/myinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>我的信息</a>
+							<a href="http://wap.incake.net/user/userinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>订购信息</a>
+							<a href="http://wap.incake.net/Login.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>登  录</a>
+						</div>
+						<a href="javascript:;" class="link user ui-link">会员专区</a>
+					</div>
+					<div class="btn nav_line"> <i class="num">0</i>
+						<a href="http://wap.incake.net/ICake/order/ShopCart.aspx" rel="external" class="link car ui-link">购物车</a>
+					</div>
+				</div>
+
+			</nav>
+			<script type="text/javascript">
+				$(function() {
+					$(".zhuxiao.li").click(function() {
+						if (confirm("确定退出?")) {
+							$.ajax({
+								url: "/Icake/cookie/cookiemanage.aspx",
+								dataType: "json",
+								type: "post",
+								data: {
+									"Action": "ZhuXiao"
+								},
+								success: function(data) {
+									if (data.errcode == "0") {
+										location.reload();
+									}
+								}
+							});
+						}
+					});
+				});
+			</script>
+
+			<menu>
+				<a href="javascript:;" class="menu_btn ui-link"></a>
+				<div class="menu_content ">
+					<div class="menu_c_btn fn_clear">
+						<div class="btn_list">
+							<div class="btn nav_line"><a href="http://wap.incake.net/ICake/index.aspx" rel="external" class="link home ui-link">首&nbsp;&nbsp;页</a>
+							</div>
+							<div class="btn nav_line">
+								<div class="menu_ul cake_ul" style="display:none;">
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>芝士系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=qiaokeli&dname=%e5%b7%a7%e5%85%8b%e5%8a%9b%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>巧克力系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=napolun&dname=%e6%8b%bf%e7%a0%b4%e4%bb%91%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>拿破仑系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=mushi&dname=%e6%85%95%e6%96%af%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>慕斯系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=ruzhi&dname=%e4%b9%b3%e8%84%82%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>乳脂系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=xianping&dname=%e9%80%89%e6%8b%bc%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>选拼系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" class="li ui-link" rel="external"><i class="arr">▶</i>所有系列</a>
+								</div>
+								<div class="menu_ul user_ul" style="display:none;">
+									<a href="http://wap.incake.net/user/userinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>订购信息</a>
+									<a href="http://wap.incake.net/user/myinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>我的信息</a>
+								</div>
+
+								<a href="javascript:;" rel="external" class="link cake ui-link">蛋糕馆</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%e5%8d%88%e5%90%8e%e8%8c%b6%e7%82%b9&dc=%e7%94%9c%e5%93%81" rel="external" class="link di ui-link">午后茶点</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://incafe.incake.net/" rel="external" class="link incake ui-link"> INCAFE</a>
+							</div>
+						</div>
+						<i class="arrow"><a href="javascript:;" class="link car ui-link"> 收起菜单</a></i>
+					</div>
+				</div>
+			</menu>
+
+			<nav class="navigation">
+				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
+				<h3>商品详情</h3>
+			</nav>
+				<div class="goods_img">
+					<img src="img/female.jpg" alt="" class="">
+				</div>
+			<div class="goods_page">
+				
+				<h3 class="female">蛋糕特色</h3>
+				<div class="post">
+					<p>巧克力丝绸飘落在香醇的比利时巧克力慕斯上，清甜的红醋栗点亮了整个“礼物”。 MR.Z的每一层都会带来不同的惊喜。悄悄咬上一口，丝滑的巧克力流心缓缓流出，充满整个味蕾，幸福感随之而来！
+						<br>饮品巧搭——美式咖啡的口味单一而香醇，最适合搭配口味重且单纯的巧克力甜点。使甜点吃起来不腻，而同时使美式咖啡中的苦味与酸味变得柔和不刺激。</p>
+				</div>
+				<div class="sweent">
+					<div class="love">
+						甜度 Sweetness &nbsp;&nbsp;
+						<img src="img/love_on.gif">
+						<img src="img/love_on.gif">
+						<img src="img/love.gif">
+						<img src="img/love.gif">
+						<img src="img/love.gif">
+						<img src="img/love.gif">
+
+					</div>
+					适合大众 适合所有节日
+				</div>
+				<div class="goods_btn">
+					<div class="box">
+						<a href="" class="go_buy ui-link" data-danwei=".5" data-pic="http://img.incake.net/UpImages/2015031015361980230.png" data-cname="左老师密码" data-showfive="1" data-cweight="磅" rel="external">立&nbsp;&nbsp;即&nbsp;&nbsp;购&nbsp;&nbsp;买</a>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<section class="gray_footer fn_clear">
+					<i class="fn_left time">(周一至周日)<br>8:30 ~ 21:00</i>
+					<i class="fn_left other">客服热线:<b><a href="tel:400-921-5757" class="ui-link">400-921-5757</a></b></i>
+					<a href="http://wap.incake.net/Icake/Detail.aspx?CommodityID=405#" class="fn_right go_top other ui-link">返回顶部</a>
+				</section>
+
+				<p class="p" style=" font-size:14px; padding:10px 0px 2px 0px;">
+					<a href="http://wap.incake.net/login.aspx" rel="external" class="ui-link">立即登录</a>&nbsp;&nbsp;<span style=" border-left:0px solid #ccc;"></span>&nbsp;&nbsp;<a href="http://wap.incake.net/Register.aspx" rel="external" class="ui-link">立即注册</a>
+				</p>
+
+				<p class="p" style=" font-size:14px; padding:8px 0px 2px 0px;">
+					<a href="http://www.incake.net/?source=mobile" rel="external" class="ui-link">电脑版</a>&nbsp;&nbsp;<span style=" border-left:2px solid #ccc;"></span>&nbsp;&nbsp;<a href="http://wap.incake.net/" rel="external" class="ui-link">触屏版</a>
+				</p>
+				<p class="p">
+					沪ICP备12045835号
+					<br> Copyright © 2014 INCAKE Company All Right Reserved
+				</p>
+			</footer>
+			<!--遮罩层-->
+			<div class="ui_mask"></div>
+
+		</section>
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+	</body>
+
+</html>
