@@ -4,16 +4,6 @@ html,body{
     padding: 0;
     height: 100%;
 }
-//定义变量
-.background-image(@color1:#ebebeb,@color2:#ebebeb,@color3:#08195f,@color4:#525e90){
-    background: #7a7a7a;
-    background-image: -webkit-gradient(linear, center top, center bottom, from(@color1), to(@color4), color-stop(50%, @color2), color-stop(50%, @color3));
-    background-image: -webkit-linear-gradient(top, @color1, @color2 50%, @color3 50%, @color4);
-    background-image: -moz-linear-gradient(top, @color1, @color2 50%, @color3 50%, @color4);
-    background-image: -o-linear-gradient(top, @color1, @color2 50%, @color3 50%, @color4);
-    background-image: -ms-linear-gradient(top, @color1, @color2 50%, @color3 50%, @color4);
-    background-image: linear-gradient(to bottom, @color1, @color2 50%, @color3 50%, @color4);
-}
 body{
     font-family: "microsoft yahei";
     overflow: hidden;
@@ -25,7 +15,7 @@ body{
     width: 750px;
     height: 466px;
     background: white url(../img/logo.png) no-repeat;
-    background-position: top center;
+    background-position: center 5px;
     border-radius: 10px;
     position: absolute;
     z-index: 2;
@@ -34,9 +24,9 @@ body{
     margin-left: -375px;
     margin-top: -233px;
     .content{
-        width: 456px;
+        width: 486px;
         margin: 140px auto 0;
-        padding-left: 180px;
+        padding-left: 160px;
         height: 306px;
         background: url(../img/tel.png) no-repeat left center;
         h1{
@@ -55,13 +45,14 @@ body{
                 width: 70px;
                 line-height: 40px;
                 text-align: right;
-                margin-right: 10px;
+                margin-right: 20px;
             }
             input{
-                width: 350px;
+                width: 344px;
                 height: 40px;
+                line-height: 40px;
+                line-height: 40px\9;
                 padding: 0 5px;
-                box-sizing: border-box;
             }
             span{
                 position: absolute;
@@ -71,9 +62,10 @@ body{
             }
         }
         .btn_group{
-            padding-left: 80px;
+            padding-left: 90px;
+            width: 360px;
             a{
-                display: inline-block;
+                float: left;
                 width: 170px;
                 height: 42px;
                 line-height: 42px;
@@ -81,7 +73,11 @@ body{
                 background: #333a70;
                 font-size: 16px;
                 color: white;
+                overflow: hidden;
                 text-decoration: none;
+                &+a{
+                    margin-left: 18px;
+                }
             }
         }
     }
