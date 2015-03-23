@@ -52,6 +52,9 @@
 			.down img{
 				max-width: 60%;
 			}
+			#share{
+				display: none;
+			}
 		</style>
 	</head>
 
@@ -64,6 +67,19 @@
 			<p class="up"><img src="img/hongbao3-0-12.png"/></p>
 			<p class="down"><img src="img/hongbao3-0-5.png"/></p>
 		</div>
+		<div class="mark" id="share">
+			<p class="up"><img src="img/hongbao3-0-12.png"/></p>
+			<p class="down"><img src="img/hongbao3-0-10.png"/></p>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oa=document.getElementsByTagName('a');
+				var share=document.getElementById('share')
+				oa[0].onclick=function(){
+					share.style.display="block";
+				}
+			}
+		</script>
 	</body>
 
 </html>
