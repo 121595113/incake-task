@@ -1,0 +1,116 @@
+//字体图标
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?tfbf1c');
+    src:url('../fonts/icomoon.eot?#iefixtfbf1c') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?tfbf1c') format('woff'),
+        url('../fonts/icomoon.ttf?tfbf1c') format('truetype'),
+        url('../fonts/icomoon.svg?tfbf1c#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.imooc-icon {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+//弹出层
+.mark_ceng{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: -10%;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(100,100,100,0.5);
+//  到货通知
+    .arrival_notice,.diweizhi01,.diweizhi02{
+        max-width: 500px;
+        width: 80%;
+        background: white;
+        margin: auto;
+        padding: 10px;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 40%;
+        .close{
+            cursor: pointer;
+            color: #dbdbdb;
+            font-size: 1.2em;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        .header{
+            text-align: center;
+            border-bottom: 1px solid #dbdbdb;
+            font-size: 1.5em;
+            line-height: 2em;
+            i{
+                font-size: 1.5em;
+                position: relative;
+                top: 5px;
+                margin-right: 5px;
+                color: #55b9ed;
+            }
+        }
+        .content{
+            margin-top: 20px;
+            text-align: center;
+            label{
+                padding-right: 10px;
+            }
+            input{
+                height: 2em;
+                border: 1px solid #b6b6b6;
+                outline: none;
+                padding: 0 5px;
+            }
+            
+        }
+        .foot{
+            text-align: center;
+            margin-top: 20px;
+            a{
+                display: inline-block;
+                padding: 8px 0;
+                background: #53b6ed;
+                color: white;
+                width: 90px;
+                margin: 0 10px;
+            }
+        }
+    }
+    .diweizhi01 .content{
+        p{
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+    }
+    .diweizhi02 {
+        display: none;
+        .content{
+            span{
+                display: inline-block;
+                margin: 0 10px;
+                font-size: 1.2em;
+                color: #898989;
+                &.checked{
+                    color: #53b6ed;
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,9 @@
-<!-- saved from url=(0038)http://wap.incake.net/ICake/index.aspx -->
+<!doctype html>
 <html class="ui-mobile">
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!--<base href="http://wap.incake.net/ICake/index.aspx">-->
-		<base href=".">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
 		<!-- 针对WebApp的页头声明 -->
@@ -25,6 +24,7 @@
 		<title>INCAKE</title>
 		<!--用户自定义样式-->
 		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/arrival_notice.css"/>
 		<style type="text/css">
 			.swiper-container {
 				width: 100%;
@@ -388,6 +388,55 @@
 			</footer>
 			<!--遮罩层-->
 			<div class="ui_mask"></div>
+			<!--弹出层start-->
+			<div class="mark_ceng">
+				<!--到货通知start-->
+				<!--<section class="arrival_notice">
+					<i class="imooc-icon close">&#xe600</i>
+					<div class="header">
+						到货通知
+					</div>
+					<div class="content">
+						<label>手机号</label>
+						<input type="tex" name="" id="" value="" />
+					</div>
+					<div class="foot">
+						<a href="javascript:;">确定</a>
+					</div>
+				</section>-->
+				<!--到货通知end-->
+				<!--地理位置start-->
+				<section class="diweizhi01">
+					<i class="imooc-icon close">&#xe600</i>
+					<div class="header">
+						<i class="imooc-icon">&#xe60b</i>位置获取
+					</div>
+					<div class="content">
+						<p>您当前的所在位置：<span>上海</span><br />是否选择此为配送城市</p>
+					</div>
+					<div class="foot">
+						<a href="javascript:;" class="shoudong">手动选择</a>
+						<a href="javascript:;">确定</a>
+					</div>
+				</section>
+				<!--地理位置end-->
+				<!--地理位置start-->
+				<section class="diweizhi02">
+					<i class="imooc-icon close">&#xe600</i>
+					<div class="header">
+						<i class="imooc-icon">&#xe60b</i>位置获取
+					</div>
+					<div class="content">
+						<span>上海</span>
+						<span>福州</span>
+					</div>
+					<div class="foot">
+						<a href="javascript:;">确定</a>
+					</div>
+				</section>
+				<!--地理位置end-->
+			</div>
+			<!--弹出层end-->
 		</section>
 
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
@@ -412,6 +461,19 @@
 					});
 				}
 			}
+			$(function(){
+				$(".close").click(function(){
+					$(".mark_ceng").hide()
+				});
+				$(".shoudong").click(function(){
+					$(".diweizhi01").hide();
+					$(".diweizhi02").show();
+				})
+				$(".diweizhi02 span").click(function(){
+					$(".diweizhi02 span").removeClass('checked');
+					$(this).addClass('checked')
+				})
+			})
 		</script>
 	</body>
 
