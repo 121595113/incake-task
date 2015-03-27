@@ -29,7 +29,7 @@
 		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
 		<!--自定义样式-->
 		<link rel="stylesheet" type="text/css" href="css/dingdanqueren.css" />
-		<title>INCAKE</title>
+		<title>全部订单</title>
 	</head>
 
 	<body class="ui-mobile-viewport ui-overlay-c" data-role="no-content">
@@ -73,29 +73,15 @@
 				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
 			</section>
 
-
 			<nav class="navigation">
 				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
-				<h3 style="text-align: left; padding-left: 40px;">订单确认</h3>
+				<h3 style="text-align: left; padding-left: 40px;">全部订单</h3>
 			</nav>
 			<section>
 				<ul class="qrdd">
-					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60d</i>wu_huang</a></dd>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60e</i>13564356753</a></dd>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60b</i>广中西路777弄</a></dd>
-						</dl>
-					</li>
-					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd class="fangshi"><a href="javascript:;"><i class="imooc-icon">&#xe60c</i>支付方式<span>微信支付</span></a></dd>
-						</dl>
-					</li>
 					<li class="out_border xiangqing">
 						<dl>
+							<dt class="header">订单状态：<span>代付款</span><strong>03-23</strong></dt>
 							<dd class="float_left">
 								<img src="../../01/pic/150.png"/>
 							</dd>
@@ -106,36 +92,25 @@
 								<label>订单号：</label><span>shp013423</span><br />
 								<label>收货时间：</label><span>2015-03-14<br />12:00~13:00</span>
 							</dd>
-							
+							<dt class="footer">
+								<span>实付：<s>169</s></span>
+								<a href="javascript:;" class="btn"><i class="imooc-icon">&#xe60c</i>确认支付</a>
+							</dt>
 						</dl>
-					</li>
-					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd class="youhuiquan"><a href="javascript:;"><i class="imooc-icon">&#xe60f</i>优惠券</a></dd>
-						</dl>
-					</li>
-					<li class="tongji">
-						<dl>
-							<dd>现计：<span>169</span></dd>
-							<dd>运费：<span>0</span></dd>
-							<dd>共优惠金额：<span>0</span></dd>
-							<dd>还需支付金额：<span>169</span></dd>
-						</dl>
-					</li>
-					<li class="btn">
-						<a href="javascript:;">付款</a>
 					</li>
 				</ul>
-
 			</section>
-
 			<!--遮罩层-->
 		</section>
 
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
 			<h1>loading</h1>
 		</div>
+		<script type="text/javascript">
+			$(".banner .imooc-icon").click(function(){
+				$(".banner").hide()
+			})
+		</script>
 	</body>
 
 </html>

@@ -33,20 +33,380 @@
     li{
         margin-bottom: 12px;
         position: relative;
+//      右侧箭头样式
         .jiantou{
+            color: #dadada;
             position: absolute;
-            right: 0px;
+            right: 10px;
             top: 50%;
             margin-top: -0.5em;
+            font-size: 2em;
+        }
+        dl{
+            padding: 5px 0;
+        }
+        dd{
+            margin: 3px 0;
+            font-size: 1em;
+            i{
+                font-size: 2em;
+                color: #3280ca;
+                margin: 0 12px;
+            }
+            &.fangshi{
+                a{
+                    color: #3280ca;
+                }
+              span{
+                  color: #888888;
+                  float: right;
+                  line-height: 2.4em;
+                  margin-right: 35px;
+              }  
+            }
+            }
+            a{
+                color: #888888;
+                line-height: 2em;
+                vertical-align: top;
+            }
+//          订单详情
+            &.xiangqing{
+                dl{
+                    overflow: hidden;
+                    padding-bottom: 0px;
+                }
+                .dt();
+                dd{
+                    &.float_left{
+                        float: left;
+                        height: 4.5em;
+                        width: 4.5em;
+                        margin-left: 12px;
+                        margin-right: 12px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    &.float_right{
+                        color: #818181;
+                        padding: 0px 10px 8px;
+                        float: right;
+                        p{
+                            font-size: 2em;
+                            color: #2c7bc6;
+                            &:before{
+                                font-size: 0.8em;
+                                content: "￥";
+                            }
+                        }
+                        
+                    }
+                    &.center{
+                        color: #8b8b8b;
+                        line-height: 1.5em;
+                        overflow: hidden;
+                        label{
+                            float: left;
+                        }
+                        span{
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+            .youhuiquan{
+                a{
+                    color: #2c7bc6;
+                    font-size: 1.2em;
+                    display: inline-block;
+                    vertical-align: middle;
+                    i{
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+//          金额统计
+        &.tongji{
+            dd{
+                color: #8a8a8a;
+                line-height: 40px;
+                border-bottom: 1px solid #dedede;
+                span{
+                    color: #2a7cc6;
+                    float: right;
+                    &:before{
+                        font-size: 0.8em;
+                        content: "￥";
+                    }
+                }
+                &:last-child{
+                    border: none;
+                }
+            }
+        }
+        &.btn{
+            a{
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                color: #fff;
+                font-size: 1.2em;
+                background: #4aaeea;
+            }
+        }
+        }
+}
+//会员中心样式
+.banner{
+    position: relative;
+    overflow: hidden;
+    .imooc-icon{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    img{
+        float: left;
+        width: 100%;
+    }
+}
+.header_mes{
+    vertical-align: middle;
+    position: relative;
+    min-height: 130px;
+    background: url(../img/bg.jpg) no-repeat top left;
+    background-size: cover;
+    padding-left: 125px;
+    .jiantou{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-size: 1.5em;
+        margin-top: -0.5em;
+        padding-right: 15px;
+        cursor: pointer;
+    }
+    .touxiang{
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        top: 50%;
+        margin-top: -45px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-left: -100px;
+        img{
+            width: 100%;
+        }
+    }
+    h1{
+        padding-top: 42px;
+        font-weight: normal;
+        color: #707070;
+    }
+    p{
+        margin-top: 12px;
+        color: #717171;
+    }
+}
+.zh_content{
+    padding: 8px;
+    margin-top: 16px;
+    margin-bottom: 22px;
+    li{
+//      会员中心样式
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        div{
+            line-height: 43px;
+            border-bottom: 1px solid #d9d9d9;
+            &:last-child{
+                border: none;
+            }
+            a{
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                color: #707070;
+                font-size: 1em;
+            }
+            .imooc-icon:not(.jiantou){
+                color: #dadada;
+                font-size: 2em;
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+                width: 30px;
+                margin-left: 15px;
+                margin-right: 10px;
+            }
+            .jiantou{
+                position: absolute;
+                right: 7px;
+                font-size: 1.5em;
+                line-height: 43px;
+                padding-right: 7px;
+            }
+        }
+//      我的信息页面列表样式
+
+.aa(){//列表1和列表2公用部分
+    a{
+        color: #3197E0;
+    }
+    i,span{
+        color: #707070;
+    }
+    span{
+        display: inline-block;
+        min-width: 20px;
+        text-align: right;
+        float: right;
+        padding-right: 25px;
+    }
+}
+        &.sub_list01{
+            div{
+                padding-left: 20px;
+                .aa();
+            }
+        }
+        &.sub_list02{
+            .aa();
+            div a i.imooc-icon:not(.jiantou){
+                color: #3197E0;
+            }
         }
     }
 }
-
-
-
-
-
-
+.new_footer{
+    text-align: center;
+    min-height: 65px;
+    position: relative;
+    .imooc-icon{
+        position: absolute;
+        top: 0;
+        left: 10px;
+        color: #715154;
+        font-size: 3em;
+        cursor: pointer;
+    }
+    span,a{
+        display: inline-block;
+        padding: 5px 10px;
+        color: #715154;
+        font-size: 1em;
+    }
+}
+//全部订单样式
+.dt(){
+    dt{
+        &.header{
+            color: #297bc7;
+            border-bottom: 1px solid #b8b8b8;
+            line-height: 42px;
+            padding: 0 15px;
+            margin-bottom: 15px;
+            span{
+                color: red;
+            }
+            strong{
+                font-weight: normal;
+                float: right;
+            }
+        }
+        &.footer{
+            display: table;
+            width: 100%;
+            height: 34px;
+            background: #3197E0;
+            span{
+                display: table-cell;
+                color: white;
+                width: 1%;
+                white-space: nowrap;
+                padding-left: 18px;
+                vertical-align: middle;
+                s{
+                    text-decoration: none;
+                    &:before{
+                        content: "￥";
+                    }
+                }
+            }
+            .btn{
+                text-align: center;
+                display: table-cell;
+                width: 1%;
+                padding-top: 5px;
+                color: white;
+                white-space: nowrap;
+                i{
+                    font-size: 1.75em;
+                    display: inline-block;
+                    margin: 0 5px;
+                }
+                &:active{
+                    background: #246eb1;
+                }
+            }
+        }
+    }
+}
+//收货人信息
+.shou_msg{
+    .out_border{
+        overflow: hidden;
+        label{
+            padding-left: 10px;
+            float: left;
+            line-height: 40px;
+        }
+        >div{
+            overflow: hidden;
+            padding-right: 10px;
+        }
+        input{
+            width: 100%;
+            height: 40px;
+            padding-right: 10px;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .chq{
+        overflow: hidden;
+    }
+    .chengshi{
+        float: left;
+        .input();
+    }
+    .quyu{
+        float: right;
+        .input();
+    }
+    .input(){
+        width: 48%;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid #dcdcdc;
+       input{
+           float: left;
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            box-shadow: none;
+       }
+    }
+}
 
 
 

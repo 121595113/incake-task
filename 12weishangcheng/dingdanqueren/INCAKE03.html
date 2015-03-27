@@ -29,7 +29,7 @@
 		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
 		<!--自定义样式-->
 		<link rel="stylesheet" type="text/css" href="css/dingdanqueren.css" />
-		<title>INCAKE</title>
+		<title>我的信息</title>
 	</head>
 
 	<body class="ui-mobile-viewport ui-overlay-c" data-role="no-content">
@@ -73,69 +73,56 @@
 				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
 			</section>
 
-
 			<nav class="navigation">
 				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
-				<h3 style="text-align: left; padding-left: 40px;">订单确认</h3>
+				<h3 style="text-align: left; padding-left: 40px;">我的信息</h3>
 			</nav>
 			<section>
-				<ul class="qrdd">
-					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60d</i>wu_huang</a></dd>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60e</i>13564356753</a></dd>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60b</i>广中西路777弄</a></dd>
-						</dl>
+				<ul class="zh_content">
+					<li class="sub_list01">
+						<div>
+							<a href="javascript:;">头像<i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
+						<div>
+							<a href="javascript:;">姓名<span>wu_huang</span><i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
+						<div>
+							<a href="javascript:;">性别<span>男</span><i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
+						<div>
+							<a href="javascript:;">生日<span>1989-3-25</span><i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
+						<div>
+							<a href="javascript:;">地址<span>广中西路777弄江裕大厦506室</span><i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
+						<div>
+							<a href="javascript:;">手机<span>13912741638</span><i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
+						<div>
+							<a href="javascript:;">邮箱<span>125854@qq.com</span><i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
 					</li>
-					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd class="fangshi"><a href="javascript:;"><i class="imooc-icon">&#xe60c</i>支付方式<span>微信支付</span></a></dd>
-						</dl>
-					</li>
-					<li class="out_border xiangqing">
-						<dl>
-							<dd class="float_left">
-								<img src="../../01/pic/150.png"/>
-							</dd>
-							<dd class="float_right">数量：<span>1</span>
-								<p>169</p>
-							</dd>
-							<dd class="center">
-								<label>订单号：</label><span>shp013423</span><br />
-								<label>收货时间：</label><span>2015-03-14<br />12:00~13:00</span>
-							</dd>
-							
-						</dl>
-					</li>
-					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd class="youhuiquan"><a href="javascript:;"><i class="imooc-icon">&#xe60f</i>优惠券</a></dd>
-						</dl>
-					</li>
-					<li class="tongji">
-						<dl>
-							<dd>现计：<span>169</span></dd>
-							<dd>运费：<span>0</span></dd>
-							<dd>共优惠金额：<span>0</span></dd>
-							<dd>还需支付金额：<span>169</span></dd>
-						</dl>
-					</li>
-					<li class="btn">
-						<a href="javascript:;">付款</a>
+					<li class="sub_list02">
+						<div>
+							<a href="javascript:;"><i class="imooc-icon">&#xe605</i>等级<i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
+						<div>
+							<a href="javascript:;"><i class="imooc-icon">&#xe606</i>积分：0<span>积分记录</span><i class="imooc-icon jiantou">&#xe601</i></a>
+						</div>
 					</li>
 				</ul>
-
 			</section>
-
 			<!--遮罩层-->
 		</section>
 
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
 			<h1>loading</h1>
 		</div>
+		<script type="text/javascript">
+			$(".banner .imooc-icon").click(function(){
+				$(".banner").hide()
+			})
+		</script>
 	</body>
 
 </html>

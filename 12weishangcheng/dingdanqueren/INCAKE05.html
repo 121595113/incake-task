@@ -76,55 +76,42 @@
 
 			<nav class="navigation">
 				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
-				<h3 style="text-align: left; padding-left: 40px;">订单确认</h3>
+				<h3 style="text-align: left; padding-left: 40px;">收货人信息</h3>
 			</nav>
 			<section>
-				<ul class="qrdd">
+				<ul class="qrdd shou_msg">
 					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60d</i>wu_huang</a></dd>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60e</i>13564356753</a></dd>
-							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60b</i>广中西路777弄</a></dd>
-						</dl>
+						<label for="">收货人：</label>
+						<div>
+							<input type="text" />
+						</div>
 					</li>
 					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd class="fangshi"><a href="javascript:;"><i class="imooc-icon">&#xe60c</i>支付方式<span>微信支付</span></a></dd>
-						</dl>
+						<label for="">手机号：</label>
+						<div>
+							<input type="text" />
+						</div>
 					</li>
-					<li class="out_border xiangqing">
-						<dl>
-							<dd class="float_left">
-								<img src="../../01/pic/150.png"/>
-							</dd>
-							<dd class="float_right">数量：<span>1</span>
-								<p>169</p>
-							</dd>
-							<dd class="center">
-								<label>订单号：</label><span>shp013423</span><br />
-								<label>收货时间：</label><span>2015-03-14<br />12:00~13:00</span>
-							</dd>
-							
-						</dl>
+					<li class="chq">
+						<div class="chengshi">
+							<input type="text" value="城市"/>
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						<div class="quyu">
+							<input type="text" value="区域"/>
+							<ul>
+								<li></li>
+							</ul>
+						</div>
 					</li>
 					<li class="out_border">
-						<dl>
-							<i class="imooc-icon jiantou">&#xe601</i>
-							<dd class="youhuiquan"><a href="javascript:;"><i class="imooc-icon">&#xe60f</i>优惠券</a></dd>
-						</dl>
-					</li>
-					<li class="tongji">
-						<dl>
-							<dd>现计：<span>169</span></dd>
-							<dd>运费：<span>0</span></dd>
-							<dd>共优惠金额：<span>0</span></dd>
-							<dd>还需支付金额：<span>169</span></dd>
-						</dl>
+						<label for="">街道地址：</label>
+						<textarea></textarea>
 					</li>
 					<li class="btn">
-						<a href="javascript:;">付款</a>
+						<a href="javascript:;">提交</a>
 					</li>
 				</ul>
 
