@@ -120,8 +120,7 @@
   float: left;
   height: 4.5em;
   width: 4.5em;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin: 0 12px;
 }
 .qrdd li.xiangqing dd.float_left img {
   width: 100%;
@@ -177,36 +176,38 @@
   border: none;
 }
 .qrdd li.btn a {
+  color: #fff;
+  background: #4aaeea;
+  font-size: 1.2em;
   display: block;
   height: 30px;
   line-height: 30px;
   text-align: center;
-  color: #fff;
-  font-size: 1.2em;
-  background: #4aaeea;
 }
 .banner {
   position: relative;
   overflow: hidden;
 }
 .banner .imooc-icon {
+  cursor: pointer;
   position: absolute;
   right: 5px;
   top: 5px;
   font-size: 1em;
-  cursor: pointer;
 }
 .banner img {
   float: left;
+}
+.banner img {
   width: 100%;
 }
 .header_mes {
-  vertical-align: middle;
   position: relative;
+  padding-left: 125px;
   min-height: 130px;
   background: url(../img/bg.jpg) no-repeat top left;
   background-size: cover;
-  padding-left: 125px;
+  vertical-align: middle;
 }
 .header_mes .jiantou {
   position: absolute;
@@ -219,13 +220,13 @@
 }
 .header_mes .touxiang {
   position: absolute;
+  top: 50%;
   width: 90px;
   height: 90px;
-  top: 50%;
   margin-top: -45px;
+  margin-left: -100px;
   overflow: hidden;
   border-radius: 50%;
-  margin-left: -100px;
 }
 .header_mes .touxiang img {
   width: 100%;
@@ -241,8 +242,7 @@
 }
 .zh_content {
   padding: 8px;
-  margin-top: 16px;
-  margin-bottom: 22px;
+  margin: 16px 0 22px;
 }
 .zh_content li {
   border: 1px solid #d9d9d9;
@@ -270,8 +270,7 @@
   display: inline-block;
   vertical-align: middle;
   width: 30px;
-  margin-left: 15px;
-  margin-right: 10px;
+  margin: 15px 0 10px;
 }
 .zh_content li div .jiantou {
   position: absolute;
@@ -338,6 +337,7 @@
   overflow: hidden;
 }
 .shou_msg .out_border label {
+  color: #267cc7;
   padding-left: 10px;
   float: left;
   line-height: 40px;
@@ -347,15 +347,25 @@
   padding-right: 10px;
 }
 .shou_msg .out_border input {
-  width: 100%;
   height: 40px;
   padding-right: 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.shou_msg .out_border textarea {
+  padding: 10px 0;
+  width: 100%;
   border: none;
   outline: none;
   box-shadow: none;
 }
 .shou_msg .chq {
   overflow: hidden;
+}
+.shou_msg .chq li {
+  margin-bottom: 0;
 }
 .shou_msg .chengshi {
   float: left;
@@ -364,10 +374,22 @@
   overflow: hidden;
   border: 1px solid #dcdcdc;
 }
+.shou_msg .chengshi label {
+  color: #267cc7;
+  padding-left: 10px;
+  float: left;
+  line-height: 40px;
+}
+.shou_msg .chengshi label {
+  padding-right: 5px;
+}
+.shou_msg .chengshi > div {
+  overflow: hidden;
+}
 .shou_msg .chengshi input {
   float: left;
-  width: 100%;
   height: 40px;
+  width: 100%;
   border: none;
   outline: none;
   box-shadow: none;
@@ -379,10 +401,22 @@
   overflow: hidden;
   border: 1px solid #dcdcdc;
 }
+.shou_msg .quyu label {
+  color: #267cc7;
+  padding-left: 10px;
+  float: left;
+  line-height: 40px;
+}
+.shou_msg .quyu label {
+  padding-right: 5px;
+}
+.shou_msg .quyu > div {
+  overflow: hidden;
+}
 .shou_msg .quyu input {
   float: left;
-  width: 100%;
   height: 40px;
+  width: 100%;
   border: none;
   outline: none;
   box-shadow: none;
