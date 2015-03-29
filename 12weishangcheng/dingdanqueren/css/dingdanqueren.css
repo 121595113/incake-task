@@ -385,6 +385,10 @@
 }
 .shou_msg .chengshi > div {
   overflow: hidden;
+  padding-right: 20px;
+  background: url(../img/sanjiao.jpg) no-repeat right center;
+  background-size: 14px;
+  background-origin: border-box;
 }
 .shou_msg .chengshi input {
   float: left;
@@ -412,6 +416,10 @@
 }
 .shou_msg .quyu > div {
   overflow: hidden;
+  padding-right: 20px;
+  background: url(../img/sanjiao.jpg) no-repeat right center;
+  background-size: 14px;
+  background-origin: border-box;
 }
 .shou_msg .quyu input {
   float: left;
@@ -420,5 +428,21 @@
   border: none;
   outline: none;
   box-shadow: none;
+}
+.moren:before {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background: white;
+  margin-right: 5px;
+  content: "";
+}
+.navigation .imooc-icon {
+  float: right;
+  font-size: 2em;
+  color: #2a7cc6;
+  line-height: 60px;
+  padding-right: 10px;
 }
 /*# sourceMappingURL=dingdanqueren.css.map */
