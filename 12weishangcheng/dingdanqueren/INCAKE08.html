@@ -31,7 +31,7 @@
 		<link rel="stylesheet" type="text/css" href="css/dingdanqueren.css" />
 		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
 		<meta http-equiv="Pragma" content="no-cache" />
-		<title>关于我们</title>
+		<title>INCAKE</title>
 	</head>
 
 	<body class="ui-mobile-viewport ui-overlay-c" data-role="no-content">
@@ -125,25 +125,6 @@
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
 			<h1>loading</h1>
 		</div>
-		<script src="js/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			var tabsSwiper = new Swiper('.swiper-container', {
-				speed: 500,
-				onSlideChangeStart: function() {
-					$(".tabs .active").removeClass('active')
-					$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
-				}
-			})
-			 $(".tabs a").on('touchstart mousedown', function(e) {
-				e.preventDefault()
-				$(".tabs .active").removeClass('active')
-				$(this).addClass('active')
-				tabsSwiper.swipeTo($(this).index())
-			})
-			 $(".tabs a").click(function(e) {
-				e.preventDefault()
-			})
-		</script>
 	</body>
 
 </html>
