@@ -265,12 +265,11 @@
 }
 .zh_content li div .imooc-icon:not(.jiantou) {
   color: #dadada;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
   width: 30px;
-  margin: 15px 0 10px;
 }
 .zh_content li div .jiantou {
   position: absolute;
@@ -386,7 +385,7 @@
 .shou_msg .chengshi > div {
   overflow: hidden;
   padding-right: 20px;
-  background: url(../img/sanjiao.jpg) no-repeat right center;
+  background: url(../img/sanjiao.jpg) no-repeat right bottom;
   background-size: 14px;
   background-origin: border-box;
 }
@@ -417,7 +416,7 @@
 .shou_msg .quyu > div {
   overflow: hidden;
   padding-right: 20px;
-  background: url(../img/sanjiao.jpg) no-repeat right center;
+  background: url(../img/sanjiao.jpg) no-repeat right bottom;
   background-size: 14px;
   background-origin: border-box;
 }
@@ -444,5 +443,129 @@
   color: #2a7cc6;
   line-height: 60px;
   padding-right: 10px;
+}
+.navigation .btn {
+  color: #307dc1;
+  float: right;
+  line-height: 60px;
+  font-size: 1.5em;
+  padding-right: 20px;
+}
+.tabs {
+  display: table;
+}
+.tabs a {
+  color: #737373;
+  font-size: 1.2em;
+  display: table-cell;
+  line-height: 50px;
+  width: 1%;
+  text-align: center;
+  border-bottom: 4px solid transparent;
+}
+.tabs a.active {
+  border-color: #277ec5;
+}
+.swiper-container .content-slide {
+  padding: 10px 0px;
+}
+.swiper-container .content-slide li {
+  overflow: hidden;
+  display: table;
+  border-spacing: 10px;
+}
+.swiper-container .content-slide div {
+  display: table-cell;
+  width: 100%;
+  height: 101px;
+  padding-left: 23px;
+}
+.swiper-container .content-slide div.red {
+  background: url(../img/xianjin_01.jpg) no-repeat left top, url(../img/xianjin_03.jpg) no-repeat right top;
+  background-color: #ee3d7f;
+  background-size: contain;
+}
+.swiper-container .content-slide div.blue {
+  background: url(../img/xianjinb_01.jpg) no-repeat left top, url(../img/xianjinb_03.jpg) no-repeat right top;
+  background-color: #0099d9;
+  background-size: contain;
+}
+.swiper-container .content-slide div h6 {
+  font-size: 0.75em;
+  font-weight: normal;
+  padding-top: 18px;
+  text-transform: uppercase;
+  color: white;
+}
+.swiper-container .content-slide div h5 {
+  position: relative;
+  left: -10px;
+  display: table-cell;
+  height: 50px;
+  font-weight: normal;
+  color: white;
+  vertical-align: bottom;
+}
+.swiper-container .content-slide div h5 span {
+  font-size: 3.5em;
+  position: relative;
+  top: 10px;
+}
+.swiper-container .content-slide p {
+  overflow: hidden;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  height: 101px;
+  width: 1%;
+  padding: 0 15px;
+  border: 1px solid #dadbda;
+  border-right: none;
+  background: url(../img/xianjin2.png) repeat-y right top;
+  background-size: contain;
+}
+article {
+  padding: 10px 10px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+article p {
+  font-size: 0.65em;
+  line-height: 1.2em;
+  color: #595959;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+article p span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+article div {
+  overflow: hidden;
+}
+article div p {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+article h1 {
+  font-size: 0.8em;
+  line-height: 1em;
+}
+article h2 {
+  font-size: 0.75em;
+}
+article .fl {
+  float: left;
+  margin-right: 5px;
+}
+article .fr {
+  float: right;
+  margin-left: 5px;
+}
+article .big {
+  width: 100%;
+}
+article .small {
+  width: 50%;
 }
 /*# sourceMappingURL=dingdanqueren.css.map */

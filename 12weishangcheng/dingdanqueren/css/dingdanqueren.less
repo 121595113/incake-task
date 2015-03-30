@@ -238,12 +238,11 @@
             }
             .imooc-icon:not(.jiantou){
                 color: #dadada;
-                font-size: 2em;
+                font-size: 1.5em;
                 text-align: center;
                 display: inline-block;
                 vertical-align: middle;
                 width: 30px;
-                margin: 15px 0 10px;
             }
             .jiantou{
                 position: absolute;
@@ -385,7 +384,7 @@
         >div{
         	overflow: hidden;
         	padding-right: 20px;
-        	background: url(../img/sanjiao.jpg) no-repeat right center;
+        	background: url(../img/sanjiao.jpg) no-repeat right bottom;
 	    background-size: 14px;
 	    background-origin: border-box;
         }
@@ -449,6 +448,160 @@
 		padding-right: 10px;
 	}
 }
+
+//优惠券页面样式
+.navigation{
+    .btn{
+        color: #307dc1;
+        float: right;
+        line-height: 60px;
+        font-size: 1.5em;
+        padding-right: 20px;
+    }
+}
+.tabs{
+    display: table;
+    a{
+        color: #737373;
+        font-size: 1.2em;
+        display: table-cell;
+        line-height: 50px;
+        width: 1%;
+        text-align: center;
+        border-bottom: 4px solid transparent;
+        &.active{
+            border-color: #277ec5;
+        }
+    }
+}
+.swiper-container{
+    .content-slide{
+        padding: 10px 0px;
+        li{
+            overflow: hidden;
+            display: table;
+            border-spacing: 10px;
+        }
+        div{
+            display: table-cell;
+            width: 100%;
+            height: 101px;
+            padding-left: 23px;
+            &.red{
+                background: url(../img/xianjin_01.jpg) no-repeat left top,url(../img/xianjin_03.jpg) no-repeat right top;
+                background-color: #ee3d7f;
+                background-size: contain;
+            }
+            &.blue{
+                background: url(../img/xianjinb_01.jpg) no-repeat left top,url(../img/xianjinb_03.jpg) no-repeat right top;
+                background-color: #0099d9;
+                background-size: contain;
+            }
+            h6{
+                font-size: 0.75em;
+                font-weight: normal;
+                padding-top: 18px;
+                text-transform: uppercase;
+                color: white;
+            }
+            h5{
+                position: relative;
+                left: -10px;
+                display: table-cell;
+                height: 50px;
+                font-weight: normal;
+                color: white;
+                vertical-align: bottom;
+                span{
+                    font-size: 3.5em;
+                    position: relative;
+                    top: 10px;
+                }
+            }
+        }
+        p{
+            overflow: hidden;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            height: 101px;
+            width: 1%;
+            padding: 0 15px;
+            border: 1px solid #dadbda;
+            border-right: none;
+            background: url(../img/xianjin2.png) repeat-y right top;
+            background-size: contain;
+        }
+    }
+}
+
+//关于我们页面样式
+article{
+    padding: 10px 10px;
+    max-width: 750px;
+    margin: 0 auto;
+    p{
+        font-size: 0.65em;
+        line-height: 1.2em;
+        color: #595959;
+        margin-bottom: 15px;
+        text-align: justify;
+        span{
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    }
+    div{
+        overflow: hidden;
+        p{
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+    }
+    h1{
+        font-size: 0.8em;
+        line-height: 1em;
+    }
+    h2{
+        font-size: 0.75em;
+    }
+    .fl{
+        float: left;
+        margin-right: 5px;
+    }
+    .fr{
+        float: right;
+        margin-left: 5px;
+    }
+    .big{
+        width: 100%;
+    }
+    .small{
+        width: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
