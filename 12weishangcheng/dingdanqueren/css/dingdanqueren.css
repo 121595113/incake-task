@@ -402,11 +402,17 @@
 }
 .shou_msg .chengshi ul {
   display: none;
-  background: white;
+  border-radius: 4px;
   position: absolute;
   top: 42px;
+  left: 0;
+  background: white;
   width: 100%;
   z-index: 9;
+}
+.shou_msg .chengshi ul li {
+  line-height: 1.5em;
+  padding-left: 40px;
 }
 .shou_msg .quyu {
   float: right;
@@ -441,11 +447,17 @@
 }
 .shou_msg .quyu ul {
   display: none;
-  background: white;
+  border-radius: 4px;
   position: absolute;
   top: 42px;
+  left: 0;
+  background: white;
   width: 100%;
   z-index: 9;
+}
+.shou_msg .quyu ul li {
+  line-height: 1.5em;
+  padding-left: 40px;
 }
 .moren:before {
   width: 10px;
