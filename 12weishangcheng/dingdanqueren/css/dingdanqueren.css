@@ -360,17 +360,20 @@
   outline: none;
   box-shadow: none;
 }
-.shou_msg .chq {
-  overflow: hidden;
+.shou_msg .chq:after {
+  display: table;
+  clear: both;
+  width: 100%;
+  content: "";
 }
 .shou_msg .chq li {
   margin-bottom: 0;
 }
 .shou_msg .chengshi {
   float: left;
+  position: relative;
   width: 48%;
   border-radius: 4px;
-  overflow: hidden;
   border: 1px solid #dcdcdc;
 }
 .shou_msg .chengshi label {
@@ -397,11 +400,19 @@
   outline: none;
   box-shadow: none;
 }
+.shou_msg .chengshi ul {
+  display: none;
+  background: white;
+  position: absolute;
+  top: 42px;
+  width: 100%;
+  z-index: 9;
+}
 .shou_msg .quyu {
   float: right;
+  position: relative;
   width: 48%;
   border-radius: 4px;
-  overflow: hidden;
   border: 1px solid #dcdcdc;
 }
 .shou_msg .quyu label {
@@ -427,6 +438,14 @@
   border: none;
   outline: none;
   box-shadow: none;
+}
+.shou_msg .quyu ul {
+  display: none;
+  background: white;
+  position: absolute;
+  top: 42px;
+  width: 100%;
+  z-index: 9;
 }
 .moren:before {
   width: 10px;

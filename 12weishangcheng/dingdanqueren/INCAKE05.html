@@ -73,7 +73,6 @@
 				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
 			</section>
 
-
 			<nav class="navigation">
 				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
 				<h3 style="text-align: left; padding-left: 40px;">收货人信息</h3>
@@ -95,21 +94,23 @@
 					<li class="chq">
 						<div class="chengshi">
 							<label>城市</label>
-						<div>
-							<input type="text" value=""/>
-						</div>
-							<ul>
-								<li></li>
-							</ul>
+							<div>
+								<input type="text" value="" />
+								<ul>
+									<li>上海</li>
+									<li>福州</li>
+								</ul>
+							</div>
 						</div>
 						<div class="quyu">
 							<label>区域</label>
-						<div>
-							<input type="text" value=""/>
-						</div>
-							<ul>
-								<li></li>
-							</ul>
+							<div>
+								<input type="text" value="" />
+								<ul>
+									<li>黄埔区</li>
+									<li>闸北区</li>
+								</ul>
+							</div>
 						</div>
 					</li>
 					<li class="out_border">
@@ -131,6 +132,25 @@
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
 			<h1>loading</h1>
 		</div>
+		<script type="text/javascript">
+			$(function() {
+				$(".chengshi input,.quyu input").click(function() {
+					$(".chq ul").hide();
+					$(this).parent().find("ul").show()
+				})
+				$(".chq li").click(function(){
+					var s = $(this).html()
+					$(this).parent().parent().find("input").val(s)
+				})
+				$(".chengshi input,.quyu input").blur(function(){
+					setTimeout(function(){
+						$(".chq ul").hide();
+					},300)
+					
+				})
+				
+			})
+		</script>
 	</body>
 
 </html>
