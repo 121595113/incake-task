@@ -1,0 +1,31 @@
+.car_package .table {
+  border-top: 1px solid #e0e4e7;
+}
+.car_package .table tr td {
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+.car_package .table tr td:first-child div {
+  border-right: 1px solid #e0e4e7;
+}
+.car_package .table div {
+  overflow: hidden;
+}
+.car_package .table div > img {
+  float: left;
+  margin: 0 80px 0px 50px;
+}
+.car_package .table div .product_titler {
+  margin-top: 10px;
+  color: #1a6eb6;
+  overflow: hidden;
+  font-weight: normal;
+}
+.car_package .table div p {
+  overflow: hidden;
+}
+.car_package .table div p del {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=car_package.css.map */
