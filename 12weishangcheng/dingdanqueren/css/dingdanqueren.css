@@ -595,6 +595,7 @@ article .fr {
 }
 article .big {
   width: 100%;
+  vertical-align: top;
 }
 article .small {
   width: 50%;
