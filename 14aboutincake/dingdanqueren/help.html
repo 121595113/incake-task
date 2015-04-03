@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9 -->
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base href="http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9">-->
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./INCAKE_files/jquery-1.8.2.min.js"></script>
+		<script src="./INCAKE_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./INCAKE_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/css/style.css">
+		<script src="./INCAKE_files/script.js" type="text/javascript"></script>
+		<script src="./INCAKE_files/mainscript.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<link rel="apple-touch-icon-precomposed" href="http://wap.incake.net/Icake/images/icon@2x.png">
+		<link rel="apple-touch-startup-image" href="http://wap.incake.net/Icake/images/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
+		<!--自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/dingdanqueren.css" />
+		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<title>INCAKE</title>
+		<style type="text/css">
+			.about_incake {}
+		</style>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c" data-role="no-content">
+		<section data-role="page" data-url="/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 632px;">
+
+			<script src="./INCAKE_files/iplookup.php" type="text/ecmascript"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#select_city a").click(function() {
+						//清空购物车
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: {
+								"Action": "ClearCookie",
+								"Type": "icake",
+								"Name": "shopcart"
+							}
+						});
+						var _data = {
+							"Action": "City",
+							"Cvalue": $(this).attr("cityId")
+						};
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: _data,
+							success: function(data) {
+								if (data.errcode == "0") {
+									location.reload();
+								}
+							}
+						});
+					});
+				});
+			</script>
+			<section id="select_city" style="display:none;">
+				<a href="javascript:;" class="link ui-link" cityname="上海市" cityid="021">上海市</a>
+				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
+			</section>
+
+			<nav class="navigation">
+				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
+				<h3 style="text-align: left; padding-left: 40px; text-align: center;">帮助中心</h3>
+			</nav>
+			<section>
+				<dl class="help">
+					<dt class="imooc-icon on">如何注册</dt>
+					<dd style="display: block;">
+						登录INCAKE官网如果您未在网站注册过，
+						<br />点击官网首页右上角【注册】按钮，
+						<br />根据提示进行账号注册；
+						<br />如果您已注册过，只需点击首页右上角【登录】按钮，输入账号密码即可登录。
+						<br />（INCAKE也为用户提供了快速购买通道--闪电购，无需注册会员即可直接下单订购商品）。
+					</dd>
+					<dt class="imooc-icon">密码找回</dt>
+					<dd>
+						登录INCAKE官网如果您未在网站注册过，
+						<br />点击官网首页右上角【注册】按钮，
+						<br />根据提示进行账号注册；
+						<br />如果您已注册过，只需点击首页右上角【登录】按钮，输入账号密码即可登录。
+						<br />（INCAKE也为用户提供了快速购买通道--闪电购，无需注册会员即可直接下单订购商品）。
+					</dd>
+				</dl>
+			</section>
+			<!--遮罩层-->
+		</section>
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+		<!--活动组件star-->
+		<script src="js/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				$(".help dt").bind("click",function(){
+					if ($(this).hasClass("on")) {
+						$(this).removeClass("on")
+					} else{
+						$(this).addClass("on")
+					}
+					$(this).next().toggle()
+				})
+			})
+		</script>
+		<!--活动组件end-->
+	</body>
+
+</html>
