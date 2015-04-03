@@ -600,11 +600,11 @@ article .big {
 article .small {
   width: 50%;
 }
+.swiper-slide {
+  overflow-y: auto;
+}
 .about_incake {
   padding: 20px;
-}
-.about_incake .swiper-slide {
-  overflow-y: auto;
 }
 .about_incake hr {
   border-bottom: none;
@@ -623,12 +623,8 @@ article .small {
   margin: 0 auto;
 }
 .link_wo {
-  overflow: auto;
   display: block;
   padding: 20px;
-}
-.link_wo .swiper-slide {
-  overflow-y: auto;
 }
 .link_wo hr {
   border-bottom: none;
