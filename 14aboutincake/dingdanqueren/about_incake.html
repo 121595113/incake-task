@@ -80,10 +80,10 @@
 
 			<nav class="navigation">
 				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
-				<h3 style="text-align: left; padding-left: 40px; text-align: center;">关于INCAKE</h3>
+				<h3 style="text-align: left; padding-left: 40px; text-align: center;" id="title">配送范围</h3>
 			</nav>
 			<section>
-				<div class="tabs"> <a href="#" class="active">关于我们</a> <a href="#">配送范围</a> <a href="#">联系我们</a>
+				<div class="tabs"> <a href="#">关于我们</a> <a href="#" class="active">配送范围</a> <a href="#">联系我们</a>
 				</div>
 				<div class="swiper-container" style="position: absolute; top:114px; bottom: 0;width: 100%;">
 					<div class="swiper-wrapper">
@@ -145,9 +145,21 @@
 			$(function() {
 				var tabsSwiper = new Swiper('.swiper-container', {
 					speed: 500,
+					initialSlide:1,
 					onSlideChangeStart: function() {
 						$(".tabs .active").removeClass('active')
 						$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
+//						更改标题
+						var _pagenow =tabsSwiper.activeIndex,
+							 title=document.getElementById('title');
+						switch (_pagenow){
+							case 0:title.innerHTML='关于我们'
+								break;
+							case 1:title.innerHTML='配送范围'
+								break;
+							default:title.innerHTML='联系我们'
+								break;
+						}
 					}
 				})
 				$(".tabs a").on('touchstart mousedown', function(e) {
