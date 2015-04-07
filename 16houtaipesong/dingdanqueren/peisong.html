@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9 -->
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base href="http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9">-->
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./INCAKE_files/jquery-1.8.2.min.js"></script>
+		<script src="./INCAKE_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./INCAKE_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/css/style.css">
+		<script src="./INCAKE_files/script.js" type="text/javascript"></script>
+		<script src="./INCAKE_files/mainscript.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<link rel="apple-touch-icon-precomposed" href="http://wap.incake.net/Icake/images/icon@2x.png">
+		<link rel="apple-touch-startup-image" href="http://wap.incake.net/Icake/images/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
+		<!--自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/dingdanqueren.css" />
+		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<title>INCAKE</title>
+		<style type="text/css">
+			.about_incake {}
+		</style>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c" data-role="no-content">
+		<section data-role="page" data-url="/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 632px;">
+
+			<script src="./INCAKE_files/iplookup.php" type="text/ecmascript"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#select_city a").click(function() {
+						//清空购物车
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: {
+								"Action": "ClearCookie",
+								"Type": "icake",
+								"Name": "shopcart"
+							}
+						});
+						var _data = {
+							"Action": "City",
+							"Cvalue": $(this).attr("cityId")
+						};
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: _data,
+							success: function(data) {
+								if (data.errcode == "0") {
+									location.reload();
+								}
+							}
+						});
+					});
+				});
+			</script>
+			<section id="select_city" style="display:none;">
+				<a href="javascript:;" class="link ui-link" cityname="上海市" cityid="021">上海市</a>
+				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
+			</section>
+
+			<nav class="navigation">
+				<span>用户名你好</span>
+				<div class="caozuo">
+					<a href="javascript:;">退出</a>|<a href="javascript:;">修改密码</a>
+				</div>
+			</nav>
+			<section>
+				<div class="tabs"> <a href="#" class="active">配送中</a> <a href="#">配送完成</a>
+				</div>
+				<div class="swiper-container" style="position: absolute; top:114px; bottom: 0;width: 100%;">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" style="overflow-y: auto;">
+							<dl class="peisong_active">
+								<dt>
+									<div class="left">
+										<label>订单号</label>
+										<div>
+											我是订单号
+										</div>
+									</div>
+									<div class="right">
+										<a href="javascript:;" class="blue_btn ui-link">配送完成</a>
+									</div>
+								</dt>
+								<dd>
+									<div>
+										<p>
+											<label>收货人：</label><span>INCAKE</span>
+										</p>
+										<p>
+											<label>手机/电话：</label><span>13584625963</span>
+										</p>
+									</div>
+									<p>
+										<label>收货时间：</label><span>2015.03.04 09:30~10:30</span>
+									</p>
+									<p>
+										<label>商品信息：</label><span>女王芝士 1.5磅&chi;1<br />女王芝士 1.5磅&chi;1</span>
+									</p>
+								</dd>
+								<dt>
+									<div class="left">
+										<label>订单号</label>
+										<div>
+											我是订单号
+										</div>
+									</div>
+									<div class="right">
+										<a href="javascript:;" class="blue_btn ui-link">配送完成</a>
+									</div>
+								</dt>
+								<dd>
+									<div>
+										<p>
+											<label>收货人：</label><span>INCAKE</span>
+										</p>
+										<p>
+											<label>手机/电话：</label><span>13584625963</span>
+										</p>
+									</div>
+									<p>
+										<label>收货时间：</label><span>2015.03.04 09:30~10:30</span>
+									</p>
+									<p>
+										<label>商品信息：</label><span>女王芝士 1.5磅&chi;1<br />女王芝士 1.5磅&chi;1</span>
+									</p>
+								</dd>
+							</dl>
+
+						</div>
+						<div class="swiper-slide" style="overflow-y: auto;">
+							<dl class="peisong_active">
+								<dt>
+									<div class="left">
+										<label>订单号</label>
+										<div>
+											我是订单号
+										</div>
+									</div>
+									<div class="right">
+										<a href="javascript:;" class="blue_btn ui-link">配送完成</a>
+									</div>
+								</dt>
+								<dd>
+									<div>
+										<p>
+											<label>收货人：</label><span>INCAKE</span>
+										</p>
+										<p>
+											<label>手机/电话：</label><span>13584625963</span>
+										</p>
+									</div>
+									<p>
+										<label>收货时间：</label><span>2015.03.04 09:30~10:30</span>
+									</p>
+									<p>
+										<label>商品信息：</label><span>女王芝士 1.5磅&chi;1<br />女王芝士 1.5磅&chi;1</span>
+									</p>
+								</dd>
+								<dt>
+									<div class="left">
+										<label>订单号</label>
+										<div>
+											我是订单号
+										</div>
+									</div>
+									<div class="right">
+										<a href="javascript:;" class="blue_btn ui-link">配送完成</a>
+									</div>
+								</dt>
+								<dd>
+									<div>
+										<p>
+											<label>收货人：</label><span>INCAKE</span>
+										</p>
+										<p>
+											<label>手机/电话：</label><span>13584625963</span>
+										</p>
+									</div>
+									<p>
+										<label>收货时间：</label><span>2015.03.04 09:30~10:30</span>
+									</p>
+									<p>
+										<label>商品信息：</label><span>女王芝士 1.5磅&chi;1<br />女王芝士 1.5磅&chi;1</span>
+									</p>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--遮罩层-->
+		</section>
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+		<!--活动组件star-->
+		<script src="js/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				var tabsSwiper = new Swiper('.swiper-container', {
+					speed: 500,
+					onSlideChangeStart: function() {
+						$(".tabs .active").removeClass('active')
+						$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
+					}
+				})
+				$(".tabs a").on('touchstart mousedown', function(e) {
+					e.preventDefault()
+					$(".tabs .active").removeClass('active')
+					$(this).addClass('active')
+					tabsSwiper.swipeTo($(this).index())
+				})
+				$(".tabs a").click(function(e) {
+					e.preventDefault()
+				})
+			})
+		</script>
+		<!--活动组件end-->
+	</body>
+
+</html>
