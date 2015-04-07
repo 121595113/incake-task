@@ -236,6 +236,11 @@
 				$(".tabs a").click(function(e) {
 					e.preventDefault()
 				})
+//				订单事件
+				$('.left div').click(function(){
+					$(this).parent().parent().next().toggle()
+				})
+
 			})
 		</script>
 		<!--活动组件end-->
