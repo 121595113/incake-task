@@ -652,6 +652,7 @@ article .small {
 }
 .help dt.on:after {
   transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
 }
 .help dt:after {
   position: absolute;
@@ -660,6 +661,7 @@ article .small {
   right: 30px;
   font-size: 1.5em;
   transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
   color: #d9d9d9;
   content: "\e601";
 }
