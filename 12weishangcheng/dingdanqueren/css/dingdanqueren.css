@@ -48,6 +48,11 @@
   color: #3280ca;
   margin: 0 12px;
 }
+/* 发票管理页面label样式*/
+.qrdd li dd label {
+  color: #3280ca;
+  margin-left: 12px;
+}
 .qrdd li dd.fangshi a {
   color: #3280ca;
 }
@@ -115,6 +120,9 @@
 }
 .qrdd li.xiangqing dt.footer .btn:active {
   background: #246eb1;
+}
+.qrdd li.xiangqing dt.footer .quxiao {
+  color: #0d2b8d;
 }
 .qrdd li.xiangqing dd.float_left {
   float: left;
@@ -600,5 +608,15 @@ article .big {
 }
 article .small {
   width: 50%;
+}
+/**
+发票管理页面样式
+*/
+.jiantou input {
+  background: none;
+}
+.jiantou > div {
+  background: url(../img/sanjiao.jpg) no-repeat right bottom;
+  background-size: 14px;
 }
 /*# sourceMappingURL=dingdanqueren.css.map */
