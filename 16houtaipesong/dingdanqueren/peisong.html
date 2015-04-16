@@ -49,7 +49,7 @@
 				</div>
 			</nav>
 			<section>
-				<div class="tabs"> <a href="#" class="active">配送中</a> <a href="#">配送完成</a>
+				<div class="tabs"> <a href="#" class="active">配送中</a> <a href="#">待配送</a><a href="#">配送完成</a>
 				</div>
 				<div class="swiper-container" style="position: absolute; top:114px; bottom: 0;width: 100%;">
 					<div class="swiper-wrapper">
@@ -188,12 +188,91 @@
 								</div>
 							</div>
 						</div>
+						<div class="swiper-slide" style="position: relative;">
+							<div id="wrapper_3" class="wrapper">
+								<div id="scroller_3" class="scroller">
+									<div id="pullDown_3" class="pullDown">
+										<span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+									</div>
+									<dl class="peisong_active" id="thelist_3">
+										<dt>
+											<div class="left">
+												<label>订单号</label>
+												<div>
+													我是订单号
+												</div>
+											</div>
+											<div class="right">
+												<a href="javascript:;" class="blue_btn ui-link">配送完成</a>
+											</div>
+										</dt>
+										<dd>
+											<div>
+												<p>
+													<label>收货人：</label><span>INCAKE</span>
+												</p>
+												<p>
+													<label>手机/电话：</label><span>13584625963</span>
+												</p>
+											</div>
+											<p>
+												<label>收货时间：</label><span>2015.03.04 09:30~10:30</span>
+											</p>
+											<p>
+												<label>商品信息：</label><span>女王芝士 1.5磅&chi;1<br />女王芝士 1.5磅&chi;1</span>
+											</p>
+										</dd>
+										<dt>
+											<div class="left">
+												<label>订单号</label>
+												<div>
+													我是订单号
+												</div>
+											</div>
+											<div class="right">
+												<a href="javascript:;" class="blue_btn ui-link">配送完成</a>
+											</div>
+										</dt>
+										<dd>
+											<div>
+												<p>
+													<label>收货人：</label><span>INCAKE</span>
+												</p>
+												<p>
+													<label>手机/电话：</label><span>13584625963</span>
+												</p>
+											</div>
+											<p>
+												<label>收货时间：</label><span>2015.03.04 09:30~10:30</span>
+											</p>
+											<p>
+												<label>商品信息：</label><span>女王芝士 1.5磅&chi;1<br />女王芝士 1.5磅&chi;1</span>
+											</p>
+										</dd>
+									</dl>
+									<div id="pullUp_3">
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 			<!--遮罩层-->
 		</section>
-
+		<!--弹出框start-->
+		<div class="aui_dialog">
+			<div class="dialog_container">
+				<div class="dialog_content">
+					确认配送完成吗？
+				</div>
+				<div class="dialog_footer">
+					<a href="javascript:;">确定</a>
+					<a href="javascript:;" class="cancel">取消</a>
+				</div>
+			</div>
+		</div>
+		<!--弹出框end-->
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
 			<h1>loading</h1>
 		</div>
@@ -217,9 +296,16 @@
 				$(".tabs a").click(function(e) {
 						e.preventDefault()
 					})
-					//				订单事件
+					//订单事件
 				$('.left div').live('click', function() {
-					$(this).parent().parent().next().toggle();
+						$(this).parents('dt').next().toggle();
+					})
+					//确认配送完成弹出框事件
+				$(".blue_btn").live("click", function() {
+					$(".aui_dialog").show();
+				})
+				$(".cancel").click(function(e) {
+					$(".aui_dialog").hide();
 				})
 			})
 		</script>

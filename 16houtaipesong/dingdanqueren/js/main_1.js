@@ -38,7 +38,14 @@ function pullUpAction(d) {
 function loaded(a, b, c, d) {
 		var pullDownEl = document.getElementById(b);
 		var pullDownOffset = pullDownEl.offsetHeight;
-		var pullUpEl = d == 'scroller_1' ? document.getElementById('pullUp_1') : document.getElementById('pullUp_2');
+		if (d == 'scroller_1') {
+			var pullUpEl = document.getElementById('pullUp_1');
+		} else if(d == 'scroller_2'){
+			var pullUpEl = document.getElementById('pullUp_2');
+		} else{
+			var pullUpEl = document.getElementById('pullUp_3');
+		}
+//		var pullUpEl = d == 'scroller_1' ? document.getElementById('pullUp_1') : document.getElementById('pullUp_2');
 		var pullUpOffset = pullUpEl.offsetHeight;
 		d = new iScroll(a, {
 			scrollbarClass: 'myScrollbar',
@@ -90,3 +97,4 @@ document.addEventListener('touchmove', function(e) {
 }, false);
 document.addEventListener('DOMContentLoaded', loaded('wrapper_2', 'pullDown_2', 'thelist_2', 'scroller_2'), false);
 document.addEventListener('DOMContentLoaded', loaded('wrapper_1', 'pullDown_1', 'thelist_1', 'scroller_1'), false);
+document.addEventListener('DOMContentLoaded', loaded('wrapper_3', 'pullDown_3', 'thelist_3', 'scroller_3'), false);
