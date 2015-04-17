@@ -26,8 +26,8 @@
 				<div class="left">
 					<h2>录入语音</h2>
 					<div class="btn_group">
-						<a href="javascript:;" class="lbtn">开始录音</a>
-						<a href="javascript:;" class="rbtn">选择音频</a>
+						<a href="javascript:;" class="lbtn kaishi">开始录音</a>
+						<a href="javascript:;" class="rbtn xuanze">选择音频</a>
 					</div>
 					<ol>
 						<li>个性化录入语音：DIY语音录制+背景音乐</li>
@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<div class="play_container">
-				<a href="javascript:;">试听</a>
+				<a href="javascript:;"></a>
 			</div>
 			<div class="progress_bar">
 				<div class="pre_load" style="width: 60%;"></div>
@@ -50,14 +50,14 @@
 				<span>60's</span>
 			</div>
 			<div class="btn_group center">
-				<a href="javascript:;" class="lbtn">开始录音</a>
-				<a href="javascript:;" class="rbtn">选择音频</a>
+				<a href="javascript:;" class="lbtn">提交</a>
+				<a href="javascript:;" class="rbtn">重新录入</a>
 			</div>
 		</section>
 		<!--遮罩层-->
 		<div class="zhezhao"></div>
 		<!--录音start-->
-		<div class="dialog_container">
+		<!--<div class="dialog_container luyin">
 			<div class="dialog_head">
 				录音中...
 			</div>
@@ -65,26 +65,66 @@
 				<p>
 					倒计时<span>60's</span>
 				</p>
+				<img src="img/shengbo.png"/>
 			</div>
 			<div class="dialog_footer">
 				<a href="javascript:;">结束</a>
 				<a href="javascript:;">试听</a>
 			</div>
-		</div>
+		</div>-->
 		<!--录音end-->
-		
+
+		<!--合成中start-->
+		<!--<div class="dialog_container hecheng">
+			<div class="dialog_head">
+				语音合成中...
+				<span>0</span>%
+			</div>
+			<div class="dialog_content">
+				<img src="img/jiqi02.png"/>
+			</div>
+			<div class="dialog_footer">
+				<a href="javascript:;">后台等待</a>
+				<a href="javascript:;">播放</a>
+			</div>
+		</div>-->
+		<!--合成中end-->
+
+		<!--播放中start-->
+		<!--<div class="dialog_container luyin">
+			<div class="dialog_head">
+				播放中...
+			</div>
+			<div class="dialog_content">
+				<p>
+					倒计时<span>60's</span>
+				</p>
+				<img src="img/shengbo.png"/>
+			</div>
+			<div class="dialog_footer">
+				<a href="javascript:;">重新录入</a>
+				<a href="javascript:;">确认</a>
+			</div>
+		</div>-->
+		<!--播放中end-->
+
 		<!--背景音乐start-->
-		<div class="dialog_container">
+		<div class="dialog_container bgmusic">
 			<div class="dialog_head">
 				背景音乐
 			</div>
 			<div class="dialog_content">
 				<ul class="list">
-					<li class="on">拨浪鼓<span>赵薇</span></li>
-					<li>生日快乐<span>儿童歌曲</span></li>
-					<li>爱之初体验<span>张震岳</span></li>
-					<li>first love<span>宇多田光</span></li>
-					<li>all of me<span>Jhon legend</span></li>
+					<li class="on">拨浪鼓<span>赵薇</span>
+					</li>
+					<li>生日快乐<span>儿童歌曲</span>
+					</li>
+					<li>爱之初体验<span>张震岳</span>
+					</li>
+					<li>first love<span>宇多田光</span>
+					</li>
+					<li>all of me<span>Jhon legend</span>
+					</li>
 				</ul>
 			</div>
 			<div class="dialog_footer">
@@ -93,5 +133,18 @@
 		</div>
 		<!--背景音乐end-->
 	</body>
+	<script src="./aizhichu_files/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.play_container a').click(function() {
+				var $abtn = $(this);
+				$abtn.hasClass("on") ? $abtn.removeClass('on') : $abtn.addClass('on');
+			})
+			$('.bgmusic li').bind('click',function(){
+				$('.bgmusic li').removeClass('on');
+				$(this).addClass('on')
+			})
+		})
+	</script>
 
 </html>

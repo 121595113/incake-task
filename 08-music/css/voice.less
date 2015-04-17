@@ -28,6 +28,42 @@ ul{
             overflow: hidden;
             padding-left: 15px;
             .btn__group(#0e2f90,#4eb3eb);
+            .kaishi,.xuanze{
+                position: relative;
+                &:before{
+                  width: 36px;
+                  height: 36px;
+                  display: inline-block;
+                  position: absolute;
+                  bottom: 140%;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  -webkit-transform: translateX(-50%);
+                  content: "";
+                  background: url(../img/hebing.png) no-repeat;
+                  background-size: 38px;
+                }  
+            }
+            .kaishi:before{
+                background-position: 0px -55px;
+            }
+            .xuanze:before{
+                background-position: 0px -93px;
+            }
+            h2{
+              &:before{
+                  width: 14px;
+                  height: 23px;
+                  display: inline-block;
+                  position: relative;
+                  top: 5px;
+                  right: 5px;
+                  content: "";
+                  background: url(../img/hebing.png) no-repeat;
+                  background-size: 38px;
+                  background-position: -17px -25px;
+                }  
+            }
             ol{
                 margin: 0;
                 padding-left: 25px;
@@ -61,6 +97,20 @@ ul{
                 left: 0;
                 top: 50%;
                 content: "";
+            }
+            h2{
+              &:before{
+                  width: 14px;
+                  height: 23px;
+                  display: inline-block;
+                  position: relative;
+                  top: 5px;
+                  right: 5px;
+                  content: "";
+                  background: url(../img/hebing.png) no-repeat;
+                  background-size: 38px;
+                  background-position: -1px -25px;
+                }  
             }
             ul{
                 li{
@@ -107,7 +157,8 @@ ul{
         width: 193px;
         height: 49px;
         margin: 5px auto 0;
-        background: blue;
+        background: url(../img/yx.png) no-repeat center;
+        background-size: contain;
         a{
             width: 37px;
             height: 37px;
@@ -118,11 +169,16 @@ ul{
             border-radius: 50%;
             text-align: center;
             color: white;
-            background:#e70012;
+            background:url(../img/hebing.png) no-repeat;
+            background-size: 38px;
+            background-position: 0px -135px;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             -webkit-transform: translateX(-50%);
+            &.on{
+                background-position: 0 -180px;
+            }
         }
     }
     .progress_bar{
@@ -205,6 +261,7 @@ ul{
         display: table;
         border-radius: 2px;
         border: 2px solid @bcl;
+        white-space: nowrap;
         a{
             width: 80px;
             line-height: 25px;
@@ -233,7 +290,8 @@ ul{
     background: rgba(0,0,0,0.6);
 }
 .dialog_container{
-    background: white;
+    background: white url(../img/tankuang.jpg) no-repeat left top;
+    background-size: 100% auto;
     padding-top: 90px;
     width: 80%;
     max-width: 466px;
@@ -249,7 +307,7 @@ ul{
         font-size: 1.25em;
     }
     .dialog_content{
-        height: 200px;
+        height: 230px;
         overflow-y: auto;
         p{
             text-align: center;
@@ -259,21 +317,6 @@ ul{
                 font-size: 1.2em;
             }
         }
-        .list{
-            line-height: 32px;
-            li{
-                color: #8a8a8a;
-                padding: 0 28px;
-                border-bottom: 1px solid #dbdbdb;
-                span{
-                    font-size: 0.65em;
-                    margin-left: 10px;
-                }
-                &.on{
-                    color: #4eb1e8;
-                }
-            }
-        }
     }
     .dialog_footer{
         text-align: center;
@@ -281,9 +324,8 @@ ul{
         a{
             display: inline-block;
             text-align: center;
-            width: 75px;
-            height: 24px;
-            line-height: 24px;
+            width: 90px;
+            line-height: 30px;
             background: #0099D9;
             color: white;
             border-radius: 4px;
@@ -292,7 +334,90 @@ ul{
         }
     }
 }
-
+//录音
+.luyin{
+  .dialog_content{
+      img{
+          margin-top: 50px;
+          width: 100%;
+      }
+  }  
+}
+//合成
+.hecheng{
+  .dialog_head{
+      position: relative;
+      top: 40px;
+      span{
+          font-size: 1.5em;
+      }
+  }  
+  .dialog_content{
+      img{
+          margin-top: 100px;
+          width: 100%;
+      }
+  }  
+}
+//背景音乐
+.bgmusic{
+  .dialog_head{
+      position: relative;
+      text-align: left;
+      padding-left: 25px;
+      &:before{
+          position: relative;
+          top: 5px;
+          width: 10px;
+          height: 30px;
+          display: inline-block;
+          background: url(../img/hebing.png) no-repeat;
+          background-size: 38px;
+          background-position: 0px -20px;
+          content: "";
+      }
+  }  
+  .dialog_content{
+      img{
+          margin-top: 100px;
+          width: 100%;
+      }
+      .list{
+          margin-top: 20px;
+        line-height: 32px;
+        li{
+            color: #8a8a8a;
+            padding: 0 28px;
+            position: relative;
+            border-bottom: 1px solid #dbdbdb;
+            &:after{
+                width: 17px;
+                height: 17px;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                right: 28px;
+                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                background: url(../img/hebing.png);
+                background-size: 38px;
+                background-position: -18px 0;
+                content: "";
+            }
+            span{
+                font-size: 0.65em;
+                margin-left: 10px;
+            }
+            &.on{
+                color: #4eb1e8;
+                &:after{
+                    background-position: 0 0;
+                }
+            }
+        }
+    }
+  }  
+}
 
 
 
