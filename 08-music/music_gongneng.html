@@ -57,7 +57,7 @@
 		<!--遮罩层-->
 		<div class="zhezhao"></div>
 		<!--录音start-->
-		<!--<div class="dialog_container luyin">
+		<div class="dialog_container luyin">
 			<div class="dialog_head">
 				录音中...
 			</div>
@@ -68,14 +68,14 @@
 				<img src="img/shengbo.png"/>
 			</div>
 			<div class="dialog_footer">
-				<a href="javascript:;">结束</a>
-				<a href="javascript:;">试听</a>
+				<a href="javascript:;" class="jieshu">结束</a>
+				<a href="javascript:;" class="shiting">试听</a>
 			</div>
-		</div>-->
+		</div>
 		<!--录音end-->
 
 		<!--合成中start-->
-		<!--<div class="dialog_container hecheng">
+		<div class="dialog_container hecheng">
 			<div class="dialog_head">
 				语音合成中...
 				<span>0</span>%
@@ -84,14 +84,14 @@
 				<img src="img/jiqi02.png"/>
 			</div>
 			<div class="dialog_footer">
-				<a href="javascript:;">后台等待</a>
+				<a href="javascript:;" class="dengdai">后台等待</a>
 				<a href="javascript:;">播放</a>
 			</div>
-		</div>-->
+		</div>
 		<!--合成中end-->
 
 		<!--播放中start-->
-		<!--<div class="dialog_container luyin">
+		<div class="dialog_container bofang">
 			<div class="dialog_head">
 				播放中...
 			</div>
@@ -105,7 +105,7 @@
 				<a href="javascript:;">重新录入</a>
 				<a href="javascript:;">确认</a>
 			</div>
-		</div>-->
+		</div>
 		<!--播放中end-->
 
 		<!--背景音乐start-->
@@ -140,9 +140,30 @@
 				var $abtn = $(this);
 				$abtn.hasClass("on") ? $abtn.removeClass('on') : $abtn.addClass('on');
 			})
+//			背景音乐选择
 			$('.bgmusic li').bind('click',function(){
 				$('.bgmusic li').removeClass('on');
 				$(this).addClass('on')
+			})
+//			开始录音
+			$('.kaishi').click(function(){
+				$('.zhezhao').show();
+				$('.luyin').show();
+			})
+			
+//			调出合成
+			$('.jieshu').click(function(){
+				$('.luyin').hide();
+				$('.hecheng').show();
+				$('.dengdai').click(function(){
+					$('.zhezhao').hide();
+					$('.hecheng').hide();
+				})
+			})
+			d
+//			调出播放
+			$('.shiting').click(function(){
+				$('.bofang').show();
 			})
 		})
 	</script>

@@ -293,6 +293,7 @@ ul {
   margin: 18px auto;
 }
 .zhezhao {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -302,6 +303,7 @@ ul {
   background: rgba(0, 0, 0, 0.6);
 }
 .dialog_container {
+  display: none;
   background: white url(../img/tankuang.jpg) no-repeat left top;
   background-size: 100% auto;
   padding-top: 90px;
@@ -346,7 +348,8 @@ ul {
   text-decoration: none;
   margin: 0 9px;
 }
-.luyin .dialog_content img {
+.luyin .dialog_content img,
+.bofang .dialog_content img {
   margin-top: 50px;
   width: 100%;
 }
