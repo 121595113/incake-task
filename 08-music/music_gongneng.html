@@ -51,7 +51,7 @@
 			</div>
 			<div class="btn_group center">
 				<a href="javascript:;" class="lbtn">提交</a>
-				<a href="javascript:;" class="rbtn">重新录入</a>
+				<a href="javascript:;" class="rbtn chongxin">重新录入</a>
 			</div>
 		</section>
 		<!--遮罩层-->
@@ -65,7 +65,7 @@
 				<p>
 					倒计时<span>60's</span>
 				</p>
-				<img src="img/shengbo.png"/>
+				<img src="img/shengbo.png" />
 			</div>
 			<div class="dialog_footer">
 				<a href="javascript:;" class="jieshu">结束</a>
@@ -81,11 +81,11 @@
 				<span>0</span>%
 			</div>
 			<div class="dialog_content">
-				<img src="img/jiqi02.png"/>
+				<img src="img/jiqi02.png" />
 			</div>
 			<div class="dialog_footer">
 				<a href="javascript:;" class="dengdai">后台等待</a>
-				<a href="javascript:;">播放</a>
+				<a href="javascript:;" class="play">播放</a>
 			</div>
 		</div>
 		<!--合成中end-->
@@ -99,10 +99,10 @@
 				<p>
 					倒计时<span>60's</span>
 				</p>
-				<img src="img/shengbo.png"/>
+				<img src="img/shengbo.png" />
 			</div>
 			<div class="dialog_footer">
-				<a href="javascript:;">重新录入</a>
+				<a href="javascript:;" class="rluru">重新录入</a>
 				<a href="javascript:;">确认</a>
 			</div>
 		</div>
@@ -128,7 +128,7 @@
 				</ul>
 			</div>
 			<div class="dialog_footer">
-				<a href="javascript:;">确认</a>
+				<a href="javascript:;" class="queding">确认</a>
 			</div>
 		</div>
 		<!--背景音乐end-->
@@ -137,33 +137,55 @@
 	<script type="text/javascript">
 		$(function() {
 			$('.play_container a').click(function() {
-				var $abtn = $(this);
-				$abtn.hasClass("on") ? $abtn.removeClass('on') : $abtn.addClass('on');
-			})
-//			背景音乐选择
-			$('.bgmusic li').bind('click',function(){
+					var $abtn = $(this);
+					$abtn.hasClass("on") ? $abtn.removeClass('on') : $abtn.addClass('on');
+				})
+				//			背景音乐选择
+			$('.bgmusic li').bind('click', function() {
 				$('.bgmusic li').removeClass('on');
 				$(this).addClass('on')
-			})
-//			开始录音
-			$('.kaishi').click(function(){
+			});
+			//选择音频
+			$('.xuanze').click(function() {
+					$('.zhezhao').show();
+					$('.bgmusic').show();
+					$('.queding').click(function() {
+						$('.zhezhao').hide();
+						$('.bgmusic').hide();
+					})
+				})
+				//			开始录音
+			$('.kaishi').click(function() {
+					$('.zhezhao').show();
+					$('.luyin').show();
+				})
+				//			调出合成
+			$('.jieshu').click(function() {
+					$('.luyin').hide();
+					$('.hecheng').show();
+					$('.dengdai').click(function() {
+						$('.zhezhao').hide();
+						$('.hecheng').hide();
+					});
+					$('.play').click(function() {
+						$('.hecheng').hide();
+						$('.bofang').show();
+					})
+				})
+				//			调出播放
+			$('.shiting').click(function() {
+				$('.luyin').hide();
+				$('.hecheng').hide();
+				$('.bofang').show();
+			});
+			//			重新录入
+			$('.rluru').click(function() {
+				$('.bofang').hide();
+				$('.luyin').show();
+			});
+			$('.chongxin').click(function() {
 				$('.zhezhao').show();
 				$('.luyin').show();
-			})
-			
-//			调出合成
-			$('.jieshu').click(function(){
-				$('.luyin').hide();
-				$('.hecheng').show();
-				$('.dengdai').click(function(){
-					$('.zhezhao').hide();
-					$('.hecheng').hide();
-				})
-			})
-//			调出播放
-			$('.shiting').click(function(){
-				$('.luyin').hide();
-				$('.bofang').show();
 			})
 		})
 	</script>
