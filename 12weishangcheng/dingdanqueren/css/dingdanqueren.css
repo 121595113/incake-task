@@ -91,6 +91,14 @@
   height: 34px;
   background: #3197E0;
 }
+.qrdd li.xiangqing dt.footer .f_left {
+  display: table-cell;
+  width: 70%;
+}
+.qrdd li.xiangqing dt.footer .f_right {
+  display: table-cell;
+  width: 30%;
+}
 .qrdd li.xiangqing dt.footer span {
   display: table-cell;
   color: white;

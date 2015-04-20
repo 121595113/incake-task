@@ -35,21 +35,21 @@
 					</ol>
 				</div>
 			</div>
-			<div class="voice_banner">
+			<div class="voice_banner" style="display: none;">
 				<img src="img/voice_xiaoren.jpg" />
 				<div>语音合成中<span>0</span>
 				</div>
 			</div>
-			<div class="play_container">
+			<div class="play_container" style="display: none;">
 				<a href="javascript:;"></a>
 			</div>
-			<div class="progress_bar">
+			<div class="progress_bar" style="display: none;">
 				<div class="pre_load" style="width: 60%;"></div>
 				<div class="curent_load" style="width: 40%;"><i></i>
 				</div>
 				<span>60's</span>
 			</div>
-			<div class="btn_group center">
+			<div class="btn_group center" style="display: none;" id="submit">
 				<a href="javascript:;" class="lbtn">提交</a>
 				<a href="javascript:;" class="rbtn chongxin">重新录入</a>
 			</div>
@@ -97,13 +97,13 @@
 			</div>
 			<div class="dialog_content">
 				<p>
-					倒计时<span>60's</span>
+					倒计时<span>30's</span>
 				</p>
 				<img src="img/shengbo.png" />
 			</div>
 			<div class="dialog_footer">
 				<a href="javascript:;" class="rluru">重新录入</a>
-				<a href="javascript:;">确认</a>
+				<a href="javascript:;" class="a_ok">确认</a>
 			</div>
 		</div>
 		<!--播放中end-->
@@ -140,48 +140,76 @@
 					var $abtn = $(this);
 					$abtn.hasClass("on") ? $abtn.removeClass('on') : $abtn.addClass('on');
 				})
-				//			背景音乐选择
+				//背景音乐选择
 			$('.bgmusic li').bind('click', function() {
 				$('.bgmusic li').removeClass('on');
 				$(this).addClass('on')
 			});
 			//选择音频
+			var falg = false;
 			$('.xuanze').click(function() {
-					$('.zhezhao').show();
-					$('.bgmusic').show();
+				$('.zhezhao').show();
+				$('.bgmusic').show();
+				falg = true;
+				if (falg) {
 					$('.queding').click(function() {
 						$('.zhezhao').hide();
+						$('.hecheng').hide();
 						$('.bgmusic').hide();
-					})
-				})
-				//			开始录音
-			$('.kaishi').click(function() {
-					$('.zhezhao').show();
-					$('.luyin').show();
-				})
-				//			调出合成
-			$('.jieshu').click(function() {
-					$('.luyin').hide();
-					$('.hecheng').show();
-					$('.dengdai').click(function() {
-						$('.zhezhao').hide();
-						$('.hecheng').hide();
+						falg = false;
 					});
-					$('.play').click(function() {
-						$('.hecheng').hide();
-						$('.bofang').show();
-					})
-				})
-				//			调出播放
-			$('.shiting').click(function() {
-				$('.luyin').hide();
-				$('.hecheng').hide();
-				$('.bofang').show();
+				}
 			});
-			//			重新录入
+			//开始录音
+			$('.kaishi').click(function() {
+				$('.zhezhao').show();
+				$('.luyin').show();
+				//点击试听
+				$('.shiting').click(function() {
+					$('.luyin').hide();
+					$('.bofang').show();
+					//背景音乐下的确定按钮
+					$('.a_ok').click(function() {
+						$('.bofang').hide();
+						$('.bgmusic').show();
+						falg = false;
+						if (!falg) {
+							$('.queding').click(function() {
+								$('.zhezhao').show();
+								$('.bgmusic').hide();
+								$('.hecheng').show();
+							})
+						}
+					});
+				});
+			});
+//			点击结束按钮
+			$('.jieshu').bind('click',function(){
+				if ($('.jieshu').html()=="结束") {
+					$('.jieshu').html("取消")
+				} else{
+					$('.jieshu').html("结束");
+					$('.luyin').hide();
+					$('.zhezhao').hide();
+				}
+			})
+			//			点击播放
+			$('.play').click(function() {
+				$('.zhezhao').hide();
+				$('.hecheng').hide();
+				$('.voice_banner,.play_container,.progress_bar,#submit').show()
+			});
+			//点击后台等待
+			$('.dengdai').click(function() {
+				$('.zhezhao').hide();
+				$('.hecheng').hide();
+				$('.voice_banner,.play_container,.progress_bar,#submit').show()
+			});
+			//重新录入
 			$('.rluru').click(function() {
 				$('.bofang').hide();
 				$('.luyin').show();
+				$('.jieshu').html("结束")
 			});
 			$('.chongxin').click(function() {
 				$('.zhezhao').show();
