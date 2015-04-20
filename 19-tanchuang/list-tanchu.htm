@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)http://wap.incake.net/ICake/List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86 -->
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base href="http://wap.incake.net/ICake/List.aspx?dtype=zhishi&amp;dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&amp;dc=%e8%9b%8b%e7%b3%95%e9%a6%86">-->
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/ICake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./list-tanchu_files/jquery-1.8.2.min.js"></script>
+		<script src="./list-tanchu_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./list-tanchu_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/ICake/css/style.css">
+		<script src="./list-tanchu_files/script.js" type="text/javascript"></script>
+		<script src="./list-tanchu_files/list.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<link rel="apple-touch-icon-precomposed" href="http://wap.incake.net/ICake/images/icon@2x.png">
+		<link rel="apple-touch-startup-image" href="http://wap.incake.net/ICake/images/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/ICake/images/startup@2x.png">
+		<!--自定义弹出框样式-->
+		<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+		<title>INCAKE</title>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c">
+		<section data-role="page" data-url="/ICake/List.aspx?dtype=zhishi&amp;dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&amp;dc=%e8%9b%8b%e7%b3%95%e9%a6%86" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 548px;">
+
+			<script type="text/javascript" src="./list-tanchu_files/iplookup.php"></script>
+			<link rel="stylesheet" type="text/css" href="./list-tanchu_files/arrival_notice.css">
+			<script type="text/javascript">
+				var city = remote_ip_info["city"];
+				$(function() {
+					$("#city_Name").text(city + "市");
+					if (city != "上海" && city != "福州") {
+						$(".diweizhi01 div.content").html("<p>您当前的所在位置：<span id=\"city_Name\">" + city + "</span><br />当前地址不支持配送，请手动选择</p>");
+						$("#cityok").attr("disable", "disable").css("background-color", "#ccc");
+					}
+					$("#cityok").click(function() {
+						if ($(this).attr("disable") == "disable") {
+							return;
+						}
+						$(".diweizhi02 span[cityname='" + city + "市']").click();
+						$(".diweizhi02 #aselectcity").click();
+					});
+					$(".close").click(function() {
+						$(".mark_ceng").hide()
+					});
+					$(".shoudong").click(function() {
+						$(".diweizhi01").hide();
+						$(".diweizhi02").show();
+						$(".diweizhi02 .close").hide();
+					})
+					$(".diweizhi02 span").click(function() {
+						$(".diweizhi02 span").removeClass('checked');
+						$(this).addClass('checked')
+					})
+					$("#aselectcity").click(function() {
+						if ($(".diweizhi02 span.checked").attr("cityId") == undefined) {
+							alert("请选择配送城市");
+							return;
+						}
+						//清空购物车
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: {
+								"Action": "ClearCookie",
+								"Type": "icake",
+								"Name": "shopcart"
+							}
+						});
+						var _data = {
+							"Action": "City",
+							"Cvalue": $(".diweizhi02 span.checked").attr("cityId")
+						};
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: _data,
+							success: function(data) {
+								if (data.errcode == "0") {
+									location.reload();
+								}
+							}
+						});
+					});
+				});
+			</script>
+			<!--遮罩层-->
+			<div class="ui_mask" style="display:none;">
+			</div>
+			<!--弹出层start-->
+			<div class="mark_ceng" style="display:none;">
+				<!--地理位置start-->
+				<section class="diweizhi01">
+					<i class="imooc-icon close" style=" display:none;"></i>
+					<div class="header">
+						<i class="imooc-icon"></i>位置获取
+					</div>
+					<div class="content">
+						<p>您当前的所在位置：<span id="city_Name">上海市</span>
+							<br>是否选择此为配送城市</p>
+					</div>
+					<div class="foot">
+						<a href="javascript:;" class="shoudong ui-link">手动选择</a>
+						<a href="javascript:;" id="cityok" class="ui-link">确定</a>
+					</div>
+				</section>
+				<!--地理位置end-->
+				<!--地理位置start-->
+				<section class="diweizhi02">
+					<i class="imooc-icon close"></i>
+					<div class="header">
+						<i class="imooc-icon"></i>位置获取
+					</div>
+					<div class="content">
+						<span cityid="021" cityname="上海市">上海市</span>
+						<span cityid="0591" cityname="福州市">福州市</span>
+					</div>
+					<div class="foot">
+						<a href="javascript:;" id="aselectcity" class="ui-link">确定</a>
+					</div>
+				</section>
+				<!--地理位置end-->
+			</div>
+			<!--弹出层end-->
+
+			<nav class="site_nav">
+
+				<div class="btn_list">
+					<div class="btn nav_line">
+						<div class="menu_ul cake_ul" style="display:none;">
+							<a href="./list-tanchu_files/list-tanchu.htm" rel="external" class="li ui-link"><i class="arr">▶</i>
+								芝士系列
+					        </a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=qiaokeli&dname=%e5%b7%a7%e5%85%8b%e5%8a%9b%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>
+								巧克力系列
+		                    </a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=napolun&dname=%e6%8b%bf%e7%a0%b4%e4%bb%91%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>
+								拿破仑系列
+							</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=mushi&dname=%e6%85%95%e6%96%af%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>
+								慕斯系列
+							</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=ruzhi&dname=%e4%b9%b3%e8%84%82%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>
+								乳脂系列
+							</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=xianping&dname=%e9%80%89%e6%8b%bc%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" rel="external" class="li ui-link"><i class="arr">▶</i>
+								选拼系列
+							</a>
+							<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" class="li ui-link" rel="external"><i class="arr">▶</i>
+								所有系列
+                            </a>
+						</div>
+						<a href="javascript:;" class="link cake ui-link">蛋糕馆</a>
+					</div>
+					<div class="btn nav_line">
+						<a href="http://incafe.incake.net/" rel="external" class="link in ui-link"> INCAFE</a>
+					</div>
+					<div class="btn nav_line">
+						<a href="http://wap.incake.net/user/usercontent.aspx" class="link user ui-link" rel="external">会员专区</a>
+					</div>
+					<div class="btn nav_line"> <i class="num">2</i>
+						<a href="http://wap.incake.net/ICake/order/ShopCart.aspx" rel="external" class="link car ui-link">购物车</a>
+					</div>
+				</div>
+
+			</nav>
+
+			<menu>
+				<a href="javascript:;" class="menu_btn ui-link"></a>
+				<div class="menu_content">
+					<div class="menu_c_btn fn_clear">
+						<div class="btn_list">
+							<div class="btn nav_line"><a href="http://wap.incake.net/ICake/index.aspx" rel="external" class="link home ui-link">首&nbsp;&nbsp;页</a>
+							</div>
+							<div class="btn nav_line">
+								<div class="menu_ul cake_ul" style="display:none;">
+									<a href="./list-tanchu_files/list-tanchu.htm" class="li ui-link" rel="external"><i class="arr">▶</i>
+										芝士系列
+									</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=qiaokeli&dname=%e5%b7%a7%e5%85%8b%e5%8a%9b%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>
+										巧克力系列
+									</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=napolun&dname=%e6%8b%bf%e7%a0%b4%e4%bb%91%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>
+										拿破仑系列
+									</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=mushi&dname=%e6%85%95%e6%96%af%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>
+										慕斯系列
+									</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=ruzhi&dname=%e4%b9%b3%e8%84%82%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>
+										乳脂系列
+									</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=xianping&dname=%e9%80%89%e6%8b%bc%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>
+										选拼系列
+									</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" class="li ui-link" rel="external"><i class="arr">▶</i>
+										所有系列
+									</a>
+								</div>
+								<div class="menu_ul user_ul" style="display:none;">
+									<a href="http://wap.incake.net/user/userinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>订购信息</a>
+									<a href="http://wap.incake.net/user/myinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>我的信息</a>
+								</div>
+
+								<a href="javascript:;" rel="external" class="link cake ui-link">蛋糕馆</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%e5%8d%88%e5%90%8e%e8%8c%b6%e7%82%b9&dc=%e7%94%9c%e5%93%81" rel="external" class="link di ui-link">午后茶点</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://incafe.incake.net/" rel="external" class="link incake ui-link"> INCAFE</a>
+							</div>
+						</div>
+						<i class="arrow"><a href="javascript:;" class="link car ui-link"> 收起菜单</a></i>
+					</div>
+				</div>
+			</menu>
+
+			<nav class="navigation">
+				<a href="javascript:history.go(-1);" class="back_link ui-link">返回</a>
+				<h3>
+					芝士系列
+				</h3>
+			</nav>
+			<section class="play_banner" id="sl_img_play" style="overflow: hidden; height: 298px; width: 596px;">
+				<ul class="con fn-clear" style="width: 2980px; transition: -webkit-transform 0ms; -webkit-transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(0, 0);">
+
+					<li class="" style="height: 298px; width: 596px;">
+						<a href="http://wap.incake.net/icake/NewActivityXM.aspx" target="_blank" class="ui-link">
+							<img src="./list-tanchu_files/2015041418360685457.jpg" width="340" height="auto" style="height: 298px; width: 596px;">
+						</a>
+					</li>
+
+					<li style="height: 298px; width: 596px;" class="">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=409" target="_blank" class="ui-link">
+							<img src="./list-tanchu_files/2015032017120519877.jpg" width="340" height="auto" style="height: 298px; width: 596px;">
+						</a>
+					</li>
+
+					<li style="height: 298px; width: 596px;" class="">
+						<a href="http://wap.incake.net/flashsale.aspx" target="_blank" class="ui-link">
+							<img src="./list-tanchu_files/2015041717513479399.jpg" width="340" height="auto" style="height: 298px; width: 596px;">
+						</a>
+					</li>
+
+					<li style="height: 298px; width: 596px;" class="">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=221" target="_blank" class="ui-link">
+							<img src="./list-tanchu_files/2015041609470357982.jpg" width="340" height="auto" style="height: 298px; width: 596px;">
+						</a>
+					</li>
+
+					<li style="height: 298px; width: 596px;" class="on">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=183" target="_blank" class="ui-link">
+							<img src="./list-tanchu_files/n-1.jpg" width="340" height="auto" style="height: 298px; width: 596px;">
+						</a>
+					</li>
+
+				</ul>
+				<ul class="pagination fn-clear" id="indicator">
+
+					<li class="li_first on"></li>
+					<li class=""></li>
+					<li class=""></li>
+					<li class=""></li>
+					<li class="li_last"></li>
+				</ul>
+
+			</section>
+
+			<!---列表开始--->
+
+			<div class="index_goods goods_list_page">
+				<div class="two_goods_box fn_clear" style="margin-top:20px;">
+					<div class="goods_box w50 left_goods fn_left">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=409" rel="external" class="ui-link">
+							<img class="img320" style="width:200px;" src="./list-tanchu_files/2015032015491987619.png">
+						</a>
+						<h3> 
+							英羽樱缘
+							<br>Sakura Cheese
+						</h3>
+						<div class="bang">
+							选择规格：
+							<br>
+							<span class="bang_con">
+						<i class="c_red" pang="1" price="169">￥169</i> /1.5磅
+					</span> ▼
+						</div>
+					</div>
+					<div class="goods_box w50 right_goods fn_left">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=218" rel="external" class="ui-link">
+							<img class="img320" style="width:200px;" src="./list-tanchu_files/1558140258503.png">
+						</a>
+						<h3> 
+							爱丁堡之恋
+							<br>Love in Edinburgh
+							</h3>
+						<div class="bang">
+							选择规格：
+							<br>
+							<span class="bang_con">
+								<i class="c_red" pang="1" price="189">￥189</i> /1.5磅
+							</span> ▼
+						</div>
+					</div>
+				</div>
+				<div class="bang_select left_goods_select">
+					<a href="javascript:;" class="link line ui-link"><i class="c_red" pang="1" price="169">￥169</i> / 1.5磅</a>
+				</div>
+				<div class="bang_select right_goods_select">
+					<a href="javascript:;" class="link line ui-link"><i class="c_red" pang="1" price="189">￥189</i> / 1.5磅</a><a href="javascript:;" class="link line ui-link"><i class="c_red" pang="2" price="279">￥279</i> / 2.5磅</a>
+					<a href="javascript:;" class="link line ui-link"><i class="c_red" pang="3" price="429">￥429</i> / 3.5磅</a><a href="javascript:;" class="link ui-link"><i class="c_red" pang="5" price="709">￥709</i> / 5.5磅</a>
+				</div>
+				<div class="two_goods_box btn_box fn_clear">
+					<div class="goods_box w50 left_goods fn_left">
+						<div class="goods_page">
+							<div class="goods_btn">
+								<div class="box" style="display:block;">
+									<a href="javascript:;" data-float="left" data-cid="409" rel="external" class="shan_gou ui-link">
+										<i class="shan_ico"></i> 闪电购
+									</a>
+								</div>
+								<div class="box">
+
+									<a href="javascript:;" data-float="left" data-cid="409" data-pic="http://img.incake.net/UpImages/2015032015491987619.png" data-cname="英羽樱缘" data-quefen="0" data-danwei=".5" data-cweight="磅" data-showfive="1" class="go_buy ui-link">加入购物车</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="goods_box w50 right_goods fn_left">
+						<div class="goods_page">
+							<div class="goods_btn">
+								<div class="box" style="display:block;">
+									<a href="javascript:;" data-float="right" data-cid="218" rel="external" class="shan_gou ui-link">
+										<i class="shan_ico"></i> 闪电购
+									</a>
+								</div>
+								<div class="box">
+
+									<a href="javascript:;" data-float="right" data-cid="218" data-pic="http://img.incake.net/UpImages/1558140258503.png" data-cname="爱丁堡之恋" data-quefen="1" data-danwei=".5" data-cweight="磅" data-showfive="1" class="go_buy ui-link">加入购物车</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="index_goods goods_list_page">
+				<div class="two_goods_box fn_clear" style="margin-top:20px;">
+					<div class="goods_box w50 left_goods fn_left">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=180" rel="external" class="ui-link">
+							<img class="img320" style="width:200px;" src="./list-tanchu_files/1559140259023.png">
+						</a>
+						<h3> 
+							女王芝士
+							<br>Queen Cheese
+						</h3>
+						<div class="bang">
+							选择规格：
+							<br>
+							<span class="bang_con">
+								<i class="c_red" pang="1" price="169">￥169</i> /1.5磅
+							</span> ▼
+						</div>
+					</div>
+					<div class="goods_box w50 right_goods fn_left">
+						<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=181" rel="external" class="ui-link">
+							<img class="img320" style="width:200px;" src="./list-tanchu_files/2015010910092720256.png">
+						</a>
+						<h3> 
+							狮心国王
+							<br>The Lion-heart King
+						</h3>
+						<div class="bang">
+							选择规格：
+							<br>
+							<span class="bang_con">
+								<i class="c_red" pang="1" price="169">￥169</i> /1.5磅
+							</span> ▼
+						</div>
+					</div>
+				</div>
+				<div class="bang_select left_goods_select">
+					<a href="javascript:;" class="link line ui-link"><i class="c_red" pang="1" price="169">￥169</i> / 1.5磅</a><a href="javascript:;" class="link line ui-link"><i class="c_red" pang="2" price="259">￥259</i> / 2.5磅</a>
+					<a href="javascript:;" class="link line ui-link"><i class="c_red" pang="3" price="389">￥389</i> / 3.5磅</a><a href="javascript:;" class="link ui-link"><i class="c_red" pang="5" price="659">￥659</i> / 5.5磅</a>
+				</div>
+				<div class="bang_select right_goods_select">
+					<a href="javascript:;" class="link line ui-link"><i class="c_red" pang="1" price="169">￥169</i> / 1.5磅</a><a href="javascript:;" class="link line ui-link"><i class="c_red" pang="2" price="259">￥259</i> / 2.5磅</a>
+					<a href="javascript:;" class="link line ui-link"><i class="c_red" pang="3" price="389">￥389</i> / 3.5磅</a><a href="javascript:;" class="link ui-link"><i class="c_red" pang="5" price="659">￥659</i> / 5.5磅</a>
+				</div>
+				<div class="two_goods_box btn_box fn_clear">
+					<div class="goods_box w50 left_goods fn_left">
+						<div class="goods_page">
+							<div class="goods_btn">
+								<div class="box" style="display:block;">
+									<a href="javascript:;" data-float="left" data-cid="180" rel="external" class="shan_gou ui-link">
+										<i class="shan_ico"></i> 闪电购
+									</a>
+								</div>
+								<div class="box">
+
+									<a href="javascript:;" data-float="left" data-cid="180" data-pic="http://img.incake.net/UpImages/1559140259023.png" data-cname="女王芝士" data-quefen="1" data-danwei=".5" data-cweight="磅" data-showfive="1" class="go_buy ui-link">加入购物车</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="goods_box w50 right_goods fn_left">
+						<div class="goods_page">
+							<div class="goods_btn">
+								<div class="box" style="display:block;">
+									<a href="javascript:;" data-float="right" data-cid="181" rel="external" class="shan_gou ui-link">
+										<i class="shan_ico"></i> 闪电购
+									</a>
+								</div>
+								<div class="box">
+
+									<a href="javascript:;" data-float="right" data-cid="181" data-pic="http://img.incake.net/UpImages/2015010910092720256.png" data-cname="狮心国王" data-quefen="0" data-danwei=".5" data-cweight="磅" data-showfive="1" class="go_buy ui-link">加入购物车</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section id="content">
+				<div class="index_goods goods_list_page">
+					<div class="two_goods_box fn_clear" style="margin-top:20px;">
+						<div class="goods_box w50 left_goods fn_left">
+							<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=182" rel="external">
+								<img class="img320" style="width:200px;" src="./list-tanchu_files/2015010910114665638.png">
+							</a>
+							<h3> 淘气王子<br>His Naughtiness</h3>
+							<div class="bang"> 选择规格：
+								<br> <span class="bang_con"><i class="c_red" pang="1" price="169">￥169</i> /1.5磅</span> ▼ </div>
+						</div>
+						<div class="goods_box w50 right_goods fn_left">
+							<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=183" rel="external">
+								<img class="img320" style="width:200px;" src="./list-tanchu_files/1559140259173.png">
+							</a>
+							<h3> 玛格丽特<br>Princess Margaret  </h3>
+							<div class="bang"> 选择规格：
+								<br> <span class="bang_con"><i class="c_red" pang="1" price="169">￥169</i> /1.5磅 </span> ▼</div>
+						</div>
+					</div>
+					<div class="bang_select left_goods_select"><a href="javascript:;" class="link line"><i class="c_red" pang="1" price="169">￥169</i> / 1.5磅</a><a href="javascript:;" class="link line"><i class="c_red" pang="2" price="259">￥259</i> / 2.5磅</a><a href="javascript:;" class="link line"><i class="c_red" pang="3" price="389">￥389</i> / 3.5磅</a>
+						<a href="javascript:;" class="link"><i class="c_red" pang="5" price="659">￥659</i> / 5.5磅</a>
+					</div>
+					<div class="bang_select right_goods_select"><a href="javascript:;" class="link line"><i class="c_red" pang="1" price="169">￥169</i> / 1.5磅</a><a href="javascript:;" class="link line"><i class="c_red" pang="2" price="259">￥259</i> / 2.5磅</a><a href="javascript:;" class="link line"><i class="c_red" pang="3" price="389">￥389</i> / 3.5磅</a>
+						<a href="javascript:;" class="link"><i class="c_red" pang="5" price="659">￥659</i> / 5.5磅</a>
+					</div>
+					<div class="two_goods_box btn_box fn_clear">
+						<div class="goods_box w50 left_goods fn_left">
+							<div class="goods_page">
+								<div class="goods_btn">
+									<div class="box" style="display:block;">
+										<a href="javascript:;" data-float="left" data-cid="182" rel="external" class="shan_gou ui-link"> <i class="shan_ico"></i> 闪电购 </a>
+									</div>
+									<div class="box"> <a href="javascript:;" data-float="left" data-cid="182" data-pic="http://img.incake.net/UpImages/2015010910114665638.png" data-cname="淘气王子" data-quefen="1" data-danwei=".5" data-cweight="磅" data-showfive="1" class="go_buy ui-link">加入购物车</a> </div>
+								</div>
+							</div>
+						</div>
+						<div class="goods_box w50 right_goods fn_left">
+							<div class="goods_page">
+								<div class="goods_btn">
+									<div class="box" style="display:block;">
+										<a href="javascript:;" data-float="right" data-cid="183" rel="external" class="shan_gou ui-link"> <i class="shan_ico"></i> 闪电购 </a>
+									</div>
+									<div class="box"> <a href="javascript:;" data-float="right" data-cid="183" data-pic="http://img.incake.net/UpImages/1559140259173.png" data-cname="玛格丽特" data-quefen="0" data-danwei=".5" data-cweight="磅" data-showfive="1" class="go_buy ui-link">加入购物车</a> </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="index_goods goods_list_page">
+					<div class="two_goods_box fn_clear">
+						<div class="goods_box w50 left_goods fn_left">
+							<a href="http://wap.incake.net/ICake/Detail.aspx?CommodityId=184%20" rel="external">
+								<img class="img320" style="width:200px;" src="./list-tanchu_files/1559140259423.png">
+							</a>
+							<h3> 
+								蓝莓优格
+								<br>Blueberry Cheese
+							</h3>
+							<div class="bang">
+								选择规格：
+								<br>
+								<span class="bang_con"><i class="c_red" pang="1" price="169">￥169</i> /1.5磅</span>▼
+							</div>
+						</div>
+					</div>
+					<div class="bang_select left_goods_select">
+						<a href="javascript:;" class="link line">
+							<i class="c_red" pang="1" price="169">￥169</i> / 1.5磅
+						</a>
+						<a href="javascript:;" class="link line">
+							<i class="c_red" pang="2" price="259">￥259</i> / 2.5磅
+						</a>
+						<a href="javascript:;" class="link line"><i class="c_red" pang="3" price="389">￥389</i> / 3.5磅
+						</a>
+						<a href="javascript:;" class="link">
+							<i class="c_red" pang="5" price="659">￥659</i> / 5.5磅
+						</a>
+					</div>
+					<div class="two_goods_box btn_box fn_clear">
+						<div class="goods_box w50 left_goods fn_left">
+							<div class="goods_page">
+								<div class="goods_btn">
+									<div class="box" style="display:block;">
+										<a href="javascript:;" data-float="left" data-cid="184" class="shan_gou ui-link" rel="external">
+											<i class="shan_ico"></i> 闪电购
+										</a>
+									</div>
+									<div class="box">
+										<a href="javascript:;" data-float="left" data-cid="184" data-pic="http://img.incake.net/UpImages/1559140259423.png" data-cname="蓝莓优格" data-quefen="0" data-danwei=".5" data-cweight="磅" data-showfive="1" class="go_buy ui-link">
+											加入购物车
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div id="LoadIng" style="text-align: center; font-weight: 600; height: 30px; font-size: 10px; line-height: 30px; color: rgb(68, 68, 68); display: none;"></div>
+			<!---列表结束--->
+
+			<footer>
+				<section class="gray_footer fn_clear">
+					<i class="fn_left time">
+						(周一至周日)<br>8:30 ~ 21:00
+					</i>
+					<i class="fn_left other">
+						客服热线:
+						<b>
+							<a href="tel:400-921-5757" class="ui-link">400-921-5757</a>
+						</b>
+					</i>
+					<a href="http://wap.incake.net/ICake/List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86#" class="fn_right go_top other ui-link">
+						返回顶部
+					</a>
+				</section>
+
+				<p class="p" style=" font-size:14px; padding:10px 0px 2px 0px;">
+					<a href="http://wap.incake.net/login.aspx" rel="external" class="ui-link">立即登录</a>&nbsp;&nbsp;<span style=" border-left:0px solid #ccc;"></span>&nbsp;&nbsp;<a href="http://wap.incake.net/Register.aspx" rel="external" class="ui-link">立即注册</a>
+				</p>
+
+				<p class="p" style=" font-size:14px; padding:8px 0px 2px 0px;">
+					<a href="http://www.incake.net/?source=mobile" rel="external" class="ui-link">
+						电脑版
+					</a>&nbsp;&nbsp;
+					<span style=" border-left:2px solid #ccc;"></span>&nbsp;&nbsp;
+					<a href="http://wap.incake.net/" rel="external" class="ui-link">
+						触屏版
+					</a>
+				</p>
+
+				<ul style="width:100%; margin-top:20px; display:inline-block; border-top:1px solid #ccc;border-bottom:1px solid #ccc; padding:5px 0px;">
+					<li style=" width:33.33%; float:left; text-align:center;"> <a href="http://wap.incake.net/user/AboutIncake.aspx?id=1" rel="external" class="ui-link">配送服务</a>
+					</li>
+					<li style=" width:33.33%;float:left;text-align:center;"> <a href="http://wap.incake.net/user/AboutIncake.aspx?id=2" rel="external" class="ui-link">关于我们</a>
+					</li>
+					<li style=" width:33.33%;float:left;text-align:center;"><a href="http://wap.incake.net/user/HelpCenter.aspx" rel="external" class="ui-link">购买流程</a>
+					</li>
+				</ul>
+
+				<p class="p">
+					沪ICP备12045835号
+					<br> Copyright © 2014 INCAKE Company All Right Reserved
+				</p>
+			</footer>
+			<script type="text/javascript">
+				$(function() {
+					$(".zhuxiao.li").click(function() {
+						if (confirm("确定退出?")) {
+							$.ajax({
+								url: "/Icake/cookie/cookiemanage.aspx",
+								dataType: "json",
+								type: "post",
+								data: {
+									"Action": "ZhuXiao"
+								},
+								success: function(data) {
+									if (data.errcode == "0") {
+										location.reload();
+									}
+								}
+							});
+						}
+					});
+				});
+			</script>
+			<!--遮罩层-->
+			<div class="ui_mask"></div>
+			<div class="mask_ceng"></div>
+			<!--弹出框start-->
+			<section class="modal-dialog">
+				<i class="imooc-icon close">&#xe600;</i>
+				<div class="modal-header">
+					INCAKE
+				</div>
+				<div class="modal-body">
+					<p>
+						加入购物车成功，去结算？
+					</p>
+				</div>
+				<div class="modal-footer">
+					<a href="javascript:;" class="btn btn-default b_ok">确定</a>
+					<a href="javascript:;" class="btn btn-primary b_go">继续购物</a>
+				</div>
+			</section>
+			<!--弹出框end-->
+
+		</section>
+
+		<script type="text/javascript">
+			var startNum = 2;
+			$(function() {
+				$(window).bind("scroll", function() {
+					var top = document.documentElement.scrollTop + document.body.scrollTop;
+					var textheight = $(document).height();
+					if (textheight - top - $(window).height() <= 300) {
+						//alert(1);
+						if ($("#LoadIng").is(":hidden")) {
+							AjaxGetData();
+						}
+					}
+				});
+			});
+
+			function AjaxGetData() {
+				$("#LoadIng").show();
+				$.ajax({
+					url: "List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86",
+					type: "post",
+					dataType: "html",
+					data: {
+						"Action": "Page",
+						"Num": startNum
+					},
+					success: function(data) {
+						if (data != " ") {
+							$("#content").append(data);
+							$("#LoadIng").hide();
+							startNum += 1;
+						} else {
+							$("#LoadIng").show().html(" ").slideUp(500);
+						}
+					}
+				});
+			}
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				//模态框的显示隐藏
+				function modal_dialog(show_hide) {
+					if (show_hide == "show") {
+						$('.mask_ceng').show();
+						$('.modal-dialog').show();
+					} else {
+						$('.mask_ceng').hide();
+						$('.modal-dialog').hide();
+					}
+				}
+				//调用模态框的显示或隐藏
+				$('.go_buy').click(function() {
+					modal_dialog("show");
+				});
+				$('.close').click(function() {
+					modal_dialog("hide");
+				});
+				$('.b_ok').click(function(){
+					modal_dialog("hide");
+				});
+				$('.b_go').click(function(){
+					modal_dialog("hide");
+				});
+			})
+		</script>
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+	</body>
+
+</html>
