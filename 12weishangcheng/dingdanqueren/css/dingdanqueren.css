@@ -92,19 +92,21 @@
   background: #3197E0;
 }
 .qrdd li.xiangqing dt.footer .f_left {
-  display: table-cell;
+  float: left;
   width: 70%;
+  height: 34px;
 }
 .qrdd li.xiangqing dt.footer .f_right {
-  display: table-cell;
-  width: 30%;
+  float: right;
+  width: 25%;
+  height: 34px;
 }
 .qrdd li.xiangqing dt.footer span {
   display: table-cell;
   color: white;
   width: 1%;
   white-space: nowrap;
-  padding-left: 18px;
+  padding-left: 8px;
   vertical-align: middle;
 }
 .qrdd li.xiangqing dt.footer span s {
