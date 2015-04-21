@@ -50,6 +50,20 @@
     li{
         margin-bottom: 12px;
         position: relative;
+       /* 新增时间样式*/
+        .time{
+            float: right;
+            width: 50%;
+            color: #888888;
+            padding-top: 15px;
+            label{
+                float: left;
+            }
+            p{
+                overflow: hidden;
+                padding-right: 5px;
+            }
+        }
 //      右侧箭头样式
         .jiantou{
             color: #dadada;
@@ -69,21 +83,18 @@
                 font-size: 2em;
                 color: #3280ca;
                 margin: 0 12px;
+                vertical-align: middle;
             }
           /* 发票管理页面label样式*/
          label{
              color: #3280ca;
-             margin-left: 12px;
          }
             &.fangshi{
-                a{
-                    color: #3280ca;
-                }
               span{
                   color: #888888;
                   float: right;
                   line-height: 2.4em;
-                  margin-right: 35px;
+                  margin: 0 10px;
               }  
             }
         }
@@ -96,7 +107,7 @@
         &.xiangqing{
             dl{
                 overflow: hidden;
-                padding-bottom: 0px;
+                padding-bottom: 0;
             }
             .dt();
             dd{
@@ -109,35 +120,22 @@
                 }
                 &.float_right{
                     color: #818181;
-                    padding: 0px 10px 8px;
                     float: right;
-                    p{
-                        font-size: 2em;
-                        color: #2c7bc6;
-                        .before();
+                    height: 4.5em;
+                    margin-right: 10px;
+                    a{
+                        line-height: 4.5em;
+                        color:  #3280ca;
                     }
                 }
                 &.center{
+                    padding-top: 6px;
                     color: #8b8b8b;
+                    font-size: 0.8em;
                     line-height: 1.5em;
                     overflow: hidden;
-                    label{
-                        float: left;
-                    }
-                    span{
-                        display: inline-block;
-                    }
-                }
-            }
-        }
-        .youhuiquan{
-            a{
-                color: #2c7bc6;
-                font-size: 1.2em;
-                display: inline-block;
-                vertical-align: middle;
-                i{
-                    display: inline-block;
+                    height: 4.5em;
+                    display: table-cell;
                     vertical-align: middle;
                 }
             }
@@ -331,7 +329,7 @@
             background: #3197E0;
             .f_left{
                 float: left;
-                width: 70%;
+                width: 75%;
                 height: 34px;
             }
             .f_right{
@@ -346,9 +344,11 @@
                 white-space: nowrap;
                 padding-left: 8px;
                 vertical-align: middle;
+                height: 34px;
                 s{
                     text-decoration: none;
                     &:before{
+                        font-size: 0.8em;
                         content: "￥";
                     }
                 }
@@ -361,9 +361,10 @@
                 color: white;
                 white-space: nowrap;
                 i{
-                    font-size: 1.75em;
+                    font-size: 1.5em;
+                    position: relative;
+                    top: 3px;
                     display: inline-block;
-                    margin: 0 5px;
                 }
                 &:active{
                     background: #246eb1;
@@ -633,8 +634,102 @@ article{
         background-size: 14px;
     }
 }
-
-
+/**
+评论页新样式
+*/
+.pinglun{
+    .footer{
+        .checkbox{
+            &:before{
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                border: 3px solid #fff;
+                background: #fff;
+                display: inline-block;
+                margin-right: 5px;
+                content: "";
+            }
+        }
+        .on:before{
+            background: #999 !important;
+        }
+        .btn{
+            float: right;
+            width: auto !important;
+            padding: 0 5px;
+        }
+    }
+    .pinglun_container{
+        position: relative;
+        padding-left: 90px;
+        padding-right: 5px;
+        margin-bottom: 20px;
+         .pic{
+            position: absolute;
+            left: 10px;
+            width: 80px;
+            height: 80px;
+            img{
+                width: 100%;
+            }
+        }
+        .pinglun_list{
+            border-bottom: 5px solid #f5f5f5;
+            li{
+                line-height: 30px;
+                border-bottom: 1px solid #f5f5f5;
+                margin-bottom: 0;
+                margin-left: 5px;
+                &:last-child{
+                    border: none;
+                }
+                label{
+                    float: left;
+                    font-size: 0.75em;
+                    color: #999;
+                    margin-right: 10px;
+                }
+                div{
+                    span{
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: middle;
+                        background: url(../img/smile-01.png) no-repeat;
+                        background-size: 20px;
+                    }
+                }
+                &.zongping{
+                    span{
+                        margin-right: 2px;
+                        background-position: 0 -26px;
+                        &.on{
+                            background-position: 0px 0px;
+                        }
+                    }
+                }
+                &.kouwei,&.server{
+                    span{
+                        margin-right: 8px;
+                        background-position: 0 -72px;
+                        &.on{
+                            background-position: 0px -50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    textarea{
+        padding: 5px;
+        font-size: 0.8em;
+        width: 100%;
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+    }
+}
 
 
 

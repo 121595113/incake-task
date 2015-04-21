@@ -28,6 +28,20 @@
   margin-bottom: 12px;
   position: relative;
 }
+/* 新增时间样式*/
+.qrdd li .time {
+  float: right;
+  width: 50%;
+  color: #888888;
+  padding-top: 15px;
+}
+.qrdd li .time label {
+  float: left;
+}
+.qrdd li .time p {
+  overflow: hidden;
+  padding-right: 5px;
+}
 .qrdd li .jiantou {
   color: #dadada;
   position: absolute;
@@ -47,20 +61,17 @@
   font-size: 2em;
   color: #3280ca;
   margin: 0 12px;
+  vertical-align: middle;
 }
 /* 发票管理页面label样式*/
 .qrdd li dd label {
-  color: #3280ca;
-  margin-left: 12px;
-}
-.qrdd li dd.fangshi a {
   color: #3280ca;
 }
 .qrdd li dd.fangshi span {
   color: #888888;
   float: right;
   line-height: 2.4em;
-  margin-right: 35px;
+  margin: 0 10px;
 }
 .qrdd li a {
   color: #888888;
@@ -69,7 +80,7 @@
 }
 .qrdd li.xiangqing dl {
   overflow: hidden;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 .qrdd li.xiangqing dt.header {
   color: #297bc7;
@@ -93,7 +104,7 @@
 }
 .qrdd li.xiangqing dt.footer .f_left {
   float: left;
-  width: 70%;
+  width: 75%;
   height: 34px;
 }
 .qrdd li.xiangqing dt.footer .f_right {
@@ -108,11 +119,13 @@
   white-space: nowrap;
   padding-left: 8px;
   vertical-align: middle;
+  height: 34px;
 }
 .qrdd li.xiangqing dt.footer span s {
   text-decoration: none;
 }
 .qrdd li.xiangqing dt.footer span s:before {
+  font-size: 0.8em;
   content: "￥";
 }
 .qrdd li.xiangqing dt.footer .btn {
@@ -124,9 +137,10 @@
   white-space: nowrap;
 }
 .qrdd li.xiangqing dt.footer .btn i {
-  font-size: 1.75em;
+  font-size: 1.5em;
+  position: relative;
+  top: 3px;
   display: inline-block;
-  margin: 0 5px;
 }
 .qrdd li.xiangqing dt.footer .btn:active {
   background: #246eb1;
@@ -145,36 +159,22 @@
 }
 .qrdd li.xiangqing dd.float_right {
   color: #818181;
-  padding: 0px 10px 8px;
   float: right;
+  height: 4.5em;
+  margin-right: 10px;
 }
-.qrdd li.xiangqing dd.float_right p {
-  font-size: 2em;
-  color: #2c7bc6;
-}
-.qrdd li.xiangqing dd.float_right p:before {
-  font-size: 0.8em;
-  content: "￥";
+.qrdd li.xiangqing dd.float_right a {
+  line-height: 4.5em;
+  color: #3280ca;
 }
 .qrdd li.xiangqing dd.center {
+  padding-top: 6px;
   color: #8b8b8b;
+  font-size: 0.8em;
   line-height: 1.5em;
   overflow: hidden;
-}
-.qrdd li.xiangqing dd.center label {
-  float: left;
-}
-.qrdd li.xiangqing dd.center span {
-  display: inline-block;
-}
-.qrdd li .youhuiquan a {
-  color: #2c7bc6;
-  font-size: 1.2em;
-  display: inline-block;
-  vertical-align: middle;
-}
-.qrdd li .youhuiquan a i {
-  display: inline-block;
+  height: 4.5em;
+  display: table-cell;
   vertical-align: middle;
 }
 .qrdd li.tongji dd {
@@ -628,5 +628,91 @@ article .small {
 .jiantou > div {
   background: url(../img/sanjiao.jpg) no-repeat right bottom;
   background-size: 14px;
+}
+/**
+评论页新样式
+*/
+.pinglun .footer .checkbox:before {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: #fff;
+  display: inline-block;
+  margin-right: 5px;
+  content: "";
+}
+.pinglun .footer .on:before {
+  background: #999 !important;
+}
+.pinglun .footer .btn {
+  float: right;
+  width: auto !important;
+  padding: 0 5px;
+}
+.pinglun .pinglun_container {
+  position: relative;
+  padding-left: 90px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+}
+.pinglun .pinglun_container .pic {
+  position: absolute;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+}
+.pinglun .pinglun_container .pic img {
+  width: 100%;
+}
+.pinglun .pinglun_container .pinglun_list {
+  border-bottom: 5px solid #f5f5f5;
+}
+.pinglun .pinglun_container .pinglun_list li {
+  line-height: 30px;
+  border-bottom: 1px solid #f5f5f5;
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.pinglun .pinglun_container .pinglun_list li:last-child {
+  border: none;
+}
+.pinglun .pinglun_container .pinglun_list li label {
+  float: left;
+  font-size: 0.75em;
+  color: #999;
+  margin-right: 10px;
+}
+.pinglun .pinglun_container .pinglun_list li div span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background: url(../img/smile-01.png) no-repeat;
+  background-size: 20px;
+}
+.pinglun .pinglun_container .pinglun_list li.zongping span {
+  margin-right: 2px;
+  background-position: 0 -26px;
+}
+.pinglun .pinglun_container .pinglun_list li.zongping span.on {
+  background-position: 0px 0px;
+}
+.pinglun .pinglun_container .pinglun_list li.kouwei span,
+.pinglun .pinglun_container .pinglun_list li.server span {
+  margin-right: 8px;
+  background-position: 0 -72px;
+}
+.pinglun .pinglun_container .pinglun_list li.kouwei span.on,
+.pinglun .pinglun_container .pinglun_list li.server span.on {
+  background-position: 0px -50px;
+}
+.pinglun textarea {
+  padding: 5px;
+  font-size: 0.8em;
+  width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
 }
 /*# sourceMappingURL=dingdanqueren.css.map */

@@ -75,59 +75,62 @@
 
 			<nav class="navigation">
 				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
-				<h3 style="text-align: left; padding-left: 40px;">全部订单</h3>
+				<h3 style="text-align: left; padding-left: 40px;">评价</h3>
 			</nav>
 			<section>
-				<ul class="qrdd">
+				<ul class="qrdd pinglun">
 					<li class="out_border xiangqing">
 						<dl>
-							<dt class="header">订单状态：<span>待付款</span><strong>03-23</strong></dt>
-							<dd class="float_left">
-								<img src="../../01/pic/150.png" />
+							<dt class="header">SHP013423<strong>03-23</strong></dt>
+							<dd class="pinglun_container">
+								<div class="pic">
+									<img src="../../01/pic/150.png" />
+								</div>
+								<ul class="pinglun_list">
+									<li class="zongping">
+										<label>总评</label>
+										<div><span></span><span></span><span></span><span></span><span></span>
+										</div>
+									</li>
+									<li class="kouwei">
+										<label>口味</label>
+										<div><span></span><span></span><span></span><span></span><span></span>
+										</div>
+									</li>
+									<li class="server">
+										<label>服务</label>
+										<div><span></span><span></span><span></span><span></span><span></span>
+										</div>
+									</li>
+								</ul>
+								<textarea placeholder="对这次消费满意吗？给小伙伴分享一下吧!"></textarea>
 							</dd>
-							<dd class="float_right">数量：<span>1</span>
-								<p>169</p>
-							</dd>
-							<dd class="center">
-								<label>订单号：</label><span>shp013423</span>
-								<br />
-								<label>收货时间：</label><span>2015-03-14<br />12:00~13:00</span>
+							<dd class="pinglun_container">
+								<div class="pic">
+									<img src="../../01/pic/150.png" />
+								</div>
+								<ul class="pinglun_list">
+									<li class="zongping">
+										<label>总评</label>
+										<div><span></span><span></span><span></span><span></span><span></span>
+										</div>
+									</li>
+									<li class="kouwei">
+										<label>口味</label>
+										<div><span></span><span></span><span></span><span></span><span></span>
+										</div>
+									</li>
+									<li class="server">
+										<label>服务</label>
+										<div><span></span><span></span><span></span><span></span><span></span>
+										</div>
+									</li>
+								</ul>
+								<textarea placeholder="对这次消费满意吗？给小伙伴分享一下吧!"></textarea>
 							</dd>
 							<dt class="footer">
-								<div class="f_left">
-									<span>实付:<s>169</s></span>
-									<a href="javascript:;" class="btn"><i class="imooc-icon" style="font-size: 1.1em;top: 1px;">&#xe600;</i>取消订单</a>
-									<a href="javascript:;" class="btn"><i class="imooc-icon">&#xe60c;</i>确认支付</a>
-								</div>
-								<div class="f_right">
-									<a href="javascript:;" class="btn">评价</a>
-									<a href="javascript:;" class="btn">查看</a>
-								</div>
-							</dt>
-						</dl>
-					</li>
-					<li class="out_border xiangqing">
-						<dl>
-							<dt class="header">订单状态：<span>配送</span><strong>03-23</strong></dt>
-							<dd class="float_left">
-								<img src="../../01/pic/150.png" />
-							</dd>
-							<dd class="float_right">数量：<span>1</span>
-								<p>169</p>
-							</dd>
-							<dd class="center">
-								<label>订单号：</label><span>shp013423</span>
-								<br />
-								<label>收货时间：</label><span>2015-03-14<br />12:00~13:00</span>
-							</dd>
-							<dt class="footer">
-								<div class="f_left">
-									<span>实付:<s>169</s></span>
-								</div>
-								<div class="f_right">
-									<a href="javascript:;" class="btn">已评价</a>
-									<a href="javascript:;" class="btn">查看</a>
-								</div>
+								<span class="checkbox">匿名评论</span>
+								<a href="javascript:;" class="btn" style="text-align: right; padding-right: 5px;">发表评论</a>
 							</dt>
 						</dl>
 					</li>
@@ -139,6 +142,51 @@
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
 			<h1>loading</h1>
 		</div>
+		<script type="text/javascript">
+			$(function() {
+				$('.checkbox').bind('click', function() {
+					if (!$(this).hasClass('on')) {
+						$('.checkbox').addClass('on')
+					} else {
+						$('.checkbox').removeClass('on')
+					}
+				});
+				
+				//总评
+				$('.zongping span').each(function(){
+					$(this).click(function(){
+						$(this).parents('.zongping').find('span').removeClass('on');
+						var l=$(this).index();
+						for (var i=0; i<=l; i++) {
+							$(this).parents('.zongping').find('span')[i].className="on"
+						}
+					})
+				})
+				
+				//口味
+				$('.kouwei span').each(function(){
+					$(this).click(function(){
+						$(this).parents('.kouwei').find('span').removeClass('on');
+						var l=$(this).index();
+						for (var i=0; i<=l; i++) {
+							$(this).parents('.kouwei').find('span')[i].className="on"
+						}
+					})
+				})
+				
+				//服务
+				$('.server span').each(function(){
+					$(this).click(function(){
+						$(this).parents('.server').find('span').removeClass('on');
+						var l=$(this).index();
+						for (var i=0; i<=l; i++) {
+							$(this).parents('.server').find('span')[i].className="on"
+						}
+					})
+				})
+				
+			})
+		</script>
 	</body>
 
 </html>

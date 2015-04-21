@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base href="http://wap.incake.net/Login.aspx">-->
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./login_files/jquery-1.8.2.min.js"></script>
+		<script src="./login_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./login_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/css/style.css">
+		<script src="./login_files/script.js" type="text/javascript"></script>
+		<script src="./login_files/mainscript.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<link rel="apple-touch-icon-precomposed" href="http://wap.incake.net/Icake/images/icon@2x.png">
+		<link rel="apple-touch-startup-image" href="http://wap.incake.net/Icake/images/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
+		<!--自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/huodongyemian.css"/>
+		<title>INCAKE</title>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c">
+		<section data-role="page" data-url="/Login.aspx" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 593px;">
+
+			<script src="./login_files/iplookup.php" type="text/ecmascript"></script>
+			<section id="select_city" style="display:none;">
+				<a href="javascript:;" class="link ui-link" cityname="上海市" cityid="021">上海市</a>
+				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
+			</section>
+
+			<menu>
+				<a href="javascript:;" class="menu_btn ui-link"></a>
+				<div class="menu_content ">
+					<div class="menu_c_btn fn_clear">
+						<div class="btn_list">
+							<div class="btn nav_line"><a href="http://wap.incake.net/ICake/index.aspx" rel="external" class="link home ui-link">首&nbsp;&nbsp;页</a>
+							</div>
+							<div class="btn nav_line">
+								<div class="menu_ul cake_ul" style="display:none;">
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=zhishi&dname=%e8%8a%9d%e5%a3%ab%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>芝士系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=qiaokeli&dname=%e5%b7%a7%e5%85%8b%e5%8a%9b%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>巧克力系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=napolun&dname=%e6%8b%bf%e7%a0%b4%e4%bb%91%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>拿破仑系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=mushi&dname=%e6%85%95%e6%96%af%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>慕斯系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=ruzhi&dname=%e4%b9%b3%e8%84%82%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>乳脂系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=xianping&dname=%e9%80%89%e6%8b%bc%e7%b3%bb%e5%88%97&dc=%e8%9b%8b%e7%b3%95%e9%a6%86" class="li ui-link" rel="external"><i class="arr">▶</i>选拼系列</a>
+									<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%E8%9B%8B%E7%B3%95%E9%A6%86&dc=%E8%9B%8B%E7%B3%95%E9%A6%86" class="li ui-link" rel="external"><i class="arr">▶</i>所有系列</a>
+								</div>
+								<div class="menu_ul user_ul" style="display:none;">
+									<a href="http://wap.incake.net/user/userinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>订购信息</a>
+									<a href="http://wap.incake.net/user/myinfo.aspx" rel="external" class="li ui-link"><i class="arr">▶</i>我的信息</a>
+								</div>
+								<a href="javascript:;" rel="external" class="link cake ui-link">蛋糕馆</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://wap.incake.net/ICake/List.aspx?dtype=&dname=%e5%8d%88%e5%90%8e%e8%8c%b6%e7%82%b9&dc=%e7%94%9c%e5%93%81" rel="external" class="link di ui-link">午后茶点</a>
+							</div>
+							<div class="btn nav_line">
+								<a href="http://incafe.incake.net/" rel="external" class="link incake ui-link"> INCAFE</a>
+							</div>
+						</div>
+						<i class="arrow"><a href="javascript:;" class="link car ui-link"> 收起菜单</a></i>
+					</div>
+				</div>
+			</menu>
+
+			<nav class="navigation">
+				<div class="drop_down">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul class="drop_down_list">
+					<li><a href="javascript:;">母亲节生磅活动</a></li>
+					<li><a href="javascript:;">欢庆蜕变举杯共享</a></li>
+				</ul>
+				<h1>Mother's Day 爱就要升级</h1>
+				
+			</nav>
+			<section>
+				<div class="huodong_container" style="position: relative;">
+					<img style="width: 100%;" src="img/150409.jpg" />
+					<a href="javascript:;" style="top: 66%;left: 20%;width: 31%;height: 5%;"></a>
+					<a href="javascript:;" style="top: 66%;left: 62%;width: 31%;height: 5%;"></a>
+				</div>
+			</section>
+
+			<!--遮罩层-->
+			<div class="ui_mask">
+			</div>
+
+		</section>
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('.drop_down').click(function(){
+					$('.drop_down_list').toggle();
+					
+					$('.drop_down_list li').click(function(){
+						var that=$(this),
+							Txt=that.find('a').html();
+							$('.navigation h1').html(Txt);
+							$('.drop_down_list').hide()
+					})
+				})
+			})
+		</script>
+	</body>
+
+</html>

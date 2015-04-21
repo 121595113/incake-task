@@ -76,6 +76,12 @@
   border: 1px solid #D9D9D9;
   margin: 0 5px;
 }
+.modal-dialog .modal-footer .btn.btn-default {
+  color: #444;
+}
+.modal-dialog .modal-footer .btn.btn-default:link {
+  color: #444;
+}
 .modal-dialog .modal-footer .btn.btn-primary {
   color: #fff;
   background: #0099D9;
