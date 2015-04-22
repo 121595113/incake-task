@@ -129,7 +129,7 @@
 						无背景音乐
 					</div>
 					<li>
-						<button></button>
+						<button class="flag"></button>
 						<div>
 							拨浪鼓<span>赵薇</span>
 						</div>
@@ -182,37 +182,40 @@
 			$('.abtn_music').click(function() {
 				if ($(this).hasClass('on')) {
 					$(this).removeClass('on');
-					$('.list li button').each(function(){
-					if ($(this).hasClass('off')) {
-						$(this).removeClass('on')
-					};
-				})
-				} else{
+					$('.list li button').each(function() {
+						if ($(this).hasClass('flag')) {
+							$(this).removeClass('on');
+						};
+					})
+				} else {
 					$(this).addClass('on');
-					$('.list li button').each(function(){
-					if ($(this).hasClass('off')) {
-						$(this).addClass('on')
-					};
-				})
+					$('.list li button').each(function() {
+						if ($(this).hasClass('flag')) {
+							$(this).addClass('on');
+							$(this).next('div').addClass('on');
+						};
+					})
 				}
-				
 			});
+			//点击列表事件
 			$('.list li div').click(function() {
-				$('.list div').removeClass('on')
-				$(this).addClass('on')
+				$('.list div').removeClass('on');
+				$(this).addClass('on');
 			});
+			//列表播放按钮事件
 			$('.list li button').click(function() {
-					if ($(this).hasClass('on')) {
-						$('.list li button').removeClass('off')
-						$(this).addClass('off')
-						$('.abtn_music').removeClass('on')
+					$('.list div').removeClass('on');
+					$(this).next('div').addClass('on');
+					if ($(this).hasClass('flag')) {
+						$(this).hasClass('on') ? $(this).removeClass('on') : $(this).addClass('on');
+						$('.abtn_music').hasClass('on') ? $('.abtn_music').removeClass('on') : $('.abtn_music').addClass('on');
 					} else {
-						$('.list li button').removeClass('on')
-						$(this).addClass('on off');
-						$('.abtn_music').addClass('on')
+						$('.list li button').removeClass('on flag');
+						$(this).addClass('on flag');
+						$('.abtn_music').addClass('on');
 					}
 				})
-				//开始录音
+			//开始录音
 			$('.kaishi').click(function() {
 				$('.zhezhao').show();
 				$('.luyin').show();
@@ -235,10 +238,10 @@
 					});
 				});
 			});
-			//			点击结束按钮
+			//点击结束按钮
 			$('.jieshu').bind('click', function() {
 					if ($('.jieshu').html() == "开始录音") {
-						$('.jieshu').html("结束")
+						$('.jieshu').html("结束");
 					} else if ($('.jieshu').html() == "结束") {
 						$('.jieshu').html("取消");
 					} else {
@@ -247,7 +250,7 @@
 						$('.zhezhao').hide();
 					}
 				})
-				//			点击播放
+			//点击播放
 			$('.play').click(function() {
 				$('.zhezhao').hide();
 				$('.hecheng').hide();
@@ -261,7 +264,7 @@
 			$('.rluru').click(function() {
 				$('.bofang').hide();
 				$('.luyin').show();
-				$('.jieshu').html("开始录音")
+				$('.jieshu').html("开始录音");
 			});
 			$('.chongxin').click(function() {
 				$('.zhezhao').show();
