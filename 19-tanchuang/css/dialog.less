@@ -57,8 +57,8 @@
         color: #999;
     }
     .modal-header{
-        color: #0B2F8F;
-        padding-left: 10px;
+        text-align: center;
+        font-weight: normal;
         padding-top: 10px;
         font-size: 1.5em;
         line-height: 1.5em;
@@ -67,11 +67,14 @@
     .modal-body{
         padding: 20px 10px;
         min-height: 30px;
+        text-align: center;
+        p{
+            font-size: 1.1em;
+        }
     }
     .modal-footer{
-        text-align: right;
+        text-align: center;
         padding: 10px;
-        border-top: 1px solid #D9D9D9;
         .btn{
             display: inline-block;
             padding: 0 5px;
@@ -82,10 +85,9 @@
             border: 1px solid #D9D9D9;
             margin: 0 5px;
             &.btn-default{
-                color: #444;
-                &:link{
-                   color: #444;
-                }
+                 color: #fff;
+                background: #0099D9;
+                border-color: #0099D9;
             }
             &.btn-primary{
                 color: #fff;

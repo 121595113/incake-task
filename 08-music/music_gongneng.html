@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<section class="voice_container">
+		<section class="voice_container" style="background: #4eb3eb; height: 100%;">
 			<header>
 				<img src="img/voice_header.jpg" />
 			</header>
@@ -24,34 +24,29 @@
 					</ul>
 				</div>
 				<div class="left">
-					<h2>录入语音</h2>
-					<div class="btn_group">
-						<a href="javascript:;" class="lbtn kaishi">开始录音</a>
-						<a href="javascript:;" class="rbtn xuanze">选择音频</a>
-					</div>
-					<ol>
-						<li>个性化录入语音：DIY语音录制+背景音乐</li>
-						<li>背景音乐选择：添加纯音乐录入</li>
-					</ol>
+					<dl>
+						<dd>
+							<a href="javascript:;" class="kaishi"><span></span><br />开始录制</a>
+							<p>
+								为您的专属Voicecake语音录制！
+								<br /> 点击[开始录音]60秒录制→[试听]→
+								<br />[确定]→选择背景音乐[确定]→
+								<br />等待语音合成[播放]→[提交]
+							</p>
+						</dd>
+						<dd>
+							<a href="javascript:;" class="xuanze"><span></span><br />选择音频</a>
+							<p>
+								点击[选择音频]为Voicecake添加纯
+								<br />音乐录入，确定[提交]。
+							</p>
+						</dd>
+					</dl>
+					<p>如果您无需任何语音录入，可直接选择
+						<br />[提交]订购Voicecake。</p>
+					<a href="javascript:;" class="tijiao">直接提交</a>
 				</div>
-			</div>
-			<div class="voice_banner" style="display: none;">
-				<img src="img/voice_xiaoren.jpg" />
-				<div>语音合成中<span>0</span>
-				</div>
-			</div>
-			<div class="play_container" style="display: none;">
-				<a href="javascript:;"></a>
-			</div>
-			<div class="progress_bar" style="display: none;">
-				<div class="pre_load" style="width: 60%;"></div>
-				<div class="curent_load" style="width: 40%;"><i></i>
-				</div>
-				<span>60's</span>
-			</div>
-			<div class="btn_group center" style="display: none;" id="submit">
-				<a href="javascript:;" class="lbtn">提交</a>
-				<a href="javascript:;" class="rbtn chongxin">重新录入</a>
+				<img src="img/0422robt.png" />
 			</div>
 		</section>
 		<!--遮罩层-->
@@ -84,7 +79,7 @@
 				<img src="img/jiqi02.png" />
 			</div>
 			<div class="dialog_footer">
-				<a href="javascript:;" class="dengdai">后台等待</a>
+				<a href="music_hecheng.html" class="dengdai">后台等待</a>
 				<a href="javascript:;" class="play">播放</a>
 			</div>
 		</div>
@@ -110,20 +105,52 @@
 
 		<!--背景音乐start-->
 		<div class="dialog_container bgmusic">
+			<div class="kongjian">
+				<a href="javascript:;" class="abtn_music"></a>
+				<div class="progress">
+					<div style="width: 60%;"><span></span>
+					</div>
+				</div>
+				<button class="pre">
+					<span></span>
+					<span></span>
+				</button>
+				<button class="next">
+					<span></span>
+					<span></span>
+				</button>
+			</div>
 			<div class="dialog_head">
 				背景音乐
 			</div>
 			<div class="dialog_content">
 				<ul class="list">
-					<li class="on">拨浪鼓<span>赵薇</span>
+					<div class="wu">
+						无背景音乐
+					</div>
+					<li>
+						<button></button>
+						<div>
+							拨浪鼓<span>赵薇</span>
+						</div>
 					</li>
-					<li>生日快乐<span>儿童歌曲</span>
+					<li>
+						<button></button>
+						<div>
+							生日快乐<span>儿童歌曲</span>
+						</div>
 					</li>
-					<li>爱之初体验<span>张震岳</span>
+					<li>
+						<button></button>
+						<div>
+							爱之初体验<span>张震岳</span>
+						</div>
 					</li>
-					<li>first love<span>宇多田光</span>
-					</li>
-					<li>all of me<span>Jhon legend</span>
+					<li>
+						<button></button>
+						<div>
+							first love<span>宇多田光</span>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -136,15 +163,6 @@
 	<script src="./aizhichu_files/jquery-1.8.2.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			$('.play_container a').click(function() {
-					var $abtn = $(this);
-					$abtn.hasClass("on") ? $abtn.removeClass('on') : $abtn.addClass('on');
-				})
-				//背景音乐选择
-			$('.bgmusic li').bind('click', function() {
-				$('.bgmusic li').removeClass('on');
-				$(this).addClass('on')
-			});
 			//选择音频
 			var falg = false;
 			$('.xuanze').click(function() {
@@ -160,7 +178,41 @@
 					});
 				}
 			});
-			//开始录音
+			//播放音乐控件
+			$('.abtn_music').click(function() {
+				if ($(this).hasClass('on')) {
+					$(this).removeClass('on');
+					$('.list li button').each(function(){
+					if ($(this).hasClass('off')) {
+						$(this).removeClass('on')
+					};
+				})
+				} else{
+					$(this).addClass('on');
+					$('.list li button').each(function(){
+					if ($(this).hasClass('off')) {
+						$(this).addClass('on')
+					};
+				})
+				}
+				
+			});
+			$('.list li div').click(function() {
+				$('.list div').removeClass('on')
+				$(this).addClass('on')
+			});
+			$('.list li button').click(function() {
+					if ($(this).hasClass('on')) {
+						$('.list li button').removeClass('off')
+						$(this).addClass('off')
+						$('.abtn_music').removeClass('on')
+					} else {
+						$('.list li button').removeClass('on')
+						$(this).addClass('on off');
+						$('.abtn_music').addClass('on')
+					}
+				})
+				//开始录音
 			$('.kaishi').click(function() {
 				$('.zhezhao').show();
 				$('.luyin').show();
@@ -183,30 +235,27 @@
 					});
 				});
 			});
-//			点击结束按钮
-			$('.jieshu').bind('click',function(){
-				if ($('.jieshu').html()=="开始录音") {
-					$('.jieshu').html("结束")
-				} else if($('.jieshu').html()=="结束"){
-					
-					$('.jieshu').html("取消");
-				}else{
-					$('.jieshu').html("开始录音");
-					$('.luyin').hide();
-					$('.zhezhao').hide();
-				}
-			})
-			//			点击播放
+			//			点击结束按钮
+			$('.jieshu').bind('click', function() {
+					if ($('.jieshu').html() == "开始录音") {
+						$('.jieshu').html("结束")
+					} else if ($('.jieshu').html() == "结束") {
+						$('.jieshu').html("取消");
+					} else {
+						$('.jieshu').html("开始录音");
+						$('.luyin').hide();
+						$('.zhezhao').hide();
+					}
+				})
+				//			点击播放
 			$('.play').click(function() {
 				$('.zhezhao').hide();
 				$('.hecheng').hide();
-				$('.voice_banner,.play_container,.progress_bar,#submit').show()
 			});
 			//点击后台等待
 			$('.dengdai').click(function() {
 				$('.zhezhao').hide();
 				$('.hecheng').hide();
-				$('.voice_banner,.play_container,.progress_bar,#submit').show()
 			});
 			//重新录入
 			$('.rluru').click(function() {
