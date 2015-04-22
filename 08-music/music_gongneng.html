@@ -192,6 +192,7 @@
 					$('.list li button').each(function() {
 						if ($(this).hasClass('flag')) {
 							$(this).addClass('on');
+							$('.list div').removeClass('on');
 							$(this).next('div').addClass('on');
 						};
 					})
