@@ -1,0 +1,173 @@
+//颜色预设
+@_gray:#888;
+@_blue:#3280ca;
+//在文本前添加人民币符号
+.before(@em:0.8em){
+    &:before{
+        font-size: @em;
+        content: "￥";
+    }
+}
+//清楚最后一个的描边
+.last_child(){
+    &:last-child{
+        border: none;
+    }
+}
+//图片宽度100%显示
+.img(){
+    img{
+        width: 100%;
+    }
+}
+//用这个可以制作一个圆形
+.circular(@w){
+    width: @w;
+    height: @w;
+    border-radius: 50%;
+}
+/*我的信息页面列表样式*/
+.aa(){//列表1和列表2公用部分
+    a{
+        color: #3197E0;
+    }
+    i,span{
+        color: #707070;
+    }
+    span{
+        display: inline-block;
+        min-width: 20px;
+        text-align: right;
+        float: right;
+        padding-right: 25px;
+    }
+}
+//订单详情页下dt标签的统一设置
+.dt(){
+    dt{
+        &.header{
+            color: #297bc7;
+            border-bottom: 1px solid #b8b8b8;
+            line-height: 42px;
+            padding: 0 15px;
+            margin-bottom: 15px;
+            span{
+                color: red;
+            }
+            strong{
+                font-weight: normal;
+                float: right;
+            }
+        }
+        &.header_primary{
+            background: #2a7cc6;
+            color: #fff;
+            margin-top: -5px;
+        }
+        &.footer{
+            display: table;
+            width: 100%;
+            height: 34px;
+            background: #3197E0;
+            .f_left{
+                float: left;
+                width: 75%;
+                height: 34px;
+            }
+            .f_right{
+                float: right;
+                width: 25%;
+                height: 34px;
+            }
+            span{
+                display: table-cell;
+                color: #fff;
+                width: 1%;
+                white-space: nowrap;
+                padding-left: 8px;
+                vertical-align: middle;
+                height: 34px;
+                s{
+                    text-decoration: none;
+                    .before();
+                }
+            }
+            .btn{
+                text-align: center;
+                display: table-cell;
+                width: 1%;
+                padding-top: 5px;
+                color: #fff;
+                white-space: nowrap;
+                i{
+                    font-size: 1.5em;
+                    position: relative;
+                    top: 3px;
+                    display: inline-block;
+                }
+                &:active{
+                    background: #246eb1;
+                }
+            }
+            .quxiao{
+                color: #0d2b8d;
+            }
+        }
+    }
+}
+
+
+.label(){
+    label{
+        color: #267cc7;
+        padding-left: 10px;
+        float: left;
+        line-height: 40px;
+    }
+}
+//清楚文本输入类的描边
+.outline(){
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+}
+//收货人信息页面收货地址样式
+.input(){
+    position: relative;
+    width: 48%;
+    border-radius: 4px;
+    border: 1px solid #dcdcdc;
+    .label();
+    label{
+        padding-right: 5px;
+    }
+    >div{
+        overflow: hidden;
+        padding-right: 20px;
+        background: url(../img/sanjiao.jpg) no-repeat right bottom;
+        background-size: 14px;
+        background-origin: border-box;
+    }
+   input{
+       float: left;
+       height: 40px;
+       .outline();
+   }
+   ul{
+       display: none;
+       background: #fff;
+       border-radius: 4px;
+       position: absolute;
+       top: 42px;
+       left: 0;
+       background: #fff;
+       width: 100%;
+       z-index: 9;
+       li{
+        line-height: 1.5em;
+        padding-left: 40px;
+       }
+   }
+}
+

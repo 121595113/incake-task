@@ -17,6 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/*确认订单*/
 .qrdd {
   padding: 10px;
 }
@@ -30,13 +31,13 @@
 }
 /* 新增时间样式*/
 .qrdd li .time {
-  float: right;
-  width: 50%;
-  color: #888888;
-  padding-top: 15px;
+  margin-left: 10px;
+  color: #888;
 }
 .qrdd li .time label {
   float: left;
+  min-width: 70px;
+  color: #888;
 }
 .qrdd li .time p {
   overflow: hidden;
@@ -68,13 +69,13 @@
   color: #3280ca;
 }
 .qrdd li dd.fangshi span {
-  color: #888888;
+  color: #888;
   float: right;
   line-height: 2.4em;
   margin: 0 10px;
 }
 .qrdd li a {
-  color: #888888;
+  color: #888;
   line-height: 2em;
   vertical-align: top;
 }
@@ -96,6 +97,11 @@
   font-weight: normal;
   float: right;
 }
+.qrdd li.xiangqing dt.header_primary {
+  background: #2a7cc6;
+  color: #fff;
+  margin-top: -5px;
+}
 .qrdd li.xiangqing dt.footer {
   display: table;
   width: 100%;
@@ -114,7 +120,7 @@
 }
 .qrdd li.xiangqing dt.footer span {
   display: table-cell;
-  color: white;
+  color: #fff;
   width: 1%;
   white-space: nowrap;
   padding-left: 8px;
@@ -133,7 +139,7 @@
   display: table-cell;
   width: 1%;
   padding-top: 5px;
-  color: white;
+  color: #fff;
   white-space: nowrap;
 }
 .qrdd li.xiangqing dt.footer .btn i {
@@ -158,7 +164,7 @@
   width: 100%;
 }
 .qrdd li.xiangqing dd.float_right {
-  color: #818181;
+  color: #888;
   float: right;
   height: 4.5em;
   margin-right: 10px;
@@ -167,9 +173,13 @@
   line-height: 4.5em;
   color: #3280ca;
 }
+.qrdd li.xiangqing dd.float_right p {
+  color: #3280ca;
+  font-size: 2em;
+}
 .qrdd li.xiangqing dd.center {
   padding-top: 6px;
-  color: #8b8b8b;
+  color: #888;
   font-size: 0.8em;
   line-height: 1.5em;
   overflow: hidden;
@@ -177,8 +187,16 @@
   display: table-cell;
   vertical-align: middle;
 }
+.qrdd li.xiangqing dd.center label {
+  float: left;
+  color: #888;
+}
+.qrdd li.xiangqing dd.center span {
+  display: inline-block;
+  overflow: hidden;
+}
 .qrdd li.tongji dd {
-  color: #8a8a8a;
+  color: #888;
   line-height: 40px;
   border-bottom: 1px solid #dedede;
 }
@@ -239,11 +257,11 @@
 .header_mes .touxiang {
   position: absolute;
   top: 50%;
-  width: 90px;
-  height: 90px;
   margin-top: -45px;
   margin-left: -100px;
   overflow: hidden;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
 }
 .header_mes .touxiang img {
@@ -296,6 +314,7 @@
   line-height: 43px;
   padding-right: 7px;
 }
+/*我的信息页面列表样式*/
 .zh_content li.sub_list01 div {
   padding-left: 20px;
 }
@@ -369,14 +388,14 @@
   width: 100%;
   border: none;
   outline: none;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 .shou_msg .out_border textarea {
   padding: 10px 0;
   width: 100%;
   border: none;
   outline: none;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 .shou_msg .chq:after {
   display: table;
@@ -416,7 +435,7 @@
   width: 100%;
   border: none;
   outline: none;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 .shou_msg .chengshi ul {
   display: none;
@@ -424,7 +443,7 @@
   position: absolute;
   top: 42px;
   left: 0;
-  background: white;
+  background: #fff;
   width: 100%;
   z-index: 9;
 }
@@ -461,7 +480,7 @@
   width: 100%;
   border: none;
   outline: none;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 .shou_msg .quyu ul {
   display: none;
@@ -469,7 +488,7 @@
   position: absolute;
   top: 42px;
   left: 0;
-  background: white;
+  background: #fff;
   width: 100%;
   z-index: 9;
 }
@@ -480,9 +499,9 @@
 .moren:before {
   width: 10px;
   height: 10px;
-  display: inline-block;
   border-radius: 50%;
-  background: white;
+  display: inline-block;
+  background: #fff;
   margin-right: 5px;
   content: "";
 }
@@ -544,7 +563,7 @@
   font-weight: normal;
   padding-top: 18px;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
 }
 .swiper-container .content-slide div h5 {
   position: relative;
@@ -552,7 +571,7 @@
   display: table-cell;
   height: 50px;
   font-weight: normal;
-  color: white;
+  color: #fff;
   vertical-align: bottom;
 }
 .swiper-container .content-slide div h5 span {
@@ -573,6 +592,7 @@
   background: url(../img/xianjin2.png) repeat-y right top;
   background-size: contain;
 }
+/*关于我们页面样式*/
 article {
   padding: 10px 10px;
   max-width: 750px;
@@ -629,6 +649,9 @@ article .small {
   background: url(../img/sanjiao.jpg) no-repeat right bottom;
   background-size: 14px;
 }
+.fapiao label {
+  margin-left: 10px;
+}
 /**
 评论页新样式
 */
@@ -652,7 +675,7 @@ article .small {
 }
 .pinglun .pinglun_container {
   position: relative;
-  padding-left: 90px;
+  padding-left: 100px;
   padding-right: 5px;
   margin-bottom: 20px;
 }
@@ -664,6 +687,22 @@ article .small {
 }
 .pinglun .pinglun_container .pic img {
   width: 100%;
+}
+.pinglun .pinglun_container .start {
+  padding: 15px 0;
+}
+.pinglun .pinglun_container .start span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background: url(../img/smile-01.png) no-repeat;
+  background-size: 20px;
+  margin-right: 2px;
+  background-position: 0 -26px;
+}
+.pinglun .pinglun_container .start span.on {
+  background-position: 0px 0px;
 }
 .pinglun .pinglun_container .pinglun_list {
   border-bottom: 5px solid #f5f5f5;
@@ -714,5 +753,26 @@ article .small {
   border: none;
   outline: none;
   box-shadow: none !important;
+}
+.pinglun p {
+  font-size: 0.8em;
+}
+/*
+ *我的评论页面样式 
+ */
+.delete_editor {
+  float: right;
+  margin-left: 10px;
+  height: 42px;
+}
+.delete_editor a {
+  display: inline-block;
+  color: #fff !important;
+  line-height: 42em;
+  vertical-align: middle !important;
+}
+.delete_editor a i {
+  font-size: 1.8em;
+  vertical-align: middle;
 }
 /*# sourceMappingURL=dingdanqueren.css.map */
