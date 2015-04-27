@@ -7,8 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/voice.css" />
 		<title></title>
 		<style>
-			
-			#bars {
+			#bars1,#bars2 {
 			    height: 30px;
 			    left: 50%;
 			    transform: translateX(-50%);
@@ -17,17 +16,17 @@
 			    bottom: 20px;
 			    width: 152px;
 			}
-			
 			.bar {
 			   background: #4bb0e6;
 			    bottom: 1px;
 			    height: 3px;
 			    position: absolute;
 			    width: 7px;      
+			}
+			.on .bar {
 			    animation: sound 0ms -800ms linear infinite alternate;
 			    -webkit-animation: sound 0ms -800ms linear infinite alternate;
 			}
-			
 			@keyframes sound {
 			    0% {
 			       opacity: .35;
@@ -38,7 +37,6 @@
 			        height: 38px;        
 			    }
 			}
-			
 			@-webkit-keyframes sound {
 			    0% {
 			       opacity: .35;
@@ -49,26 +47,44 @@
 			        height: 38px;        
 			    }
 			}
-			
-			.bar:nth-child(1)  { left: 1px; -webkit-animation-duration: 474ms;animation-duration: 474ms; }
-			.bar:nth-child(2)  { left: 9px; -webkit-animation-duration: 433ms;animation-duration: 433ms; }
-			.bar:nth-child(3)  { left: 17px; -webkit-animation-duration: 407ms;animation-duration: 407ms; }
-			.bar:nth-child(4)  { left: 25px; -webkit-animation-duration: 458ms;animation-duration: 458ms; }
-			.bar:nth-child(5)  { left: 33px; -webkit-animation-duration: 400ms;animation-duration: 400ms; }
-			.bar:nth-child(6)  { left: 41px; -webkit-animation-duration: 427ms;animation-duration: 427ms; }
-			.bar:nth-child(7)  { left: 49px; -webkit-animation-duration: 441ms;animation-duration: 441ms; }
-			.bar:nth-child(8)  { left: 57px; -webkit-animation-duration: 419ms;animation-duration: 419ms; }
-			.bar:nth-child(9)  { left: 65px; -webkit-animation-duration: 487ms;animation-duration: 487ms; }
-			.bar:nth-child(10) { left: 73px; -webkit-animation-duration: 442ms;animation-duration: 442ms; }
-			.bar:nth-child(11)  { left: 81px; -webkit-animation-duration: 433ms;animation-duration: 433ms; }
-			.bar:nth-child(12)  { left: 89px; -webkit-animation-duration: 407ms;animation-duration: 407ms; }
-			.bar:nth-child(13)  { left: 97px; -webkit-animation-duration: 458ms;animation-duration: 458ms; }
-			.bar:nth-child(14)  { left: 105px; -webkit-animation-duration: 400ms;animation-duration: 400ms; }
-			.bar:nth-child(15)  { left: 113px; -webkit-animation-duration: 427ms;animation-duration: 427ms; }
-			.bar:nth-child(16)  { left: 121px; -webkit-animation-duration: 441ms;animation-duration: 441ms; }
-			.bar:nth-child(17)  { left: 129px; -webkit-animation-duration: 419ms;animation-duration: 419ms; }
-			.bar:nth-child(18)  { left: 137px; -webkit-animation-duration: 487ms;animation-duration: 487ms; }
-			.bar:nth-child(19) { left: 145px; -webkit-animation-duration: 442ms;animation-duration: 442ms; }​
+			.bar:nth-child(1)  { left: 1px;}
+			.bar:nth-child(2)  { left: 9px;}
+			.bar:nth-child(3)  { left: 17px;}
+			.bar:nth-child(4)  { left: 25px;}
+			.bar:nth-child(5)  { left: 33px;}
+			.bar:nth-child(6)  { left: 41px;}
+			.bar:nth-child(7)  { left: 49px;}
+			.bar:nth-child(8)  { left: 57px;}
+			.bar:nth-child(9)  { left: 65px;}
+			.bar:nth-child(10) { left: 73px;}
+			.bar:nth-child(11)  { left: 81px;}
+			.bar:nth-child(12)  { left: 89px;}
+			.bar:nth-child(13)  { left: 97px;}
+			.bar:nth-child(14)  { left: 105px;}
+			.bar:nth-child(15)  { left: 113px;}
+			.bar:nth-child(16)  { left: 121px;}
+			.bar:nth-child(17)  { left: 129px;}
+			.bar:nth-child(18)  { left: 137px;}
+			.bar:nth-child(19) { left: 145px;}
+			.on .bar:nth-child(1)  {-webkit-animation-duration: 474ms;animation-duration: 474ms; }
+			.on .bar:nth-child(2)  {-webkit-animation-duration: 433ms;animation-duration: 433ms; }
+			.on .bar:nth-child(3)  {-webkit-animation-duration: 407ms;animation-duration: 407ms; }
+			.on .bar:nth-child(4)  {-webkit-animation-duration: 458ms;animation-duration: 458ms; }
+			.on .bar:nth-child(5)  {-webkit-animation-duration: 400ms;animation-duration: 400ms; }
+			.on .bar:nth-child(6)  {-webkit-animation-duration: 427ms;animation-duration: 427ms; }
+			.on .bar:nth-child(7)  {-webkit-animation-duration: 441ms;animation-duration: 441ms; }
+			.on .bar:nth-child(8)  {-webkit-animation-duration: 419ms;animation-duration: 419ms; }
+			.on .bar:nth-child(9)  {-webkit-animation-duration: 487ms;animation-duration: 487ms; }
+			.on .bar:nth-child(10) {-webkit-animation-duration: 442ms;animation-duration: 442ms; }
+			.on .bar:nth-child(11)  {-webkit-animation-duration: 433ms;animation-duration: 433ms; }
+			.on .bar:nth-child(12)  {-webkit-animation-duration: 407ms;animation-duration: 407ms; }
+			.on .bar:nth-child(13)  {-webkit-animation-duration: 458ms;animation-duration: 458ms; }
+			.on .bar:nth-child(14)  {-webkit-animation-duration: 400ms;animation-duration: 400ms; }
+			.on .bar:nth-child(15)  {-webkit-animation-duration: 427ms;animation-duration: 427ms; }
+			.on .bar:nth-child(16)  {-webkit-animation-duration: 441ms;animation-duration: 441ms; }
+			.on .bar:nth-child(17)  {-webkit-animation-duration: 419ms;animation-duration: 419ms; }
+			.on .bar:nth-child(18)  {-webkit-animation-duration: 487ms;animation-duration: 487ms; }
+			.on .bar:nth-child(19) {-webkit-animation-duration: 442ms;animation-duration: 442ms; }​
 		</style>
 	</head>
 
@@ -124,7 +140,7 @@
 				<p>
 					倒计时<span>60's</span>
 				</p>
-				<div id="bars">
+				<div id="bars1">
 					<div class="bar"></div>
 					<div class="bar"></div>
 					<div class="bar"></div>
@@ -179,7 +195,7 @@
 				<p>
 					倒计时<span>30's</span>
 				</p>
-				<div id="bars">
+				<div id="bars2" class="on">
 					<div class="bar"></div>
 					<div class="bar"></div>
 					<div class="bar"></div>
@@ -352,14 +368,17 @@
 			$('.jieshu').bind('click', function() {
 					if ($('.jieshu').html() == "开始录音") {
 						$('.jieshu').html("结束");
+						$('#bars1').addClass('on');
 					} else if ($('.jieshu').html() == "结束") {
 						$('.jieshu').html("取消");
+						$('#bars1').removeClass('on');
 					} else {
 						$('.jieshu').html("开始录音");
 						$('.luyin').hide();
 						$('.zhezhao').hide();
+						$('#bars1').removeClass('on');
 					}
-				})
+				});
 			//点击播放
 			$('.play').click(function() {
 				$('.zhezhao').hide();
