@@ -6,6 +6,70 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" type="text/css" href="css/voice.css" />
 		<title></title>
+		<style>
+			
+			#bars {
+			    height: 30px;
+			    left: 50%;
+			    transform: translateX(-50%);
+			    -webkit-transform: translateX(-50%);
+			    position: absolute;
+			    bottom: 20px;
+			    width: 152px;
+			}
+			
+			.bar {
+			   background: #4bb0e6;
+			    bottom: 1px;
+			    height: 3px;
+			    position: absolute;
+			    width: 7px;      
+			    animation: sound 0ms -800ms linear infinite alternate;
+			    -webkit-animation: sound 0ms -800ms linear infinite alternate;
+			}
+			
+			@keyframes sound {
+			    0% {
+			       opacity: .35;
+			        height: 3px; 
+			    }
+			    100% {
+			        opacity: 1;       
+			        height: 38px;        
+			    }
+			}
+			
+			@-webkit-keyframes sound {
+			    0% {
+			       opacity: .35;
+			        height: 3px; 
+			    }
+			    100% {
+			        opacity: 1;       
+			        height: 38px;        
+			    }
+			}
+			
+			.bar:nth-child(1)  { left: 1px; -webkit-animation-duration: 474ms;animation-duration: 474ms; }
+			.bar:nth-child(2)  { left: 9px; -webkit-animation-duration: 433ms;animation-duration: 433ms; }
+			.bar:nth-child(3)  { left: 17px; -webkit-animation-duration: 407ms;animation-duration: 407ms; }
+			.bar:nth-child(4)  { left: 25px; -webkit-animation-duration: 458ms;animation-duration: 458ms; }
+			.bar:nth-child(5)  { left: 33px; -webkit-animation-duration: 400ms;animation-duration: 400ms; }
+			.bar:nth-child(6)  { left: 41px; -webkit-animation-duration: 427ms;animation-duration: 427ms; }
+			.bar:nth-child(7)  { left: 49px; -webkit-animation-duration: 441ms;animation-duration: 441ms; }
+			.bar:nth-child(8)  { left: 57px; -webkit-animation-duration: 419ms;animation-duration: 419ms; }
+			.bar:nth-child(9)  { left: 65px; -webkit-animation-duration: 487ms;animation-duration: 487ms; }
+			.bar:nth-child(10) { left: 73px; -webkit-animation-duration: 442ms;animation-duration: 442ms; }
+			.bar:nth-child(11)  { left: 81px; -webkit-animation-duration: 433ms;animation-duration: 433ms; }
+			.bar:nth-child(12)  { left: 89px; -webkit-animation-duration: 407ms;animation-duration: 407ms; }
+			.bar:nth-child(13)  { left: 97px; -webkit-animation-duration: 458ms;animation-duration: 458ms; }
+			.bar:nth-child(14)  { left: 105px; -webkit-animation-duration: 400ms;animation-duration: 400ms; }
+			.bar:nth-child(15)  { left: 113px; -webkit-animation-duration: 427ms;animation-duration: 427ms; }
+			.bar:nth-child(16)  { left: 121px; -webkit-animation-duration: 441ms;animation-duration: 441ms; }
+			.bar:nth-child(17)  { left: 129px; -webkit-animation-duration: 419ms;animation-duration: 419ms; }
+			.bar:nth-child(18)  { left: 137px; -webkit-animation-duration: 487ms;animation-duration: 487ms; }
+			.bar:nth-child(19) { left: 145px; -webkit-animation-duration: 442ms;animation-duration: 442ms; }​
+		</style>
 	</head>
 
 	<body>
@@ -56,11 +120,32 @@
 			<div class="dialog_head">
 				录音中...
 			</div>
-			<div class="dialog_content">
+			<div class="dialog_content" style="position: relative;">
 				<p>
 					倒计时<span>60's</span>
 				</p>
-				<img src="img/shengbo.png" />
+				<div id="bars">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<!--<img src="img/shengbo.png" />-->
 			</div>
 			<div class="dialog_footer">
 				<a href="javascript:;" class="jieshu">开始录音</a>
@@ -90,11 +175,32 @@
 			<div class="dialog_head">
 				播放中...
 			</div>
-			<div class="dialog_content">
+			<div class="dialog_content" style="position: relative;">
 				<p>
 					倒计时<span>30's</span>
 				</p>
-				<img src="img/shengbo.png" />
+				<div id="bars">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<!--<img src="img/shengbo.png" />-->
 			</div>
 			<div class="dialog_footer">
 				<a href="javascript:;" class="rluru">重新录入</a>
@@ -105,7 +211,10 @@
 
 		<!--背景音乐start-->
 		<div class="dialog_container bgmusic">
-			<div class="kongjian">
+			<div class="kongjian" style="position: relative;">
+				<div class="mengceng" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;background: rgba(0,0,0,.35); z-index: 2;">
+					<img src="img/gift.png" / style="position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%);height: 50%;">
+				</div>
 				<a href="javascript:;" class="abtn_music"></a>
 				<div class="progress">
 					<div style="width: 60%;"><span></span>
