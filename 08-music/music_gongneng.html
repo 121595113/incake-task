@@ -7,84 +7,181 @@
 		<link rel="stylesheet" type="text/css" href="css/voice.css" />
 		<title></title>
 		<style>
-			#bars1,#bars2 {
-			    height: 30px;
-			    left: 50%;
-			    transform: translateX(-50%);
-			    -webkit-transform: translateX(-50%);
-			    position: absolute;
-			    bottom: 20px;
-			    width: 152px;
+			#bars1,
+			#bars2 {
+				height: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				position: absolute;
+				bottom: 20px;
+				width: 152px;
 			}
 			.bar {
-			   background: #4bb0e6;
-			    bottom: 1px;
-			    height: 3px;
-			    position: absolute;
-			    width: 7px;      
+				background: #4bb0e6;
+				bottom: 1px;
+				height: 3px;
+				position: absolute;
+				width: 7px;
 			}
 			.on .bar {
-			    animation: sound 0ms -800ms linear infinite alternate;
-			    -webkit-animation: sound 0ms -800ms linear infinite alternate;
+				animation: sound 0ms -800ms linear infinite alternate;
+				-webkit-animation: sound 0ms -800ms linear infinite alternate;
 			}
 			@keyframes sound {
-			    0% {
-			       opacity: .35;
-			        height: 3px; 
-			    }
-			    100% {
-			        opacity: 1;       
-			        height: 38px;        
-			    }
+				0% {
+					opacity: .35;
+					height: 3px;
+				}
+				100% {
+					opacity: 1;
+					height: 38px;
+				}
 			}
 			@-webkit-keyframes sound {
-			    0% {
-			       opacity: .35;
-			        height: 3px; 
-			    }
-			    100% {
-			        opacity: 1;       
-			        height: 38px;        
-			    }
+				0% {
+					opacity: .35;
+					height: 3px;
+				}
+				100% {
+					opacity: 1;
+					height: 38px;
+				}
 			}
-			.bar:nth-child(1)  { left: 1px;}
-			.bar:nth-child(2)  { left: 9px;}
-			.bar:nth-child(3)  { left: 17px;}
-			.bar:nth-child(4)  { left: 25px;}
-			.bar:nth-child(5)  { left: 33px;}
-			.bar:nth-child(6)  { left: 41px;}
-			.bar:nth-child(7)  { left: 49px;}
-			.bar:nth-child(8)  { left: 57px;}
-			.bar:nth-child(9)  { left: 65px;}
-			.bar:nth-child(10) { left: 73px;}
-			.bar:nth-child(11)  { left: 81px;}
-			.bar:nth-child(12)  { left: 89px;}
-			.bar:nth-child(13)  { left: 97px;}
-			.bar:nth-child(14)  { left: 105px;}
-			.bar:nth-child(15)  { left: 113px;}
-			.bar:nth-child(16)  { left: 121px;}
-			.bar:nth-child(17)  { left: 129px;}
-			.bar:nth-child(18)  { left: 137px;}
-			.bar:nth-child(19) { left: 145px;}
-			.on .bar:nth-child(1)  {-webkit-animation-duration: 474ms;animation-duration: 474ms; }
-			.on .bar:nth-child(2)  {-webkit-animation-duration: 433ms;animation-duration: 433ms; }
-			.on .bar:nth-child(3)  {-webkit-animation-duration: 407ms;animation-duration: 407ms; }
-			.on .bar:nth-child(4)  {-webkit-animation-duration: 458ms;animation-duration: 458ms; }
-			.on .bar:nth-child(5)  {-webkit-animation-duration: 400ms;animation-duration: 400ms; }
-			.on .bar:nth-child(6)  {-webkit-animation-duration: 427ms;animation-duration: 427ms; }
-			.on .bar:nth-child(7)  {-webkit-animation-duration: 441ms;animation-duration: 441ms; }
-			.on .bar:nth-child(8)  {-webkit-animation-duration: 419ms;animation-duration: 419ms; }
-			.on .bar:nth-child(9)  {-webkit-animation-duration: 487ms;animation-duration: 487ms; }
-			.on .bar:nth-child(10) {-webkit-animation-duration: 442ms;animation-duration: 442ms; }
-			.on .bar:nth-child(11)  {-webkit-animation-duration: 433ms;animation-duration: 433ms; }
-			.on .bar:nth-child(12)  {-webkit-animation-duration: 407ms;animation-duration: 407ms; }
-			.on .bar:nth-child(13)  {-webkit-animation-duration: 458ms;animation-duration: 458ms; }
-			.on .bar:nth-child(14)  {-webkit-animation-duration: 400ms;animation-duration: 400ms; }
-			.on .bar:nth-child(15)  {-webkit-animation-duration: 427ms;animation-duration: 427ms; }
-			.on .bar:nth-child(16)  {-webkit-animation-duration: 441ms;animation-duration: 441ms; }
-			.on .bar:nth-child(17)  {-webkit-animation-duration: 419ms;animation-duration: 419ms; }
-			.on .bar:nth-child(18)  {-webkit-animation-duration: 487ms;animation-duration: 487ms; }
-			.on .bar:nth-child(19) {-webkit-animation-duration: 442ms;animation-duration: 442ms; }​
+			.bar:nth-child(1) {
+				left: 1px;
+			}
+			.bar:nth-child(2) {
+				left: 9px;
+			}
+			.bar:nth-child(3) {
+				left: 17px;
+			}
+			.bar:nth-child(4) {
+				left: 25px;
+			}
+			.bar:nth-child(5) {
+				left: 33px;
+			}
+			.bar:nth-child(6) {
+				left: 41px;
+			}
+			.bar:nth-child(7) {
+				left: 49px;
+			}
+			.bar:nth-child(8) {
+				left: 57px;
+			}
+			.bar:nth-child(9) {
+				left: 65px;
+			}
+			.bar:nth-child(10) {
+				left: 73px;
+			}
+			.bar:nth-child(11) {
+				left: 81px;
+			}
+			.bar:nth-child(12) {
+				left: 89px;
+			}
+			.bar:nth-child(13) {
+				left: 97px;
+			}
+			.bar:nth-child(14) {
+				left: 105px;
+			}
+			.bar:nth-child(15) {
+				left: 113px;
+			}
+			.bar:nth-child(16) {
+				left: 121px;
+			}
+			.bar:nth-child(17) {
+				left: 129px;
+			}
+			.bar:nth-child(18) {
+				left: 137px;
+			}
+			.bar:nth-child(19) {
+				left: 145px;
+			}
+			.on .bar:nth-child(1) {
+				-webkit-animation-duration: 474ms;
+				animation-duration: 474ms;
+			}
+			.on .bar:nth-child(2) {
+				-webkit-animation-duration: 433ms;
+				animation-duration: 433ms;
+			}
+			.on .bar:nth-child(3) {
+				-webkit-animation-duration: 407ms;
+				animation-duration: 407ms;
+			}
+			.on .bar:nth-child(4) {
+				-webkit-animation-duration: 458ms;
+				animation-duration: 458ms;
+			}
+			.on .bar:nth-child(5) {
+				-webkit-animation-duration: 400ms;
+				animation-duration: 400ms;
+			}
+			.on .bar:nth-child(6) {
+				-webkit-animation-duration: 427ms;
+				animation-duration: 427ms;
+			}
+			.on .bar:nth-child(7) {
+				-webkit-animation-duration: 441ms;
+				animation-duration: 441ms;
+			}
+			.on .bar:nth-child(8) {
+				-webkit-animation-duration: 419ms;
+				animation-duration: 419ms;
+			}
+			.on .bar:nth-child(9) {
+				-webkit-animation-duration: 487ms;
+				animation-duration: 487ms;
+			}
+			.on .bar:nth-child(10) {
+				-webkit-animation-duration: 442ms;
+				animation-duration: 442ms;
+			}
+			.on .bar:nth-child(11) {
+				-webkit-animation-duration: 433ms;
+				animation-duration: 433ms;
+			}
+			.on .bar:nth-child(12) {
+				-webkit-animation-duration: 407ms;
+				animation-duration: 407ms;
+			}
+			.on .bar:nth-child(13) {
+				-webkit-animation-duration: 458ms;
+				animation-duration: 458ms;
+			}
+			.on .bar:nth-child(14) {
+				-webkit-animation-duration: 400ms;
+				animation-duration: 400ms;
+			}
+			.on .bar:nth-child(15) {
+				-webkit-animation-duration: 427ms;
+				animation-duration: 427ms;
+			}
+			.on .bar:nth-child(16) {
+				-webkit-animation-duration: 441ms;
+				animation-duration: 441ms;
+			}
+			.on .bar:nth-child(17) {
+				-webkit-animation-duration: 419ms;
+				animation-duration: 419ms;
+			}
+			.on .bar:nth-child(18) {
+				-webkit-animation-duration: 487ms;
+				animation-duration: 487ms;
+			}
+			.on .bar:nth-child(19) {
+				-webkit-animation-duration: 442ms;
+				animation-duration: 442ms;
+			}
+			​
 		</style>
 	</head>
 
@@ -117,8 +214,8 @@
 						<dd>
 							<a href="javascript:;" class="xuanze"><span></span><br />选择音频</a>
 							<p>
-								点击[选择音频]为Voicecake添加纯
-								<br />音乐录入，确定[提交]。
+								点击[选择音频]为Voicecake添加
+								<br />纯 音乐录入，确定[提交]。
 							</p>
 						</dd>
 					</dl>
@@ -232,20 +329,15 @@
 					<img src="img/gift.png" / style="position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%);height: 50%;">
 				</div>-->
 				<a href="javascript:;" class="abtn_music"></a>
-				<p style="overflow: hidden; margin-left: 60px; margin-top: 0;margin-bottom: 5px;padding-top: 5px;">我是歌曲名<span style="font-size: 0.8em; margin: 0 10px;">演唱者</span></p>
+				<p style="overflow: hidden; margin-left: 60px; margin-top: 0;margin-bottom: 5px;padding-top: 5px;">我是歌曲名<span style="font-size: 0.8em; margin: 0 10px;">演唱者</span>
+				</p>
 				<div class="progress">
-					<div style="width: 60%;"><span></span>
+					<div style="width: 0%;">
+						<!--<span></span>-->
 					</div>
+					<input type="range" value="0" max="100" min="0" class="drag" />
 				</div>
-				
-				<!--<button class="pre">
-					<span></span>
-					<span></span>
-				</button>
-				<button class="next">
-					<span></span>
-					<span></span>
-				</button>-->
+
 			</div>
 			<div class="dialog_head">
 				背景音乐
@@ -283,6 +375,7 @@
 			</div>
 			<div class="dialog_footer">
 				<a href="javascript:;" class="queding">确认</a>
+				<a href="javascript:;" class="quxiao">取消</a>
 			</div>
 		</div>
 		<!--背景音乐end-->
@@ -325,11 +418,22 @@
 					})
 				}
 			});
+			//无背景音乐事件
+			$('.wu').click(function() {
+				$(this).addClass('on');
+				$('.list li div').removeClass('on')
+			});
 			//点击列表事件
 			$('.list li div').click(function() {
+				$('.wu').removeClass('on');
 				$('.list div').removeClass('on');
 				$(this).addClass('on');
 			});
+			var Touchmove="ontouchmove" in window ? "touchmove":"mousemove"
+			$('.drag').bind(Touchmove,function(){
+				var w=$('.drag').val();
+				$('.progress>div').css('width',w + '%')
+			})
 			//列表播放按钮事件
 			$('.list li button').click(function() {
 					$('.list div').removeClass('on');
@@ -343,7 +447,7 @@
 						$('.abtn_music').addClass('on');
 					}
 				})
-			//开始录音
+				//开始录音
 			$('.kaishi').click(function() {
 				$('.zhezhao').show();
 				$('.luyin').show();
@@ -368,19 +472,19 @@
 			});
 			//点击结束按钮
 			$('.jieshu').bind('click', function() {
-					if ($('.jieshu').html() == "开始录音") {
-						$('.jieshu').html("结束");
-						$('#bars1').addClass('on');
-					} else if ($('.jieshu').html() == "结束") {
-						$('.jieshu').html("取消");
-						$('#bars1').removeClass('on');
-					} else {
-						$('.jieshu').html("开始录音");
-						$('.luyin').hide();
-						$('.zhezhao').hide();
-						$('#bars1').removeClass('on');
-					}
-				});
+				if ($('.jieshu').html() == "开始录音") {
+					$('.jieshu').html("结束");
+					$('#bars1').addClass('on');
+				} else if ($('.jieshu').html() == "结束") {
+					$('.jieshu').html("取消");
+					$('#bars1').removeClass('on');
+				} else {
+					$('.jieshu').html("开始录音");
+					$('.luyin').hide();
+					$('.zhezhao').hide();
+					$('#bars1').removeClass('on');
+				}
+			});
 			//点击播放
 			$('.play').click(function() {
 				$('.zhezhao').hide();
