@@ -429,11 +429,21 @@
 				$('.list div').removeClass('on');
 				$(this).addClass('on');
 			});
-			var Touchmove="ontouchmove" in window ? "touchmove":"mousemove"
+			var Touchstart="ontouchstart" in window ? "touchstart":"mousestart",
+				Touchmove="ontouchmove" in window ? "touchmove":"mousemove",
+				Touchend="ontouchend" in window ? "touchend":"mouseend";
+			$('.drag').bind(Touchstart,function(){
+				var w=$('.drag').val();
+				$('.progress>div').css('width',w + '%')
+			});
 			$('.drag').bind(Touchmove,function(){
 				var w=$('.drag').val();
 				$('.progress>div').css('width',w + '%')
-			})
+			});
+			$('.drag').bind(Touchend,function(){
+				var w=$('.drag').val();
+				$('.progress>div').css('width',w + '%')
+			});
 			//列表播放按钮事件
 			$('.list li button').click(function() {
 					$('.list div').removeClass('on');
