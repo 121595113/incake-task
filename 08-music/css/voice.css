@@ -494,9 +494,10 @@ ul {
   right: 28px;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  background: url(../img/hebing.png);
+  background: url(../img/hebing.png) no-repeat left top;
   background-size: 38px;
   background-position: -18px 0;
+  padding: 0;
 }
 .bgmusic .dialog_content .list li button.on {
   background-position: 0 0;
