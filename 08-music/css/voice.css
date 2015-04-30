@@ -70,6 +70,7 @@ ul {
   text-decoration: none;
   font-size: 0.8em;
   white-space: nowrap;
+  padding: 2px 0;
 }
 .voice_container .voice_content .left dl dd a span {
   width: 44px;
@@ -80,11 +81,11 @@ ul {
 }
 .voice_container .voice_content .left dl dd p {
   color: #fff;
-  margin-top: 5px;
+  margin-top: -3px;
   height: 30px;
   padding-left: 60px;
   font-size: 0.75em;
-  line-height: 1.2em;
+  line-height: 1.5em;
   text-align: left;
   vertical-align: middle;
   white-space: nowrap;
@@ -93,9 +94,8 @@ ul {
   margin: 0;
   color: #fff;
   text-align: center;
-  font-size: 0.8em;
-  transform: scale(0.9);
-  -webkit-transform: scale(0.9);
+  font-size: 0.75em;
+  line-height: 1.5em;
 }
 .voice_container .voice_content .left .tijiao {
   width: 100px;
