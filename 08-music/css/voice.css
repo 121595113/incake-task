@@ -1,0 +1,516 @@
+html,
+body {
+  height: 100%;
+}
+body,
+ul,
+dd,
+dl {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+.voice_container {
+  max-width: 750px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.voice_container header img,
+.voice_container .voice_banner img {
+  width: 100%;
+  vertical-align: top;
+}
+.voice_container .voice_content {
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.voice_container .voice_content:after {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  background: white;
+  transform: translate(-100px, -50%);
+  -webkit-transform: translate(-100px, -50%);
+  left: 100%;
+  top: 50%;
+  content: "";
+}
+.voice_container .voice_content h2 {
+  color: #102d93;
+  font-weight: normal;
+  font-size: 1em;
+}
+.voice_container .voice_content .left {
+  overflow: hidden;
+}
+.voice_container .voice_content .left dl {
+  margin: 0px 0px 10px 15px;
+  width: 80%;
+}
+.voice_container .voice_content .left dl dd {
+  padding: 15px 0 10px;
+  border-bottom: 1px solid #fff;
+}
+.voice_container .voice_content .left dl dd:after {
+  display: block;
+  clear: left;
+  content: "";
+}
+.voice_container .voice_content .left dl dd a {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  float: left;
+  color: #0e2f8e;
+  text-decoration: none;
+  font-size: 0.8em;
+  white-space: nowrap;
+  padding: 2px 0;
+}
+.voice_container .voice_content .left dl dd a span {
+  width: 44px;
+  height: 44px;
+  background: url(../img/0422icon.png) no-repeat;
+  background-size: 87px;
+  display: inline-block;
+}
+.voice_container .voice_content .left dl dd p {
+  color: #fff;
+  margin-top: -3px;
+  height: 30px;
+  padding-left: 60px;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.voice_container .voice_content .left > p {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 0.75em;
+  line-height: 1.5em;
+}
+.voice_container .voice_content .left .tijiao {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  display: block;
+  margin: 10px auto;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  background: #0e2f8e;
+}
+.voice_container .voice_content .right {
+  position: relative;
+  z-index: 1;
+  float: right;
+  width: 90px;
+  margin-top: 50px;
+  height: 100%;
+}
+.voice_container .voice_content .right ul li {
+  color: #102d93;
+  font-size: 0.85em;
+  line-height: 1.5em;
+}
+.voice_container .voice_content .right ul li:before {
+  margin-right: 5px;
+  line-height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  background: #102d93;
+  height: 5px;
+  width: 5px;
+  content: "";
+}
+.voice_container .voice_content > img {
+  width: 86px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+}
+.voice_container .voice_banner {
+  position: relative;
+  margin-top: 20px;
+}
+.voice_container .voice_banner div {
+  position: absolute;
+  color: #112d90;
+  top: 0;
+  left: 10%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  text-align: center;
+}
+.voice_container .voice_banner div span {
+  font-size: 1.5em;
+  color: #8a8a8a;
+}
+.voice_container .voice_banner div span:after {
+  font-size: 0.5em;
+  content: '%';
+}
+.voice_container .play_container {
+  position: relative;
+  margin-top: -10%;
+}
+.voice_container .play_container img {
+  width: 100%;
+}
+.voice_container .play_container a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  background: url(../img/hebing.png) no-repeat;
+  background-size: 50px;
+  background-position: 0px -73px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+.voice_container .play_container a.on {
+  background-position: 0 -132px;
+}
+.voice_container .progress_bar {
+  width: 80%;
+  height: 3px;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  border-top-width: 0;
+  background: white;
+  box-shadow: 0px 1px 1px rgba(100, 100, 100, 0.5), 0px 0px 2px rgba(100, 100, 100, 0.3);
+  margin: 9px auto;
+}
+.voice_container .progress_bar div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  height: 3px;
+}
+.voice_container .progress_bar div.pre_load {
+  background: #7d7d7d;
+  z-index: 1;
+}
+.voice_container .progress_bar div.curent_load {
+  background: #42b1dc;
+  z-index: 2;
+}
+.voice_container .progress_bar div.curent_load i {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  right: 0;
+  top: 50%;
+}
+.voice_container .progress_bar div.curent_load i:before {
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  display: block;
+  background: white;
+  content: "";
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.voice_container .progress_bar div.curent_load i:after {
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+  background: #757b79;
+  content: "";
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.voice_container .progress_bar span {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  color: #0e2f90;
+  white-space: nowrap;
+  margin-left: 5px;
+  margin-top: -0.5em;
+  font-size: 0.75em;
+}
+.btn_group {
+  margin: 18px 0;
+  text-align: center;
+}
+.btn_group a {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  background: #4eb1ea;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 0 12px;
+}
+.zhezhao {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.dialog_container {
+  display: none;
+  background: white url(../img/tankuang.jpg) no-repeat left top;
+  background-size: 100% auto;
+  padding-top: 90px;
+  width: 80%;
+  max-width: 466px;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.dialog_container .dialog_head {
+  text-align: center;
+  color: #13268d;
+  font-size: 1.25em;
+}
+.dialog_container .dialog_content {
+  height: 230px;
+  overflow-y: auto;
+}
+.dialog_container .dialog_content p {
+  text-align: center;
+  font-size: 0.8em;
+  color: #13268d;
+}
+.dialog_container .dialog_content p span {
+  font-size: 1.2em;
+}
+.dialog_container .dialog_footer {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.dialog_container .dialog_footer a {
+  display: inline-block;
+  text-align: center;
+  width: 90px;
+  line-height: 30px;
+  background: #0099D9;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 0 9px;
+}
+.luyin .dialog_content img,
+.bofang .dialog_content img {
+  margin-top: 50px;
+  width: 100%;
+}
+.hecheng .dialog_head {
+  position: relative;
+  top: 40px;
+}
+.hecheng .dialog_head span {
+  font-size: 1.5em;
+}
+.hecheng .dialog_content img {
+  margin-top: 100px;
+  width: 100%;
+}
+.bgmusic {
+  padding-top: 25px;
+}
+.bgmusic .kongjian {
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #e5e5e7;
+  box-shadow: 1px 0px 6px rgba(100, 100, 100, 0.3);
+  background: #fefefe;
+  width: 80%;
+  margin: 0 auto;
+}
+.bgmusic .kongjian .abtn_music {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: #40acd3 url(../img/play_stop.png) no-repeat;
+  background-size: auto 53px;
+}
+.bgmusic .kongjian .abtn_music.on {
+  background-position: -50px 0;
+}
+.bgmusic .kongjian .progress {
+  margin-left: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  position: relative;
+  height: 4px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+.bgmusic .kongjian .progress > div {
+  position: absolute;
+  height: 4px;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  background: #54c5ed;
+}
+.bgmusic .kongjian .progress > div span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  box-shadow: 0 0 1px #999;
+  width: 3px;
+  height: 3px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #999;
+}
+/*新增拖动组件*/
+.bgmusic .kongjian .progress .drag {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-radius: 15px;
+  width: 100%;
+  height: 4px;
+  outline: none;
+}
+.bgmusic .kongjian .progress .drag::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: default;
+  top: 1px;
+  height: 15px;
+  width: 15px;
+  background: #999;
+  box-shadow: 0 0 1px #999;
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+.bgmusic .kongjian button {
+  cursor: pointer;
+  width: 70px;
+  height: 20px;
+  line-height: 18px;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  background: #f9f9f9;
+  outline: none;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+.bgmusic .kongjian button span {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border: 5px solid transparent;
+}
+.bgmusic .kongjian button.pre {
+  margin-left: 10px;
+}
+.bgmusic .kongjian button.pre span {
+  margin-left: -8px;
+  border-right-color: #46b4d7;
+}
+.bgmusic .kongjian button.next span {
+  border-left-color: #46b4d7;
+  margin-right: -8px;
+}
+.bgmusic .dialog_head {
+  position: relative;
+  text-align: left;
+  padding-left: 25px;
+}
+.bgmusic .dialog_head:before {
+  position: relative;
+  top: 5px;
+  width: 10px;
+  height: 30px;
+  display: inline-block;
+  background: url(../img/hebing.png) no-repeat;
+  background-size: 38px;
+  background-position: 0px -20px;
+  content: "";
+}
+.bgmusic .dialog_content img {
+  margin-top: 100px;
+  width: 100%;
+}
+.bgmusic .dialog_content .list {
+  margin-top: 20px;
+}
+.bgmusic .dialog_content .list .wu {
+  color: #8a8a8a;
+  padding-left: 28px;
+  line-height: 32px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.bgmusic .dialog_content .list .wu.on {
+  color: #4eb2ed;
+}
+.bgmusic .dialog_content .list li {
+  padding: 0 28px;
+  position: relative;
+  border-bottom: 1px solid #dbdbdb;
+}
+.bgmusic .dialog_content .list li button {
+  width: 17px;
+  height: 17px;
+  border: none;
+  outline: none;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  background: url(../img/hebing.png) no-repeat left top;
+  background-size: 38px;
+  background-position: -18px 0;
+  padding: 0;
+}
+.bgmusic .dialog_content .list li button.on {
+  background-position: 0 0;
+}
+.bgmusic .dialog_content .list li div {
+  color: #8a8a8a;
+  line-height: 32px;
+}
+.bgmusic .dialog_content .list li div.on {
+  color: #4eb2ed;
+}
+.bgmusic .dialog_content .list li span {
+  font-size: 0.65em;
+  margin-left: 10px;
+}
+/*# sourceMappingURL=voice.css.map */

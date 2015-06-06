@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9 -->
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base href="http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9">-->
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./INCAKE_files/jquery-1.8.2.min.js"></script>
+		<script src="./INCAKE_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./INCAKE_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/css/style.css">
+		<script src="./INCAKE_files/script.js" type="text/javascript"></script>
+		<script src="./INCAKE_files/mainscript.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<link rel="apple-touch-icon-precomposed" href="http://wap.incake.net/Icake/images/icon@2x.png">
+		<link rel="apple-touch-startup-image" href="http://wap.incake.net/Icake/images/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
+		<!--自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/dingdanqueren.css" />
+		<title>INCAKE</title>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c" data-role="no-content">
+		<section data-role="page" data-url="/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 632px;">
+
+			<script src="./INCAKE_files/iplookup.php" type="text/ecmascript"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#select_city a").click(function() {
+						//清空购物车
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: {
+								"Action": "ClearCookie",
+								"Type": "icake",
+								"Name": "shopcart"
+							}
+						});
+						var _data = {
+							"Action": "City",
+							"Cvalue": $(this).attr("cityId")
+						};
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: _data,
+							success: function(data) {
+								if (data.errcode == "0") {
+									location.reload();
+								}
+							}
+						});
+					});
+				});
+			</script>
+			<section id="select_city" style="display:none;">
+				<a href="javascript:;" class="link ui-link" cityname="上海市" cityid="021">上海市</a>
+				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
+			</section>
+
+			<nav class="navigation">
+				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
+				<h3 style="text-align: left; padding-left: 40px;">订单详情</h3>
+			</nav>
+			<section>
+				<ul class="qrdd">
+					<li class="out_border">
+						<dl class="time">
+							<dd>
+								<label>订单号：</label>
+								<p>SPH013423</p>
+							</dd>
+							<dd>
+								<label>下单时间：</label>
+								<p>2015-02-04&nbsp;&nbsp;12:00~13:00</p>
+							</dd>
+							<dd>
+								<label>收货时间：</label>
+								<p>2015-02-04&nbsp;&nbsp;12:00~13:00</p>
+							</dd>
+						</dl>
+					</li>
+					<li class="out_border">
+						<dl>
+							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60d;</i>wu_huang</a>
+							</dd>
+							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60e;</i>13564356753</a>
+							</dd>
+							<dd><a href="javascript:;"><i class="imooc-icon">&#xe60b;</i>广中西路777弄</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="out_border">
+						<dl>
+							<dd class="fangshi"><i class="imooc-icon">&#xe60c;</i>
+								<label>支付方式：</label><span>微信支付</span>
+							</dd>
+						</dl>
+					</li>
+					<li class="out_border xiangqing">
+						<dl>
+							<dd class="float_left">
+								<img src="../../01/pic/150.png" />
+							</dd>
+							<dd class="float_right">
+								<a href="javascript:;">再购买</a>
+							</dd>
+							<dd class="center">
+								草莓拿破仑 1.5磅 数量1 ￥169.00
+							</dd>
+						</dl>
+						<dl>
+							<dd class="float_left">
+								<img src="../../01/pic/150.png" />
+							</dd>
+							<dd class="float_right">
+								<a href="javascript:;">再购买</a>
+							</dd>
+							<dd class="center">
+								草莓拿破仑 1.5磅 数量1 ￥169.00
+							</dd>
+						</dl>
+					</li>
+					<li class="out_border">
+						<dl>
+							<dd class="fangshi"><i class="imooc-icon">&#xe60f;</i>
+								<label>优惠信息：</label><span>优惠券</span>
+							</dd>
+						</dl>
+					</li>
+					<li class="out_border">
+						<dl>
+							<dd class="fangshi"><i class="imooc-icon">&#xe612;</i>
+								<label>发票信息：</label><span>蛋糕</span><span>个人</span><span>增值税发票</span>
+							</dd>
+						</dl>
+					</li>
+					<li class="tongji">
+						<dl>
+							<dd>现计：<span>169</span>
+							</dd>
+							<dd>运费：<span>0</span>
+							</dd>
+							<dd>共优惠金额：<span>0</span>
+							</dd>
+							<dd>还需支付金额：<span>169</span>
+							</dd>
+						</dl>
+					</li>
+					<!--<li class="btn">
+						<a href="javascript:;">付款</a>
+					</li>-->
+				</ul>
+
+			</section>
+
+			<!--遮罩层-->
+		</section>
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+	</body>
+
+</html>

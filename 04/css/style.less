@@ -1,0 +1,46 @@
+.data_time{
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 25px;
+    overflow: hidden;
+    .tabs{
+        padding: 0 25px;
+        a{
+            color: #5d5d5d;
+            font-size: 1.5em;
+            &+a{
+                margin-left: 20px;
+            }
+            &.active{
+                color: #2274ca;
+            }
+        }
+    }
+    .swiper-slide ul{
+        padding: 0;
+        margin: 0;
+        li{
+            display: table-cell;
+            padding: 10px;
+            span{
+                display: block;
+                text-align: center;
+                white-space: nowrap;
+            }
+            &.active{
+                color: #2274ca;
+            }
+        }
+    }
+    .visible{
+        opacity: 1 !important;
+        z-index: 2 !important;
+    }
+}
+//修复页面样式bug
+.ui-select .ui-btn-icon-right .ui-icon{
+    right: 0;
+}
+.tab_content .tabnav li{
+    float: left;
+}

@@ -1,0 +1,95 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  font-family: "microsoft yahei";
+  overflow: hidden;
+  position: relative;
+  background: url(../img/bg.jpg) center;
+  background-repeat: repeat-x;
+}
+.container {
+  width: 750px;
+  height: 466px;
+  background: white url(../img/logo.png) no-repeat;
+  background-position: center 5px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  margin-left: -375px;
+  margin-top: -233px;
+}
+.container .content {
+  width: 486px;
+  margin: 140px auto 0;
+  padding-left: 160px;
+  height: 306px;
+  background: url(../img/tel.png) no-repeat left center;
+}
+.container .content h1 {
+  font-size: 30px;
+  color: #1e3c70;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+.container .content .list_group {
+  margin-bottom: 15px;
+}
+.container .content .list_group label {
+  color: #666666;
+  float: left;
+  display: inline-block;
+  width: 70px;
+  line-height: 40px;
+  text-align: right;
+  margin-right: 20px;
+}
+.container .content .list_group input {
+  width: 344px;
+  height: 40px;
+  line-height: 40px;
+  line-height: 40px \9;
+  padding: 0 5px;
+}
+.container .content .list_group span {
+  position: absolute;
+  color: red;
+  line-height: 40px;
+  margin-left: 10px;
+}
+.container .content .btn_group {
+  padding-left: 90px;
+  width: 360px;
+}
+.container .content .btn_group a {
+  float: left;
+  width: 170px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  background: #333a70;
+  font-size: 16px;
+  color: white;
+  overflow: hidden;
+  text-decoration: none;
+}
+.container .content .btn_group a.margin_left {
+  margin-left: 18px;
+}
+.long_shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -375px;
+  margin-top: -233px;
+}
+/*# sourceMappingURL=houtai.css.map */

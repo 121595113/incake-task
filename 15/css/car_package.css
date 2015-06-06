@@ -1,0 +1,22 @@
+.car_package h5 {
+  border-bottom: 1px solid #d5d5d5;
+}
+.car_package p {
+  overflow: hidden;
+  color: #0160af;
+}
+.car_package p del,
+.car_package p span {
+  color: #6f6f6f;
+}
+.car_package .shop_con > div {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.car_package .shop_con > div img {
+  margin: 0 20px;
+}
+.car_package .blue_btn {
+  width: 85%;
+}
+/*# sourceMappingURL=car_package.css.map */

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://www.incake.net/ -->
+<html lang="zh">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>首页-INCAKE英式蛋糕专家—每周限时半价秒杀</title>
+		<meta name="Keywords" content="INCAKE英式蛋糕专家—买蛋糕送欢唱券，限时秒杀">
+		<meta name="Description" content="INCAKE英式蛋糕专家—买蛋糕送欢唱券，限时秒杀">
+		<link rel="stylesheet" type="text/css" href="css/float-banner.css" />
+		<script charset="utf-8" src="./index_files/v.js"></script>
+		<script type="text/javascript">
+			function IsPC() {
+				var userAgentInfo = navigator.userAgent;
+				var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+				var flag = true;
+				for (var v = 0; v < Agents.length; v++) {
+					if (userAgentInfo.indexOf(Agents[v]) > 0) {
+						flag = false;
+						break;
+					}
+				}
+				return flag;
+			}
+			if (!IsPC() && location.href.toString().toLowerCase().indexOf('source=mobile') == -1) {
+				location.href = "http://wap.incake.net"
+			}
+		</script>
+		<link href="./index_files/style2.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="./index_files/jquery.js"></script>
+		<script type="text/javascript" src="./index_files/script1.js"></script>
+		<script type="text/javascript" src="./index_files/list_v0.js"></script>
+		<link rel="stylesheet" href="http://www.incake.net/js/skins/blue.css?4.1.7">
+		<script src="./index_files/artDialog.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".buynow").click(function() {
+					var price = $(this).parents(".fnn_top").find(".buynow").attr("price");
+					var proid = $(this).parents(".fnn_top").find(".buynow").attr("proid");
+					var salnum = $(this).parents(".fnn_top").find(".buynow").attr("salnum");
+					var begintime = $(this).parents(".fnn_top").find(".buynow").attr("begintime");
+					var endtime = $(this).parents(".fnn_top").find(".buynow").attr("endtime");
+					var num = $(this).parents(".fnn_top").find(".buynow").attr("qid");
+					var cid = $(this).parents(".fnn_top").find(".buynow").attr("cid");
+					var pang = $(this).parents(".fnn_top").find(".buynow").attr("qgpang");
+					var cake = proid + "-" + pang + "-1";
+					if (qianggou(begintime, endtime)) {
+						if (salnum == "0") {
+							$(".ui_popupover").hide();
+							$("#coupon_tureover").popupFn();
+							// alert("该蛋糕已抢购完");
+						} else {
+							$.ajax({
+								url: "../WebPage/SaveInfo.aspx",
+								dataType: "json",
+								type: "post",
+								timeout: "10000",
+								data: {
+									"type": "_paniccar",
+									"_cake": cake,
+									"_cid": cid,
+									"numid": num,
+									"Qgbegintime": begintime,
+									"Qgendtime": endtime
+								},
+								success: function(data) {
+									if (data.msg == "加入购物车成功") {
+										if ($("#hid").val() == "1") {
+											//location.href = "/manage/buycart.html";
+										} else {
+											location.href = "/PanicFirOrder.html";
+										}
+									} else if (data.msg == "1") {
+										$(".ui_popupone").hide();
+										$("#coupon_tureone").popupFn();
+										//alert("此蛋糕每个用户只能抢购一个");
+									} else {
+										alert(data.msg);
+									}
+								},
+								error: function() {
+									alert("网络错误！");
+								}
+							});
+						}
+					}
+				})
+			})
+			var qianggou = function(begintime, endtime) {
+				//            alert(begintime + ":" + endtime);
+				var time_start = new Date(begintime).getTime();
+				//当前时间
+				var time_now = new Date().getTime();
+				var time = new Date().getTime();
+				//结束时间
+				var time_end = new Date(endtime).getTime();
+				if (time_now < time_start) {
+					//alert("该活动正在筹备中，请耐心等待！");
+					$(".ui_popup").hide();
+					$("#coupon_ture").popupFn();
+					return false;
+				} else if (time_now > time_end) {
+					//alert("本次抢购已经结束,请下次再来抢购！");
+					$(".ui_popupend").hide();
+					$("#coupon_tureend").popupFn();
+					return false;
+				}
+				return true;
+			}
+			$(function() {
+				$(".Afternoon_tea li a").mousemove(function() {
+					$(".Afternoon_tea li div").show();
+					//alert("11");
+				});
+			})
+
+			function countDown(date_start, date_end, id, num) {
+				var hour_elem1 = $(id).find('.hour1'),
+					hour_elem2 = $(id).find('.hour2'),
+					minute_elem1 = $(id).find('.minute1'),
+					minute_elem2 = $(id).find('.minute2'),
+					second_elem1 = $(id).find('.second1'),
+					second_elem2 = $(id).find('.second2');
+				if (parseInt(num) <= 0) {
+					$("#state").text('本次秒杀已抢完');
+					return;
+				}
+				// 开始时间
+				var time_start = new Date(date_start).getTime();
+				// 开始时间
+				var time_end = new Date(date_end).getTime();
+				// 当前时间
+				var time_now = new Date().getTime();
+				// 计算剩余多少秒开始
+				var sys_second = 0;
+				if (time_now < time_start) {
+					$("#state").text('距离本次开始还有');
+					sys_second = (time_start - time_now) / 1000;
+				} else if (time_now < time_end) {
+					$("#state").text('距离本次结束还有');
+					sys_second = (time_end - time_now) / 1000;
+				} else {
+					$("#state").text('本次抢购已经结束');
+				}
+				var timer = setInterval(function() {
+					if (sys_second > 1) {
+						sys_second -= 1;
+						var hour = Math.floor(sys_second / 3600);
+						var minute = Math.floor((sys_second / 60) % 60);
+						var second = Math.floor(sys_second % 60);
+						if (hour < 10) {
+							$(hour_elem1).text('0');
+							$(hour_elem2).text(hour);
+						} else {
+							hour += '';
+							var hour1 = hour.substring(0, 1),
+								hour2 = hour.substring(1);
+							$(hour_elem1).text(hour1);
+							$(hour_elem2).text(hour2);
+						}
+						if (minute < 10) {
+							$(minute_elem1).text('0');
+							$(minute_elem2).text(minute);
+						} else {
+							minute += '';
+							var num1 = minute.substring(0, 1),
+								num2 = minute.substring(1);
+							$(minute_elem1).text(num1);
+							$(minute_elem2).text(num2);
+						}
+						if (second < 10) {
+							$(second_elem1).text('0');
+							$(second_elem2).text(second);
+						} else {
+							second += '';
+							var num1 = second.substring(0, 1),
+								num2 = second.substring(1);
+							$(second_elem1).text(num1);
+							$(second_elem2).text(num2);
+						}
+					} else {
+						if (time_now < time_start) {
+							$("#state").text('活动已开始请刷新');
+						} else if (time_now < time_end) {
+							$("#state").text('本次抢购已经结束');
+						}
+						clearInterval(timer);
+					}
+				}, 1000);
+			}
+		</script>
+		<style type="text/css">
+			.kill_right em {
+				color: #3771B0;
+				text-decoration: line-through;
+			}
+		</style>
+	</head>
+
+	<body class="i_body">
+		<div class="" style="display: none; position: absolute;">
+			<div class="aui_outer">
+				<table class="aui_border">
+					<tbody>
+						<tr>
+							<td class="aui_nw"></td>
+							<td class="aui_n"></td>
+							<td class="aui_ne"></td>
+						</tr>
+						<tr>
+							<td class="aui_w"></td>
+							<td class="aui_c">
+								<div class="aui_inner">
+									<table class="aui_dialog">
+										<tbody>
+											<tr>
+												<td colspan="2" class="aui_header">
+													<div class="aui_titleBar">
+														<div class="aui_title" style="cursor: move; display: block;"></div><a class="aui_close" href="javascript:/*artDialog*/;" style="display: block;">×</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td class="aui_icon" style="display: none;">
+													<div class="aui_iconBg" style="background-image: none; background-position: initial initial; background-repeat: initial initial;"></div>
+												</td>
+												<td class="aui_main" style="width: auto; height: auto;">
+													<div class="aui_content" style="padding: 20px 25px;"></div>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2" class="aui_footer">
+													<div class="aui_buttons" style="display: none;"></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>
+							<td class="aui_e"></td>
+						</tr>
+						<tr>
+							<td class="aui_sw"></td>
+							<td class="aui_s"></td>
+							<td class="aui_se" style="cursor: se-resize;"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- 公告-->
+		<!-- <div class="toubiao">
+    <span class="gg"><img src="img/52.gif" width="60" height="58" style="cursor:pointer;" onClick="gg_click()"></span>
+  </div>-->
+
+		<div class="page index">
+			<input type="hidden" id="hid_citycode" value="021">
+			<!-- 菜单导航-->
+			<div class="ban_main">
+				<div class="right_ban main_box">
+					<a href="javascript:;" class="box_close">
+						<img src="./index_files/close.gif" class="">
+					</a>
+					<div class="bg">
+						<a href="javascript:;" class="link">
+							<img src="./index_files/weixin.gif" alt="" class="code wx_img">
+						</a>
+						<a href="http://weibo.com/incake/profile?rightmod=1&wvr=6&mod=personnumber" class="link">
+						</a>
+						<a href="http://www.dianping.com/shop/8039213?kid=150924" target="_blank" class="link"></a>
+						<a href="http://wpa.qq.com/msgrd?v=3&uin=2837572001&site=qq&menu=yes" target="_blank" class="link"></a>
+					</div>
+				</div>
+				<div class="float_banner">
+					<a href="javascript:;" class="box_close">
+						<img src="./index_files/close.gif" class="">
+					</a>
+					<img src="../01/pic/150.png" />
+				</div>
+			</div>
+			<div class="header index">
+				<div class="header_con ">
+					<div class="w fn_clear top_info">
+						<div class="fn_left">
+							欢迎来到印克时光&nbsp;&nbsp;&nbsp;&nbsp; 周一至周日8:30~21:00&nbsp;&nbsp;&nbsp;&nbsp; 客服热线：
+							<b>400-921-5757</b>
+						</div>
+						<div class="fn_right right_box">
+							<div class="fn_left">
+								<a href="http://www.incake.net/register.html">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.incake.net/login.html">登录</a>&nbsp;&nbsp;
+								<a href="http://www.incake.net/buycart.html">
+购物车 
+</a>
+								<a href="http://www.incake.net/buycart.html" class="car">0</a>
+							</div>
+							<a href="http://www.incake.net/#" class="wx fn_left weibo">
+								<img src="./index_files/ico_wx.gif" alt="社交网络">
+								<img src="./index_files/weixin.gif" alt="" class="code">
+							</a>
+							<a href="http://www.incake.net/#" class="wx fn_left weixin">
+								<img src="./index_files/ico_wb.gif" alt="社交网络">
+								<img src="./index_files/weibo.gif" alt="" class="code">
+							</a>
+							<span class="city fn_left">
+上&nbsp;&nbsp;&nbsp;海
+</span>
+							<div class="city_list">
+								<a href="javascript:;" dataid="0591" datanow="021" class="city_link">福&nbsp;&nbsp;&nbsp;州</a>
+								<a href="javascript:;" dataid="021" datanow="021" class="city_link right_link">上&nbsp;&nbsp;&nbsp;海</a>
+							</div>
+						</div>
+					</div>
+					<div class="nav w fn_clear">
+						<div class="fn_left">
+							<div class="link home">
+								<a href="./index_files/index.htm">首页<br><i>HOME</i></a>
+							</div>
+							<div class="link list">
+								<a href="http://www.incake.net/products/cakelist.html">蛋糕馆<br><i>CAKE LIST</i></a>
+								<ul class="menu">
+									<li>
+										<a href="http://www.incake.net/products/zhishi.html">芝士系列<br>Cheese</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/qiaokeli.html">巧克力系列<br>Chocolate</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/napolun.html">拿破仑系列<br>Napoleon</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/musi.html">慕斯系列<br>Mousse</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/ruzhi.html">乳脂系列<br>Cream</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/products/diy.html">选拼系列<br>DIY</a>
+									</li>
+								</ul>
+							</div>
+							<div class="link myincake">
+								<a href="http://www.incake.net/products/dessert.html">午后茶点<br><i>AFTERNOON TEA</i></a>
+							</div>
+						</div>
+						<div class="fn_right">
+							<div class="link act">
+								<a href="http://www.incake.net/manage/center.html">我的INCAKE<br><i>MY INCAKE</i></a>
+								<ul class="menu">
+									<li>
+										<a href="http://www.incake.net/manage/myorder.html">我的订单<br>My orders</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/manage/jifen.html">我的积分<br>My points</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/manage/myquan.html">我的优惠券<br>Coupons</a>
+									</li>
+								</ul>
+							</div>
+							<div class="link enter">
+								企业专区
+								<br><i>ENTERPRISES</i>
+								<ul class="menu">
+									<li>
+										<a href="http://www.incake.net/shichi.html">试吃申请<br>Apply for Foretaste</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/viplogin.html">企业VIP登陆<br>VIP LOG IN</a>
+									</li>
+								</ul>
+							</div>
+							<div class="link about">
+								活动专享
+								<br><i>ACTIVITIES</i>
+								<ul class="menu">
+									<li>
+										<a href="http://www.incake.net/newactivity/NewActivities.html?key=57">最新活动<br>NEW ACTIVITY</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/activity/">美味攻略<br>DELICIOUS STRATEGY</a>
+									</li>
+									<li>
+										<a href="http://www.incake.net/jifen/">积分商城<br>POINTS MALL</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<a href="./index_files/index.htm" class="home_link"></a>
+					</div>
+				</div>
+			</div>
+			<div class="ui_mask"></div>
+			<div class="ui_popup w_text" id="coupon_city" style="width:350px; height:160px;">
+				<h4 class="fn_clear">
+<span class="fn_left">提示</span>
+<a href="javascript:;" class="fn_right ui_close_popup">
+<img src="./index_files/popup_close.gif" alt="关闭">
+</a>
+</h4>
+				<div class="ui_popup_content">
+					<p class="p tcenter" style="font-size: 18px;">切换城市您的购物车将被清空!</p>
+					<div class="fn_clear btn_box">
+						<a href="javascript:;" class="link_btn fn_left coupon_ok">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+						<a href="javascript:;" class="link_btn fn_right ui_close_popup">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 首页广告滚动-->
+			<div class="header_banner">
+				<div class="banner_img">
+					<div class="homeShow x-imgbox">
+						<div class="homeHead w">
+							<div class="fix num">
+								<a href="javascript:void(0)" class="on"></a>
+								<a href="javascript:void(0)" class=""></a>
+								<a href="javascript:void(0)" class=""></a>
+								<a href="javascript:void(0)" class=""></a>
+								<a href="javascript:void(0)" class=""></a>
+							</div>
+							<div class="arrows">
+								<a href="javascript:;" class="left"><i>上一张</i> </a>
+								<a href="javascript:;" class="right">
+									<i>下一张</i> </a>
+							</div>
+						</div>
+						<ul id="slides" class="banner index_banner big-img">
+							<li style="z-index: 9; display: block;">
+								<a href="http://www.incake.net/newactivity/NewActivities.html?key=57">
+									<img src="./index_files/2015022716173634333.jpg" width="1280" height="500">
+								</a>
+							</li>
+							<li style="display: none;">
+								<a href="http://www.incake.net/newactivity/NewActivities.html?key=52">
+									<img src="./index_files/2015030611231681838.jpg" width="1280" height="500">
+								</a>
+							</li>
+							<li style="display: none;">
+								<a href="http://www.incake.net/product/400.html">
+									<img src="./index_files/2015020414432577056.jpg" width="1280" height="500">
+								</a>
+							</li>
+							<li style="display: none;">
+								<a href="http://www.incake.net/product/155.html">
+									<img src="./index_files/2014123011502629942.jpg" width="1280" height="500">
+								</a>
+							</li>
+							<li style="display: none;">
+								<a href="http://www.incake.net/product/183.html">
+									<img src="./index_files/2014120111013382603.jpg" width="1280" height="500">
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 蛋糕列表-->
+			<div class="index_module">
+				<div style="overflow: hidden;">
+					<div class="fn_left left_box">
+						<div class="divduo">
+							<a href="http://www.incake.net/products/cakelist.html" class="diva">
+								<img src="./index_files/hs.jpg">
+							</a>
+							<div class="tab_con">
+								<div class="goods_list">
+									<ul class="max_width">
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/400.html">
+												<img style="width:180px; " src="./index_files/2015020616480967361.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/400.html">至爱红丝绒<br>
+love Red velvet</a>
+											</div>
+										</li>
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/155.html">
+												<img style="width:180px; " src="./index_files/2015020616484847780.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/155.html">草莓拿破仑<br>
+Strawberry Napoleon</a>
+											</div>
+										</li>
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/380.html">
+												<img style="width:180px; " src="./index_files/2015020616492148275.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/380.html">经典奶香<br>
+Classic creme</a>
+											</div>
+										</li>
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/218.html">
+												<img style="width:180px; " src="./index_files/2015020616495593620.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/218.html">爱丁堡之恋<br>
+Love in Edinburgh</a>
+											</div>
+										</li>
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/180.html">
+												<img style="width:180px; " src="./index_files/2015020616502483846.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/180.html">女王芝士<br>
+Queen Cheese</a>
+											</div>
+										</li>
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/184.html">
+												<img style="width:180px; " src="./index_files/2015030417063696248.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/184.html">蓝莓优格<br>
+Blueberry Cheese</a>
+											</div>
+										</li>
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/183.html">
+												<img style="width:180px; " src="./index_files/2015020616513174820.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/183.html">玛格丽特<br>
+Princess Margaret</a>
+											</div>
+										</li>
+										<li style="height:200px;">
+											<a href="http://www.incake.net/product/189.html">
+												<img style="width:180px; " src="./index_files/2015020616520561864.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a style="text-decoration:none;" href="http://www.incake.net/product/189.html">浓情巧克力<br>
+Chocolate in Love</a>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- 下午茶滚动图片-->
+						<div id="challist" class="chalist">
+							<div class="img04 box_con imgdiv">
+								<div class="arrows" style="display: none; height: 0px;">
+									<a href="javascript:;" class="left"><i>上一个</i> </a>
+									<a href="javascript:;" class="right">
+										<i>下一个</i> </a>
+								</div>
+								<div class="tab_con" style="width: 800px;">
+									<div class="chatupianlist">
+										<ul class="max_width chaimgli" style="left: -1294.8133069461974px;">
+											<li>
+												<a href="http://www.incake.net/product/382.html">
+													<img src="./index_files/2015020911524210768.jpg">
+												</a>
+											</li>
+											<li>
+												<a href="http://www.incake.net/product/398.html">
+													<img src="./index_files/2015020918115278713.jpg">
+												</a>
+											</li>
+											<li>
+												<a href="http://www.incake.net/product/384.html">
+													<img src="./index_files/2015020911551042057.jpg">
+												</a>
+											</li>
+											<li>
+												<a href="http://www.incake.net/product/385.html">
+													<img src="./index_files/2015020911575059212.jpg">
+												</a>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 下午茶列表-->
+						<div class="divduo">
+							<a href="http://www.incake.net/products/dessert.html" class="diva">
+								<img src="./index_files/whcd.jpg">
+							</a>
+							<div class="tab_con">
+								<div class="goods_list">
+									<ul class="max_width">
+										<li style="height:180px;">
+											<a href="http://www.incake.net/product/382.html">
+												<img style="width:180px;" src="./index_files/2015020617024486012.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a class="a" style="text-decoration:none;" href="http://www.incake.net/product/382.html">天鹅舞泡芙<br>
+Swan dance</a>
+											</div>
+										</li>
+										<li style="height:180px;">
+											<a href="http://www.incake.net/product/398.html">
+												<img style="width:180px;" src="./index_files/2015020916210877585.png">
+											</a>
+											<div class="info" style="width: 180px; display: none;">
+												<a class="a" style="text-decoration:none;" href="http://www.incake.net/product/398.html">克拉情人杯<br>
+Carat Lover</a>
+											</div>
+										</li>
+										<li style="height:180px;">
+											<a href="http://www.incake.net/product/384.html">
+												<img style="width:180px;" src="./index_files/2015020617045513819.png">
+											</a>
+											<div class="info" style="width:180px; ">
+												<a class="a" style="text-decoration:none;" href="http://www.incake.net/product/384.html">经典小方<br>
+Classic slices</a>
+											</div>
+										</li>
+										<li style="height:180px;">
+											<a href="http://www.incake.net/product/385.html">
+												<img style="width:180px;" src="./index_files/2015020617051876225.png">
+											</a>
+											<div class="info" style="width:180px; ">
+												<a class="a" style="text-decoration:none;" href="http://www.incake.net/product/385.html">草莓杏仁塔<br>
+Stawberry almond tart</a>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 抢购-->
+					<div class="fnn_right">
+						<div class="fnn_top">
+							<p>
+								<a href="http://www.incake.net/newactivity/NewActivities.html?key=52">
+									<img style="margin-left:10px;" src="./index_files/dnmiaosha.jpg">
+								</a>
+							</p>
+							<h3 id="state" style="padding:0px 0px 40px 70px;font-size:20px; font-weight:400;">距离本次开始还有</h3>
+							<div class="qg_time">
+								<div id="197" class="count-down absolute">
+									<h4 class="clearfix pd-l-10"><span class="number hour1">1</span><span class="number hour2" style="margin-left:3px;">1</span><span class="colon">:</span><span class="number minute1">4</span><span class="number minute2" style="margin-left:3px;">6</span><span class="colon">:</span><span class="number second1">4</span><span class="number second2" style="margin-left:3px;">4</span></h4>
+								</div>
+							</div>
+							<div class="kill">
+								<a href="http://www.incake.net/product/404.html">
+									<img src="./index_files/404-8.jpg" style=" width:250px; height:230px; margin-left:17px;">
+								</a>
+							</div>
+							<div class="kill_text">
+								<div class="kill_left_img">
+									<p style="color:#3f87c2;font-weight:bold;">百利豆豆卷</p>
+									<p>四只装&nbsp;&nbsp; 剩余<span style="color:red;">30</span>
+									</p>
+									<p style="position:relative; top:10px;">
+										<a price="25.00" qid="124" cid="197" proid="404" salnum="30" begintime="2015/3/11 0:00:00" endtime="2015/3/11 23:59:59">
+											<img src="./index_files/shangweikaishi.png">
+										</a>
+									</p>
+								</div>
+								<div class="kill_right"><em><span>￥30.00</span></em>
+									<p style="color:red;font-weight:bold; font-size:18px;">￥25.00</p>
+									<p style="margin-left:0px; margin-top:7px;">限量30份/天</p>
+								</div>
+							</div>
+						</div>
+						<script>
+							countDown('2015/3/11 0:00:00', '2015/3/11 23:59:59', $('#197'), '30');
+						</script>
+						<div class="fnn_bottom">
+							<p>
+								<img style="height: 40px; width: 270px; margin-left: 10px;" src="./index_files/ICAFE.png">
+							</p>
+							<div style="padding-left: 10px;">
+								<a href="http://www.incake.net/newactivity/NewActivities.html?key=24">
+									<img style="height: 285px; width: 250px; margin-left: 15px; margin-top: 7px;" src="./index_files/ICAFE1.jpg">
+								</a>
+							</div>
+							<!-- 小图片滚动-->
+							<div class="img03 box_con imgdiv">
+								<div class="arrows">
+									<a href="javascript:;" class="left"><i>上一个</i> </a>
+									<a href="javascript:;" class="right">
+										<i>下一个</i> </a>
+								</div>
+								<div class="tab_con">
+									<div class="chalists">
+										<ul class="max_width chali" style="left: 0px;">
+											<li>
+												<a href="http://www.sh-holiday.com/">
+													<img src="./index_files/2015011410293269219.jpg">
+												</a>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 导航-->
+				<div class="base">
+					<div class="base_left">
+						<div class="base_left_i">
+							<a href="http://www.incake.net/#" target="_self">
+								<img src="./index_files/content_logo.gif" width="180px" height="110px">
+							</a>
+						</div>
+						<div class="base_left_z">
+							<dl>
+								<dt><a style="text-decoration: none;">新手上路</a></dt>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/PurchaseProcess.html">购买流程</a>
+								</dd>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/DeliveryRange.html">配送范围</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a style="text-decoration: none;">INCAKE产品</a></dt>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/products/cakelist.html">精品蛋糕</a>
+								</dd>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/products/dessert.html">午后茶点</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a style="text-decoration: none;">加入INCAKE</a></dt>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/ContactUs.html">联系我们</a>
+								</dd>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/JoinUs.html">英才招聘</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a style="text-decoration: none;">关于INCAKE</a></dt>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/Culture.html">品牌故事</a>
+								</dd>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/Productconcept.html">产品理念</a>
+								</dd>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/Service.html">优质体验</a>
+								</dd>
+								<dd>
+									<a style="text-decoration: none;" href="http://www.incake.net/about/Partners.html">主要合作单位</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<!-- 微信-->
+					<div class="base_right">
+						<dl class="base_dl">
+							<dt>
+                            <img src="./index_files/erweima.jpg"><p>
+                                <!--*+margin-top: -11px;-->
+                                微信订购 立即分享</p>
+                        </dt>
+							<dd>
+								<p style="font-size: 14px; margin-top: 15px;">
+									微信订购流程：</p>
+								<p style="font-size: 10px; line-height: 1.5em; width: 320px;">
+									关注微信公众号→点击[下午茶预定]→[蛋糕预定]→选择蛋糕磅数[立即购买]→点击[去结算]→确认订单信息→选择[支付方式]→输入优惠券密码→提交订单</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- 底部-->
+				<div class="footer">
+					<img src="./index_files/footer.gif" class="foot_img">
+					<a class="foot">沪ICP备12045835号<br>
+                    Copyright©2002 INCAKE Company All Rights Reserved</a>
+				</div>
+				<div class="foot_div">
+					<script type="text/javascript">
+						var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+						document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F350d834e9b212adee92daa5ed888a2e7' type='text/javascript'%3E%3C/script%3E"));
+					</script>
+					<script src="./index_files/h.js" type="text/javascript"></script>
+					<a href="http://tongji.baidu.com/hm-web/welcome/ico?s=350d834e9b212adee92daa5ed888a2e7" target="_blank">
+						<img border="0" src="./index_files/21.gif" width="20" height="20">
+					</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				CheckDaoGuo();
+			});
+		</script>
+
+		<style type="text/css" media="screen">
+			/*.index_module .news_box .tab_con .max_width li img { padding-left: 50px;}*/
+		</style>
+
+		<div class="ui_mask">
+		</div>
+		<div class="ui_popup w_text" id="login_daogou" style="width: 340px;">
+			<h4 class="fn_clear">
+        <span class="fn_left">管理员登录</span>
+    </h4>
+			<div class="ui_popup_content">
+				<p class="p">
+					用户名：
+					<input type="text" id="txt_userName" class="ui_input_vip" style="width: 150px">&nbsp;&nbsp;<font color="red">*</font>
+				</p>
+				<p class="p">
+					密&nbsp;&nbsp;&nbsp;码：
+					<input type="password" id="txt_PassWord" class="ui_input_vip" style="width: 150px">&nbsp;&nbsp;<font color="red">*</font>
+				</p>
+				<div class="tcenter btn_box">
+					<a href="javascript:;" class="loginsale link_btn coupon_ture">确&nbsp;&nbsp;&nbsp;&nbsp;认</a>
+				</div>
+			</div>
+		</div>
+		<div class="ui_popup w_text" id="coupon_ture" style="width: 340px;">
+			<h4 class="fn_clear">
+        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup">
+            <img src="./index_files/popup_close.gif" alt="关闭">
+        </a>
+    </h4>
+			<div class="ui_popup_content">
+				<p class="p tcenter">
+					该活动正在筹备中，请耐心等待!</p>
+				<div class="tcenter btn_box">
+					<a href="javascript:;" class="link_btn ui_close_popup">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+				</div>
+			</div>
+		</div>
+		<div class="ui_popup w_text ui_popupend" id="coupon_tureend" style="width: 340px;">
+			<h4 class="fn_clear">
+        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup">
+            <img src="./index_files/popup_close.gif" alt="关闭">
+        </a>
+    </h4>
+			<div class="ui_popup_content">
+				<p class="p tcenter">
+					本次抢购已经结束,请下次再来抢购！</p>
+				<div class="tcenter btn_box">
+					<a href="javascript:;" class="link_btn ui_close_popup">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+				</div>
+			</div>
+		</div>
+		<div class="ui_popup w_text ui_popupover" id="coupon_tureover" style="width: 340px;">
+			<h4 class="fn_clear">
+        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup">
+            <img src="./index_files/popup_close.gif" alt="关闭">
+        </a>
+    </h4>
+			<div class="ui_popup_content">
+				<p class="p tcenter">
+					该蛋糕已抢购完,请下次再来抢购！</p>
+				<div class="tcenter btn_box">
+					<a href="javascript:;" class="link_btn ui_close_popup">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+				</div>
+			</div>
+		</div>
+		<div class="ui_popup w_text ui_popupone" id="coupon_tureone" style="width: 340px;">
+			<h4 class="fn_clear">
+        <span class="fn_left">提示</span> <a href="javascript:;" class="fn_right ui_close_popup">
+            <img src="./index_files/popup_close.gif" alt="关闭">
+        </a>
+    </h4>
+			<div class="ui_popup_content">
+				<p class="p tcenter">
+					此蛋糕每个用户只能抢购一个！</p>
+				<div class="tcenter btn_box">
+					<a href="javascript:;" class="link_btn ui_close_popup">确&nbsp;&nbsp;&nbsp;&nbsp;定</a>
+				</div>
+			</div>
+		</div>
+
+		<iframe src="./index_files/cm.htm" style="display: none;"></iframe>
+		<img src="./index_files/a.gif" style="width: 1px;
+    height: 1px; display: none;">
+		<script type="text/javascript" src="./index_files/v(1).js"></script>
+		<script type="text/javascript">
+			__msv_m('arrive')
+		</script>
+		<script>
+		$(function(){
+			$(".float_banner .box_close").click(function(){
+				$(".float_banner").hide()
+			})
+		})
+		</script>
+	</body>
+
+</html>

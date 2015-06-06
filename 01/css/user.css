@@ -1,0 +1,527 @@
+* {
+  -webkit-user-select: auto;
+}
+.list_tp {
+  background: #ffffff;
+  overflow: hidden;
+  padding-bottom: 55px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.3);
+  -webkit-box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.3);
+}
+.list_tp li {
+  width: 320px;
+  margin: 40px;
+  float: left;
+}
+.list_tp li > a {
+  display: block;
+  text-align: center;
+}
+.list_tp div h3 {
+  font-size: 18px !important;
+}
+.list_tp li:nth-child(3n+1) .goods_btn:before {
+  width: 0px;
+}
+.list_tp .goods_btn {
+  position: relative;
+}
+.list_tp .goods_btn:before {
+  content: "";
+  width: 1px;
+  height: 100px;
+  position: absolute;
+  left: -40px;
+  bottom: 0;
+  background: #cccccc;
+}
+.list_tp .goods_btn > * {
+  display: inline-block !important;
+}
+.list_tp .goods_btn .sgou {
+  color: #d3333d;
+  margin-left: 8px;
+  background: url(../img/dian_default.gif) no-repeat;
+  background-size: contain;
+}
+.list_tp .goods_btn .sgou:hover {
+  background-image: url(../img/dian_hover.gif);
+}
+.list_tp .goods_btn .gouche {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  top: -50px;
+  right: 10px;
+  background: url(../img/gouwuchehui.png) no-repeat center;
+}
+.list_tp .goods_btn .gouche:hover {
+  background-image: url(../img/gouwuche.png);
+}
+.goods_list_page .goods_btn {
+  padding: 0;
+  border: none;
+  margin-top: 10px;
+}
+.goods_list_page .goods_btn .btn {
+  width: 150px;
+  margin-bottom: 0;
+  background-size: 100% 100%;
+}
+.goods_list_page .goods_btn .btn .small_btn {
+  width: 150px;
+  background-size: 100% 100%;
+}
+.ping_content {
+  background: #ffffff;
+}
+.ping_content .box_ {
+  float: none;
+  position: relative;
+}
+.ping_content .box_ img {
+  margin: 0;
+}
+.ping_content .c4 {
+  width: 302px;
+  height: 302px;
+  margin: 0 auto;
+  top: 30px;
+}
+.ping_content .c4 a {
+  display: block;
+  position: absolute;
+  width: 114px;
+  height: 114px;
+  padding: 18px;
+}
+.ping_content .c4 .a01 {
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #DCDCDC;
+  border-right: 1px solid #DCDCDC;
+}
+.ping_content .c4 .a02 {
+  left: 151px;
+  top: 0;
+  border-bottom: 1px solid #DCDCDC;
+}
+.ping_content .c4 .a03 {
+  left: 0;
+  top: 151px;
+  border-right: 1px solid #DCDCDC;
+}
+.ping_content .c4 .a04 {
+  left: 151px;
+  top: 151px;
+}
+.ping_content .c8 {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  top: 40px;
+}
+.ping_content .c8 a {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  position: absolute;
+}
+.ping_content .c8 .a01 {
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #DCDCDC;
+  border-right: 1px solid #DCDCDC;
+}
+.ping_content .c8 .a02 {
+  left: 101px;
+  top: 0;
+  border-bottom: 1px solid #DCDCDC;
+  border-right: 1px solid #DCDCDC;
+}
+.ping_content .c8 .a03 {
+  left: 202px;
+  top: 0;
+  border-bottom: 1px solid #DCDCDC;
+}
+.ping_content .c8 .a04 {
+  left: 0;
+  top: 101px;
+  border-bottom: 1px solid #DCDCDC;
+  border-right: 1px solid #DCDCDC;
+}
+.ping_content .c8 .a05 {
+  left: 202px;
+  top: 101px;
+  border-bottom: 1px solid #DCDCDC;
+}
+.ping_content .c8 .a06 {
+  left: 0px;
+  top: 202px;
+  border-right: 1px solid #DCDCDC;
+}
+.ping_content .c8 .a07 {
+  left: 101px;
+  top: 202px;
+  border-right: 1px solid #DCDCDC;
+}
+.ping_content .c8 .a08 {
+  left: 202px;
+  top: 202px;
+}
+.ping_content .c8 .a09 {
+  left: 101px;
+  top: 101px;
+  cursor: auto;
+  border-bottom: 1px solid #DCDCDC;
+  border-right: 1px solid #DCDCDC;
+}
+.re {
+  background: #d8d8d8;
+  width: 72px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border: 1px solid #e4e4e4;
+  font-size: 14px;
+  display: block;
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#d7d7d9));
+  background-image: -webkit-linear-gradient(top, #ffffff, #d7d7d9);
+  background-image: -moz-linear-gradient(top, #ffffff, #d7d7d9);
+  background-image: -o-linear-gradient(top, #ffffff, #d7d7d9);
+  background-image: -ms-linear-gradient(top, #ffffff, #d7d7d9);
+  background-image: linear-gradient(to bottom, #ffffff, #d7d7d9);
+}
+.goods_page .price .bang a {
+  float: right;
+  color: #1e8cd7;
+  display: inline-block;
+  line-height: 30px;
+}
+.goods_page .price .bang #c8 {
+  margin-right: 56px;
+  padding-left: 15px;
+  position: relative;
+}
+.goods_page .price .bang #c8:before {
+  content: "";
+  width: 1px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  background-color: #1e8cd7;
+}
+.goods_page .price .bang #c4 {
+  margin-right: 15px;
+}
+.collo_page .bottom_b .s04 {
+  height: 430px !important;
+  margin-bottom: 100px;
+}
+.details dl {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 50px;
+}
+.details dl.hover_ dd:hover span {
+  display: block;
+}
+.details dl dt,
+.details dl dd {
+  float: left;
+}
+.details dl dt {
+  width: 400px;
+  margin-right: 152px;
+}
+.details dl dt p:nth-child(2) {
+  margin-bottom: 20px;
+}
+.details dl dt .section {
+  position: absolute;
+  bottom: 0;
+}
+.details dl dd {
+  text-align: center;
+  width: 100px;
+  margin: 10px 42px 10px;
+}
+.details dl dd h6 {
+  color: #818181;
+  font-size: 14px;
+}
+.details dl dd a {
+  position: relative;
+  display: block;
+}
+.details dl dd a span {
+  width: 56px;
+  height: 56px;
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: url(../pic/crct.png) no-repeat;
+}
+.details dl .dialog {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(100, 100, 100, 0.6);
+}
+.details dl .dialog div {
+  width: 318px;
+  height: 127px;
+  margin-left: -156px;
+  margin-top: -63px;
+  background: #ffffff;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.details dl .dialog div h1 {
+  padding-top: 27px;
+  font-size: 16px;
+  color: #666666;
+}
+.details dl .dialog div button {
+  width: 106px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 41px;
+  cursor: pointer;
+  color: #ffffff;
+  background: #303972;
+  margin-top: 23px;
+  border: 1px solid #4b5384;
+}
+.comment {
+  margin-top: 80px;
+}
+.birthdaycar {
+  position: relative;
+  width: 146px;
+  margin: 0 auto;
+}
+.birthdaycar > input {
+  width: 114px;
+  height: 30px;
+  padding: 0 25px 0 5px;
+  background: url(../pic/anniu0.png) no-repeat 110px -104px;
+  border: 1px solid #CDCDCD;
+}
+.birthdaycar ul {
+  position: absolute;
+  width: 146px;
+  display: none;
+  text-align: left;
+}
+.birthdaycar ul li {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px;
+  border: 1px solid #c0c0c0;
+  border-top: none;
+  background: #ffffff;
+}
+.birthdaycar ul li span {
+  font-size: 0.8em;
+}
+.birthdaycar ul li:hover {
+  background: #333a70;
+  color: #ffffff;
+  border-color: #333a70;
+}
+.birthdaycar ul li:last-child #zd01 {
+  display: none;
+  width: 122px;
+  height: 17px;
+  border: none;
+}
+.birthdaycar ul li:last-child #zd02 {
+  text-align: center;
+  color: #ffffff;
+  background: none;
+  border: none;
+  display: none;
+  line-height: 30px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.order_time .ui_input_text {
+  font-size: 16px;
+  padding: 17px 8px;
+  height: 16px;
+  line-height: normal;
+  background: url(../pic/anniu0.png) no-repeat;
+  background-position: 120px 7px;
+}
+.order_time .dialog {
+  position: fixed;
+  *position: absolute;
+  z-index: 99999999;
+  display: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(100, 100, 100, 0.6);
+}
+.order_time .dialog > div {
+  width: 530px;
+  height: 245px;
+  background: #ffffff;
+  padding: 48px 48px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -289px;
+  margin-top: -160px;
+}
+.order_time .dialog > div .close {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url(../pic/anniu0.png) no-repeat;
+  background-position: -1px -58px;
+}
+.order_time .dialog > div .moncolor {
+  color: #2274ca;
+}
+.order_time .dialog > div h3 {
+  border-left: 3px solid #040c5d;
+  line-height: 20px;
+  margin-bottom: 14px;
+}
+.order_time .dialog > div h3 span {
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+.order_time .dialog > div h3:after {
+  content: "";
+  border-top: 1px dotted #cfcfcf;
+  display: block;
+  position: relative;
+  top: 10px;
+}
+.order_time .dialog > div .xingqi {
+  width: 400px;
+  margin: 30px auto;
+  position: relative;
+}
+.order_time .dialog > div .xingqi span {
+  width: 30px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  background: url(../pic/anniu0.png) no-repeat;
+}
+.order_time .dialog > div .xingqi span.left {
+  left: -30px;
+  background-position: 0px -137px;
+}
+.order_time .dialog > div .xingqi span.right {
+  right: -30px;
+  background-position: 0px -180px;
+}
+.order_time .dialog > div .xingqi div {
+  width: 400px;
+  overflow: hidden;
+}
+.order_time .dialog > div .xingqi div ul {
+  overflow: hidden;
+  height: 45px;
+  display: none;
+}
+.order_time .dialog > div .xingqi div ul li {
+  float: left;
+  text-align: center;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.order_time .dialog > div .peisong {
+  padding-left: 10px;
+}
+.order_time .dialog > div .peisong select {
+  width: 120px;
+  margin: 0 10px;
+}
+.order_time .dialog > div button {
+  display: block;
+  margin: 35px auto 0;
+  background: #333a70;
+  border: none;
+  color: #ffffff;
+  width: 120px;
+  height: 35px;
+  line-height: 35px;
+}
+#myFocus {
+  width: 920px;
+  height: 250px !important;
+  margin-bottom: 20px;
+}
+#myFocus .pic li div {
+  width: 420px;
+  margin-top: 45px;
+  margin-left: 25px;
+  float: left;
+  position: relative;
+}
+#myFocus .pic li div span {
+  position: absolute;
+  display: none;
+  width: 56px;
+  height: 56px;
+  background: url(../pic/crct.png) no-repeat;
+  right: 0px;
+  top: 0px;
+}
+#myFocus .pic li div:nth-child(2):before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 130px;
+  background: #cccccc;
+  position: absolute;
+  left: -15px;
+  top: 28px;
+}
+#myFocus .pic li div img {
+  float: left;
+  width: 180px;
+  height: 180px;
+  margin-right: 10px;
+}
+#myFocus .pic li div h2 {
+  margin-left: 190px;
+  margin-bottom: 18px;
+  background: url(../pic/aixin.png) no-repeat left center;
+  color: #0062b0;
+  font-size: 20px;
+  padding-left: 30px;
+}
+#myFocus .pic li div p {
+  color: #838182;
+  font-size: 12px;
+}
+.goods_page .bottom_b {
+  top: 0px;
+}
+/*# sourceMappingURL=user.css.map */

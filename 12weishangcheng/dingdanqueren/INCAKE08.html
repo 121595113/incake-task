@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9 -->
+<html class="ui-mobile">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base href="http://wap.incake.net/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9">-->
+		<base href=".">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<!-- 针对WebApp的页头声明 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=yes">
+		<meta name="format-detection" content="email=no">
+		<!-- 加载jquery库 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/js/jq.mobile/1.2.0/jquery.mobile-1.2.0.css">
+		<script src="./INCAKE_files/jquery-1.8.2.min.js"></script>
+		<script src="./INCAKE_files/jquery.mobile-1.2.0.min.js"></script>
+		<!-- 加载iscroll库 -->
+		<script src="./INCAKE_files/iscroll.min.js" type="text/javascript"></script>
+		<!-- 本站引用 -->
+		<link rel="stylesheet" href="http://wap.incake.net/Icake/css/style.css">
+		<script src="./INCAKE_files/script.js" type="text/javascript"></script>
+		<script src="./INCAKE_files/mainscript.js" type="text/javascript"></script>
+		<!-- 针对webapp的设置 -->
+		<link rel="apple-touch-icon-precomposed" href="http://wap.incake.net/Icake/images/icon@2x.png">
+		<link rel="apple-touch-startup-image" href="http://wap.incake.net/Icake/images/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="http://wap.incake.net/Icake/images/startup@2x.png">
+		<!--自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/dingdanqueren.css" />
+		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<title>INCAKE</title>
+	</head>
+
+	<body class="ui-mobile-viewport ui-overlay-c" data-role="no-content">
+		<section data-role="page" data-url="/Login.aspx?url=C1x8RvwCqrdNwCc72CvKCS5WQwaXZEvU5d%2bdE3ZeqKyiK64QS1y0%2fQAtjgGT8dK9" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 632px;">
+
+			<script src="./INCAKE_files/iplookup.php" type="text/ecmascript"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#select_city a").click(function() {
+						//清空购物车
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: {
+								"Action": "ClearCookie",
+								"Type": "icake",
+								"Name": "shopcart"
+							}
+						});
+						var _data = {
+							"Action": "City",
+							"Cvalue": $(this).attr("cityId")
+						};
+						$.ajax({
+							url: "/Icake/cookie/CookieManage.aspx",
+							type: "post",
+							dataType: "json",
+							data: _data,
+							success: function(data) {
+								if (data.errcode == "0") {
+									location.reload();
+								}
+							}
+						});
+					});
+				});
+			</script>
+			<section id="select_city" style="display:none;">
+				<a href="javascript:;" class="link ui-link" cityname="上海市" cityid="021">上海市</a>
+				<a href="javascript:;" class="link ui-link" cityname="福州市" cityid="0591">福州市</a>
+			</section>
+
+			<nav class="navigation">
+				<a href="javascript:history.go(-1);" data-role="button" data-rel="back" class="back_link ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a>
+				<h3 style="text-align: left; padding-left: 40px;">关于我们</h3>
+			</nav>
+			<section>
+				<article>
+					<img src="images/about_00.jpg" class="fl" style="width: 65px; margin-right: 5px;" />
+					<p>是英国本土品牌。最初源自于安德森利特尔顿先生的手工蛋糕作坊。安德森利特尔顿先生（1799~1861）一生专注于蛋糕制作，曾任职英国王室蛋糕师，创造出的鲜美可口、外表雍容华贵的蛋糕受到皇室的青睐。维多利亚女王亲自为其颂发女王勋章并授予骑士称号。现安德森利特尔顿先生的后人居住在美国费城，上海印克电子商务有限公司经过多年的拜访，2012年正式将INCAKE品牌引入中国，并采用网络订购这一最前端的订购模式。秉承了传统英式手工蛋糕制作，甄选世界优质食材，传承纯正英国风味。</p>
+					<img src="images/about_01.jpg" class="big" />
+					<p style="margin-top: 10px;"><span>上海印克电子商务有限公司</span>专注于向顾客提供全方位的体验，并带来卓越的价值。INCAKE印克网络蛋糕打破了眼下传统的蛋糕销售模式，通过网络，移动端，客服热线全方位链接消费，一对一定制英式蛋糕服务。让客户体验最IN的购物新风尚。并强调要在生产过程中对人的价值的关注，对消费者、对环境、对社会的贡献。用心烘焙和真诚的笑容是INCAKE最高宗旨。优质的选材和英伦皇室的经典配方是INCAKE印克蛋糕的核心竞争力。在中国，INCAKE不断投入产品研发创新，并保证英式蛋糕的纯正口味。在中国引领着最in的英式风潮。</p>
+					<p><span>下午茶</span>是英国传统的精华所在，一首英国民谣就是这样唱的：“当时钟敲响四下时，世上的一切瞬间为茶而停”。INCAKE作为英国的本土品牌，希望下午茶文化在中国得到更多人的更多认可与喜爱，成为生活中不可或缺的一部分。无论是传统下午茶的内涵丰硕、形式优雅。还是在忙里偷闲中的一杯茶饮配以英式蛋糕的简约下午茶。这不仅仅是一种对美食的渴望，更是每个人对生活的态度。INCAKE希望无论是朋友小聚、在家或是在工作中，随时随地享受精致的生活品质。</p>
+					<img src="images/about_02.jpg" class="big" />
+					<div>
+						<img src="images/about_03.jpg" class="fr small" />
+						<h1>GOLDEN<br />
+						PROPORTION</h1>
+						<h2>黄金比例配方</h2>
+						<p>INCAKE在进行几千次、几万次的烘焙失败，才搭配出来完美的精确组合与精确比例，在制作每一款蛋糕时，蛋糕师都专注于每一个制作细节、严苛的制作步骤和时间。传承纯正的英国皇室风味，每一种组合和配比都是经典时尚的完美邂逅。</p>
+					</div>
+					<div>
+						<img src="images/about_04.jpg" class="fl small" />
+						<h1>THE BEST<br />
+						MATERIALS</h1>
+						<h2>优质食材</h2>
+						<p>我们坚信每一个国家的食材都有着独特的个性，为了寻找到优质的食材我们开始了INCAKE世界之旅--比利时的黑巧克力，法国的铁塔奶油……甄选世界各地优质食材来制作出无与伦比的美味。只选用季节性的最新鲜的水果，这是我们的用心承若。</p>
+					</div>
+					<img src="images/about_05.jpg" class="big" />
+					<div>
+						<img src="images/about_06.jpg" class="fl small" />
+						<h1>PERFECT<br />
+						PROCESS</h1>
+						<h2>完美工艺</h2>
+						<p>保留手工，并引进精确的蛋糕生产设备，其组合制作出完美工艺，在水果、坚果等蛋糕配饰上，我们的INCAKE都选择了手工艺挑选，颗颗饱满清甜。无论是味觉与视觉都是一种完美的享受。</p>
+					</div>
+					<div>
+						<img src="images/about_07.jpg" class="fr small" />
+						<h1>PRODUCTION<br />
+						STANDARD</h1>
+						<h2>生产标准</h2>
+						<p>INCAKE秉诺用心烘焙、用心服务、用心打造一个让国人安心食用的健康烘焙品牌。食品安全是食品从业人的根基与责任，INCAKE目标成为国内知名烘焙品牌的同时，也将追求最安全的烘焙列在企业文化首位。</p>
+					</div>
+				</article>
+
+			</section>
+			<!--遮罩层-->
+		</section>
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span>
+			<h1>loading</h1>
+		</div>
+	</body>
+
+</html>

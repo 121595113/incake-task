@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/voice.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<section class="voice_container">
+			<header>
+				<img src="img/voice_header.jpg" />
+			</header>
+			<div class="voice_banner">
+				<img src="img/jiqi02.png" />
+				<div>语音合成中<span>0</span>
+				</div>
+			</div>
+			<div class="play_container">
+				<img src="img/yx.png"/>
+				<a href="javascript:;"></a>
+			</div>
+			<div class="progress_bar">
+				<div class="pre_load" style="width: 60%;"></div>
+				<div class="curent_load" style="width: 40%;"><i></i>
+				</div>
+				<span>60's</span>
+			</div>
+			<div class="btn_group center">
+				<a href="javascript:;" class="lbtn">提交</a>
+				<a href="javascript:;" class="rbtn chongxin">重新录入</a>
+			</div>
+		</section>
+	</body>
+	<script src="./aizhichu_files/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.play_container a').click(function() {
+					var $abtn = $(this);
+					$abtn.hasClass("on") ? $abtn.removeClass('on') : $abtn.addClass('on');
+				})
+		})
+	</script>
+
+</html>

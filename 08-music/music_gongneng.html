@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/voice.css" />
+		<title></title>
+		<style>
+			#bars1,
+			#bars2 {
+				height: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				position: absolute;
+				bottom: 20px;
+				width: 152px;
+			}
+			.bar {
+				background: #4bb0e6;
+				bottom: 1px;
+				height: 3px;
+				position: absolute;
+				width: 7px;
+			}
+			.on .bar {
+				animation: sound 0ms -800ms linear infinite alternate;
+				-webkit-animation: sound 0ms -800ms linear infinite alternate;
+			}
+			@keyframes sound {
+				0% {
+					opacity: .35;
+					height: 3px;
+				}
+				100% {
+					opacity: 1;
+					height: 38px;
+				}
+			}
+			@-webkit-keyframes sound {
+				0% {
+					opacity: .35;
+					height: 3px;
+				}
+				100% {
+					opacity: 1;
+					height: 38px;
+				}
+			}
+			.bar:nth-child(1) {
+				left: 1px;
+			}
+			.bar:nth-child(2) {
+				left: 9px;
+			}
+			.bar:nth-child(3) {
+				left: 17px;
+			}
+			.bar:nth-child(4) {
+				left: 25px;
+			}
+			.bar:nth-child(5) {
+				left: 33px;
+			}
+			.bar:nth-child(6) {
+				left: 41px;
+			}
+			.bar:nth-child(7) {
+				left: 49px;
+			}
+			.bar:nth-child(8) {
+				left: 57px;
+			}
+			.bar:nth-child(9) {
+				left: 65px;
+			}
+			.bar:nth-child(10) {
+				left: 73px;
+			}
+			.bar:nth-child(11) {
+				left: 81px;
+			}
+			.bar:nth-child(12) {
+				left: 89px;
+			}
+			.bar:nth-child(13) {
+				left: 97px;
+			}
+			.bar:nth-child(14) {
+				left: 105px;
+			}
+			.bar:nth-child(15) {
+				left: 113px;
+			}
+			.bar:nth-child(16) {
+				left: 121px;
+			}
+			.bar:nth-child(17) {
+				left: 129px;
+			}
+			.bar:nth-child(18) {
+				left: 137px;
+			}
+			.bar:nth-child(19) {
+				left: 145px;
+			}
+			.on .bar:nth-child(1) {
+				-webkit-animation-duration: 474ms;
+				animation-duration: 474ms;
+			}
+			.on .bar:nth-child(2) {
+				-webkit-animation-duration: 433ms;
+				animation-duration: 433ms;
+			}
+			.on .bar:nth-child(3) {
+				-webkit-animation-duration: 407ms;
+				animation-duration: 407ms;
+			}
+			.on .bar:nth-child(4) {
+				-webkit-animation-duration: 458ms;
+				animation-duration: 458ms;
+			}
+			.on .bar:nth-child(5) {
+				-webkit-animation-duration: 400ms;
+				animation-duration: 400ms;
+			}
+			.on .bar:nth-child(6) {
+				-webkit-animation-duration: 427ms;
+				animation-duration: 427ms;
+			}
+			.on .bar:nth-child(7) {
+				-webkit-animation-duration: 441ms;
+				animation-duration: 441ms;
+			}
+			.on .bar:nth-child(8) {
+				-webkit-animation-duration: 419ms;
+				animation-duration: 419ms;
+			}
+			.on .bar:nth-child(9) {
+				-webkit-animation-duration: 487ms;
+				animation-duration: 487ms;
+			}
+			.on .bar:nth-child(10) {
+				-webkit-animation-duration: 442ms;
+				animation-duration: 442ms;
+			}
+			.on .bar:nth-child(11) {
+				-webkit-animation-duration: 433ms;
+				animation-duration: 433ms;
+			}
+			.on .bar:nth-child(12) {
+				-webkit-animation-duration: 407ms;
+				animation-duration: 407ms;
+			}
+			.on .bar:nth-child(13) {
+				-webkit-animation-duration: 458ms;
+				animation-duration: 458ms;
+			}
+			.on .bar:nth-child(14) {
+				-webkit-animation-duration: 400ms;
+				animation-duration: 400ms;
+			}
+			.on .bar:nth-child(15) {
+				-webkit-animation-duration: 427ms;
+				animation-duration: 427ms;
+			}
+			.on .bar:nth-child(16) {
+				-webkit-animation-duration: 441ms;
+				animation-duration: 441ms;
+			}
+			.on .bar:nth-child(17) {
+				-webkit-animation-duration: 419ms;
+				animation-duration: 419ms;
+			}
+			.on .bar:nth-child(18) {
+				-webkit-animation-duration: 487ms;
+				animation-duration: 487ms;
+			}
+			.on .bar:nth-child(19) {
+				-webkit-animation-duration: 442ms;
+				animation-duration: 442ms;
+			}
+			​
+		</style>
+	</head>
+
+	<body>
+		<section class="voice_container" style="background: #4eb3eb; height: 100%;">
+			<header>
+				<img src="img/voice_header.jpg" />
+			</header>
+			<div class="voice_content">
+				<div class="right">
+					<h2>IN推荐</h2>
+					<ul>
+						<li>拨浪鼓</li>
+						<li>生日快乐</li>
+						<li>first love</li>
+						<li>爱之初体验</li>
+					</ul>
+				</div>
+				<div class="left">
+					<dl>
+						<dd>
+							<a href="javascript:;" class="kaishi"><span></span><br />开始录制</a>
+							<p>
+								为您的专属Voicecake语音录制！
+								<br /> 点击[开始录音]60秒录制&rarr;[试听]&rarr;
+								<br />[确定]&rarr;选择背景音乐[确定]&rarr;
+								<br />等待语音合成[播放]&rarr;[提交]
+							</p>
+						</dd>
+						<dd>
+							<a href="javascript:;" class="xuanze"><span></span><br />选择音频</a>
+							<p style="margin-top: 15px;">
+								点击[选择音频]为Voicecake添
+								<br />加纯音乐录入，确定[提交]。
+							</p>
+						</dd>
+					</dl>
+					<p>如果您无需任何语音录入，
+						<br />可直接选择[提交]订购Voicecake。</p>
+					<a href="javascript:;" class="tijiao">直接提交</a>
+				</div>
+				<img src="img/0422robt.png" />
+			</div>
+		</section>
+		<!--遮罩层-->
+		<div class="zhezhao"></div>
+		<!--录音start-->
+		<div class="dialog_container luyin">
+			<div class="dialog_head">
+				录音中...
+			</div>
+			<div class="dialog_content" style="position: relative;">
+				<p>
+					倒计时<span>60's</span>
+				</p>
+				<div id="bars1">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<!--<img src="img/shengbo.png" />-->
+			</div>
+			<div class="dialog_footer">
+				<a href="javascript:;" class="jieshu">开始录音</a>
+				<a href="javascript:;" class="shiting">试听</a>
+			</div>
+		</div>
+		<!--录音end-->
+
+		<!--合成中start-->
+		<div class="dialog_container hecheng">
+			<div class="dialog_head">
+				语音合成中...
+				<span>0</span>%
+			</div>
+			<div class="dialog_content">
+				<img src="img/jiqi02.png" />
+			</div>
+			<div class="dialog_footer">
+				<a href="music_hecheng.html" class="dengdai">后台等待</a>
+				<a href="javascript:;" class="play">播放</a>
+			</div>
+		</div>
+		<!--合成中end-->
+
+		<!--播放中start-->
+		<div class="dialog_container bofang">
+			<div class="dialog_head">
+				播放中...
+			</div>
+			<div class="dialog_content" style="position: relative;">
+				<p>
+					倒计时<span>30's</span>
+				</p>
+				<div id="bars2" class="on">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<!--<img src="img/shengbo.png" />-->
+			</div>
+			<div class="dialog_footer">
+				<a href="javascript:;" class="rluru">重新录入</a>
+				<a href="javascript:;" class="a_ok">确认</a>
+			</div>
+		</div>
+		<!--播放中end-->
+
+		<!--背景音乐start-->
+		<div class="dialog_container bgmusic">
+			<div class="kongjian" style="position: relative;">
+				<!--<div class="mengceng" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;background: rgba(0,0,0,.35); z-index: 2;">
+					<img src="img/gift.png" / style="position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%);height: 50%;">
+				</div>-->
+				<a href="javascript:;" class="abtn_music"></a>
+				<p style="overflow: hidden; margin-left: 60px; margin-top: 0;margin-bottom: 5px;padding-top: 5px;">我是歌曲名<span style="font-size: 0.8em; margin: 0 10px;">演唱者</span>
+				</p>
+				<div class="progress">
+					<div style="width: 0%;">
+						<!--<span></span>-->
+					</div>
+					<input type="range" value="0" max="100" min="0" class="drag" />
+				</div>
+
+			</div>
+			<div class="dialog_head">
+				背景音乐
+			</div>
+			<div class="dialog_content">
+				<ul class="list">
+					<div class="wu">
+						无背景音乐
+					</div>
+					<li>
+						<button class="flag"></button>
+						<div>
+							拨浪鼓<span>赵薇</span>
+						</div>
+					</li>
+					<li>
+						<button></button>
+						<div>
+							生日快乐<span>儿童歌曲</span>
+						</div>
+					</li>
+					<li>
+						<button></button>
+						<div>
+							爱之初体验<span>张震岳</span>
+						</div>
+					</li>
+					<li>
+						<button></button>
+						<div>
+							first love<span>宇多田光</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="dialog_footer">
+				<a href="javascript:;" class="queding">确认</a>
+				<a href="javascript:;" class="quxiao">取消</a>
+			</div>
+		</div>
+		<!--背景音乐end-->
+	</body>
+	<script src="./aizhichu_files/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//选择音频
+			var falg = false;
+			$('.xuanze').click(function() {
+				$('.zhezhao').show();
+				$('.bgmusic').show();
+				falg = true;
+				if (falg) {
+					$('.queding').click(function() {
+						$('.zhezhao').hide();
+						$('.hecheng').hide();
+						$('.bgmusic').hide();
+						falg = false;
+					});
+				}
+			});
+			//播放音乐控件
+			$('.abtn_music').click(function() {
+				if ($(this).hasClass('on')) {
+					$(this).removeClass('on');
+					$('.list li button').each(function() {
+						if ($(this).hasClass('flag')) {
+							$(this).removeClass('on');
+						};
+					})
+				} else {
+					$(this).addClass('on');
+					$('.list li button').each(function() {
+						if ($(this).hasClass('flag')) {
+							$(this).addClass('on');
+							$('.list div').removeClass('on');
+							$(this).next('div').addClass('on');
+						};
+					})
+				}
+			});
+			//无背景音乐事件
+			$('.wu').click(function() {
+				$(this).addClass('on');
+				$('.list li div').removeClass('on')
+			});
+			//点击列表事件
+			$('.list li div').click(function() {
+				$('.wu').removeClass('on');
+				$('.list div').removeClass('on');
+				$(this).addClass('on');
+			});
+			var Touchstart="ontouchstart" in window ? "touchstart":"mousestart",
+				Touchmove="ontouchmove" in window ? "touchmove":"mousemove",
+				Touchend="ontouchend" in window ? "touchend":"mouseend";
+			$('.drag').bind(Touchstart,function(){
+				var w=$('.drag').val();
+				$('.progress>div').css('width',w + '%')
+			});
+			$('.drag').bind(Touchmove,function(){
+				var w=$('.drag').val();
+				$('.progress>div').css('width',w + '%')
+			});
+			$('.drag').bind(Touchend,function(){
+				var w=$('.drag').val();
+				$('.progress>div').css('width',w + '%')
+			});
+			//列表播放按钮事件
+			$('.list li button').click(function() {
+					$('.list div').removeClass('on');
+					$(this).next('div').addClass('on');
+					if ($(this).hasClass('flag')) {
+						$(this).hasClass('on') ? $(this).removeClass('on') : $(this).addClass('on');
+						$('.abtn_music').hasClass('on') ? $('.abtn_music').removeClass('on') : $('.abtn_music').addClass('on');
+					} else {
+						$('.list li button').removeClass('on flag');
+						$(this).addClass('on flag');
+						$('.abtn_music').addClass('on');
+					}
+				})
+				//开始录音
+			$('.kaishi').click(function() {
+				$('.zhezhao').show();
+				$('.luyin').show();
+				//点击试听
+				$('.shiting').click(function() {
+					$('.luyin').hide();
+					$('.bofang').show();
+					//背景音乐下的确定按钮
+					$('.a_ok').click(function() {
+						$('.bofang').hide();
+						$('.bgmusic').show();
+						falg = false;
+						if (!falg) {
+							$('.queding').click(function() {
+								$('.zhezhao').show();
+								$('.bgmusic').hide();
+								$('.hecheng').show();
+							})
+						}
+					});
+				});
+			});
+			//点击结束按钮
+			$('.jieshu').bind('click', function() {
+				if ($('.jieshu').html() == "开始录音") {
+					$('.jieshu').html("结束");
+					$('#bars1').addClass('on');
+				} else if ($('.jieshu').html() == "结束") {
+					$('.jieshu').html("取消");
+					$('#bars1').removeClass('on');
+				} else {
+					$('.jieshu').html("开始录音");
+					$('.luyin').hide();
+					$('.zhezhao').hide();
+					$('#bars1').removeClass('on');
+				}
+			});
+			//点击播放
+			$('.play').click(function() {
+				$('.zhezhao').hide();
+				$('.hecheng').hide();
+			});
+			//点击后台等待
+			$('.dengdai').click(function() {
+				$('.zhezhao').hide();
+				$('.hecheng').hide();
+			});
+			//重新录入
+			$('.rluru').click(function() {
+				$('.bofang').hide();
+				$('.luyin').show();
+				$('.jieshu').html("开始录音");
+			});
+			$('.chongxin').click(function() {
+				$('.zhezhao').show();
+				$('.luyin').show();
+			})
+		})
+	</script>
+
+</html>

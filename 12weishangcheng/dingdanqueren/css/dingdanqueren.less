@@ -1,0 +1,625 @@
+@import url("fangfa");
+//字体图标
+@font-face {
+    font-family: 'icomoon';
+    src:url('../../fonts/icomoon.eot?tfbf1c');
+    src:url('../../fonts/icomoon.eot?#iefixtfbf1c') format('embedded-opentype'),
+        url('../../fonts/icomoon.woff?tfbf1c') format('woff'),
+        url('../../fonts/icomoon.ttf?tfbf1c') format('truetype'),
+        url('../../fonts/icomoon.svg?tfbf1c#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.imooc-icon {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*确认订单*/
+.qrdd{
+    padding: 10px;
+    .out_border{
+        border: 1px solid #dbdddc;
+        border-radius: 4px;
+    }
+    li{
+        margin-bottom: 12px;
+        position: relative;
+       /* 新增时间样式*/
+        .time{
+            margin-left: 10px;
+            color: @_gray;
+            label{
+                float: left;
+                min-width: 70px;
+                color: @_gray;
+            }
+            p{
+                overflow: hidden;
+                padding-right: 5px;
+            }
+        }
+        //右侧箭头样式
+        .jiantou{
+            color: #dadada;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -0.5em;
+            font-size: 2em;
+        }
+        dl{
+            padding: 5px 0;
+        }
+        dd{
+            margin: 3px 0;
+            font-size: 1em;
+            i{
+                font-size: 2em;
+                color: @_blue;
+                margin: 0 12px;
+                vertical-align: middle;
+            }
+          /* 发票管理页面label样式*/
+         label{
+             color: @_blue;
+         }
+            &.fangshi{
+              span{
+                  color: @_gray;
+                  float: right;
+                  line-height: 2.4em;
+                  margin: 0 10px;
+              }  
+            }
+        }
+        a{
+            color: @_gray;
+            line-height: 2em;
+            vertical-align: top;
+        }
+        //订单详情
+        &.xiangqing{
+            dl{
+                overflow: hidden;
+                padding-bottom: 0;
+            }
+            .dt();
+            dd{
+                &.float_left{
+                    float: left;
+                    height: 4.5em;
+                    width: 4.5em;
+                    margin: 0 12px;
+                    .img();
+                }
+                &.float_right{
+                    color: @_gray;
+                    float: right;
+                    height: 4.5em;
+                    margin-right: 10px;
+                    a{
+                        line-height: 4.5em;
+                        color:  @_blue;
+                    }
+                    p{
+                        color: @_blue;
+                        font-size: 2em;
+                    }
+                }
+                &.center{
+                    padding-top: 6px;
+                    color: @_gray;
+                    font-size: 0.8em;
+                    line-height: 1.5em;
+                    overflow: hidden;
+                    height: 4.5em;
+                    display: table-cell;
+                    vertical-align: middle;
+                    label{
+                        float: left;
+                        color: @_gray;
+                    }
+                    span{
+                        display: inline-block;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+        //金额统计
+        &.tongji{
+            dd{
+                color: @_gray;
+                line-height: 40px;
+                border-bottom: 1px solid #dedede;
+                span{
+                    color: #2a7cc6;
+                    float: right;
+                   .before();
+                }
+                .last_child();
+            }
+        }
+        &.btn{
+            a{
+                color: #fff;
+                background: #4aaeea;
+                font-size: 1.2em;
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+            }
+        }
+    }
+}
+//会员中心样式
+.banner{
+    position: relative;
+    overflow: hidden;
+    .imooc-icon{
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 1em;
+    }
+    img{
+        float: left;
+    }
+    .img();
+}
+.header_mes{
+    position: relative;
+    padding-left: 125px;
+    min-height: 130px;
+    background: url(../img/bg.jpg) no-repeat top left;
+    background-size: cover;
+    vertical-align: middle;
+    .jiantou{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-size: 1.5em;
+        margin-top: -0.5em;
+        padding-right: 15px;
+        cursor: pointer;
+    }
+    .touxiang{
+        position: absolute;
+        top: 50%;
+        margin-top: -45px;
+        margin-left: -100px;
+        overflow: hidden;
+        .circular(90px);
+        .img();
+    }
+    h1{
+        padding-top: 42px;
+        font-weight: normal;
+        color: #707070;
+    }
+    p{
+        margin-top: 12px;
+        color: #717171;
+    }
+}
+.zh_content{
+    padding: 8px;
+    margin: 16px 0 22px;
+    li{
+        //会员中心样式
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        div{
+            line-height: 43px;
+            border-bottom: 1px solid #d9d9d9;
+            .last_child();
+            a{
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                color: #707070;
+                font-size: 1em;
+            }
+            .imooc-icon:not(.jiantou){
+                color: #dadada;
+                font-size: 1.5em;
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+                width: 30px;
+            }
+            .jiantou{
+                position: absolute;
+                right: 7px;
+                font-size: 1.5em;
+                line-height: 43px;
+                padding-right: 7px;
+            }
+        }
+        
+        /*我的信息页面列表样式*/
+        &.sub_list01{
+            div{
+                padding-left: 20px;
+                .aa();
+            }
+        }
+        &.sub_list02{
+            .aa();
+            div a i.imooc-icon:not(.jiantou){
+                color: #3197E0;
+            }
+        }
+    }
+}
+.new_footer{
+    text-align: center;
+    min-height: 65px;
+    position: relative;
+    .imooc-icon{
+        position: absolute;
+        top: 0;
+        left: 10px;
+        color: #715154;
+        font-size: 3em;
+        cursor: pointer;
+    }
+    span,a{
+        display: inline-block;
+        padding: 5px 10px;
+        color: #715154;
+        font-size: 1em;
+    }
+}
+//全部订单样式
+
+//收货人信息
+ 
+.shou_msg{
+    .out_border{
+        overflow: hidden;
+        .label();
+        >div{
+            overflow: hidden;
+            padding-right: 10px;
+        }
+        input{
+            height: 40px;
+            padding-right: 10px;
+           .outline();
+        }
+        textarea{
+        	padding: 10px 0;
+        	.outline();
+        }
+    }
+    .chq{
+        &:after{
+            display: table;
+            clear: both;
+            width: 100%;
+            content: "";
+        }
+        li{
+      	  	margin-bottom: 0;
+        }
+    }
+    .chengshi{
+        float: left;
+        .input();
+    }
+    .quyu{
+        float: right;
+        .input();
+    }
+}
+//收获地址管理样式
+.moren{
+	&:before{
+		.circular(10px);
+		display: inline-block;
+		background: #fff;
+		margin-right: 5px;
+		content: "";
+	}
+}
+.navigation{
+	.imooc-icon{
+		float: right;
+		font-size: 2em;
+		color: #2a7cc6;
+		line-height: 60px;
+		padding-right: 10px;
+	}
+}
+
+//优惠券页面样式
+.navigation{
+    .btn{
+        color: #307dc1;
+        float: right;
+        line-height: 60px;
+        font-size: 1.5em;
+        padding-right: 20px;
+    }
+}
+.tabs{
+    display: table;
+    a{
+        color: #737373;
+        font-size: 1.2em;
+        display: table-cell;
+        line-height: 50px;
+        width: 1%;
+        text-align: center;
+        border-bottom: 4px solid transparent;
+        &.active{
+            border-color: #277ec5;
+        }
+    }
+}
+.swiper-container{
+    .content-slide{
+        padding: 10px 0px;
+        li{
+            overflow: hidden;
+            display: table;
+            border-spacing: 10px;
+        }
+        div{
+            display: table-cell;
+            width: 100%;
+            height: 101px;
+            padding-left: 23px;
+            &.red{
+                background: url(../img/xianjin_01.jpg) no-repeat left top,url(../img/xianjin_03.jpg) no-repeat right top;
+                background-color: #ee3d7f;
+                background-size: contain;
+            }
+            &.blue{
+                background: url(../img/xianjinb_01.jpg) no-repeat left top,url(../img/xianjinb_03.jpg) no-repeat right top;
+                background-color: #0099d9;
+                background-size: contain;
+            }
+            h6{
+                font-size: 0.75em;
+                font-weight: normal;
+                padding-top: 18px;
+                text-transform: uppercase;
+                color: #fff;
+            }
+            h5{
+                position: relative;
+                left: -10px;
+                display: table-cell;
+                height: 50px;
+                font-weight: normal;
+                color: #fff;
+                vertical-align: bottom;
+                span{
+                    font-size: 3.5em;
+                    position: relative;
+                    top: 10px;
+                }
+            }
+        }
+        p{
+            overflow: hidden;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            height: 101px;
+            width: 1%;
+            padding: 0 15px;
+            border: 1px solid #dadbda;
+            border-right: none;
+            background: url(../img/xianjin2.png) repeat-y right top;
+            background-size: contain;
+        }
+    }
+}
+
+/*关于我们页面样式*/
+article{
+    padding: 10px 10px;
+    max-width: 750px;
+    margin: 0 auto;
+    p{
+        font-size: 0.75em;
+        line-height: 1.55em;
+        color: #595959;
+        margin-bottom: 15px;
+        text-align: justify;
+        span{
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    }
+    div{
+        overflow: hidden;
+        p{
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+    }
+    h1{
+        font-size: 0.8em;
+        line-height: 1em;
+        margin-top: 5px;
+    }
+    h2{
+        font-size: 0.95em;
+    }
+    .fl{
+        float: left;
+        margin-right: 5px;
+    }
+    .fr{
+        float: right;
+        margin-left: 5px;
+    }
+    .big{
+        width: 100%;
+        vertical-align: top;
+    }
+    .small{
+        width: 50%;
+    }
+}
+
+/**
+发票管理页面样式
+*/
+.jiantou{
+    input{
+        background: none;
+    }
+    >div{
+        background: url(../img/sanjiao.jpg) no-repeat right bottom;
+        background-size: 14px;
+    }
+}
+.fapiao{
+    label{
+        margin-left: 10px;
+    }
+}
+/**
+评论页新样式
+*/
+.pinglun{
+    .footer{
+        .checkbox{
+            &:before{
+                .circular(5px);
+                border: 3px solid #fff;
+                background: #fff;
+                display: inline-block;
+                margin-right: 5px;
+                content: "";
+            }
+        }
+        .on:before{
+            background: #999 !important;
+        }
+        .btn{
+            float: right;
+            width: auto !important;
+            padding: 0 5px;
+        }
+    }
+    .pinglun_container{
+        position: relative;
+        padding-left: 100px;
+        padding-right: 5px;
+        margin-bottom: 20px;
+         .pic{
+            position: absolute;
+            left: 10px;
+            width: 80px;
+            height: 80px;
+            .img();
+        }
+        .start{
+            padding: 15px 0;
+            span{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+                background: url(../img/smile-01.png) no-repeat;
+                background-size: 20px;
+                margin-right: 2px;
+                background-position: 0 -26px;
+                &.on{
+                    background-position: 0px 0px;
+                }
+            }
+        }
+        .pinglun_list{
+            border-bottom: 5px solid #f5f5f5;
+            li{
+                line-height: 30px;
+                border-bottom: 1px solid #f5f5f5;
+                margin-bottom: 0;
+                margin-left: 5px;
+                .last_child();
+                label{
+                    float: left;
+                    font-size: 0.75em;
+                    color: #999;
+                    margin-right: 10px;
+                }
+                div{
+                    span{
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: middle;
+                        background: url(../img/smile-01.png) no-repeat;
+                        background-size: 20px;
+                    }
+                }
+                &.zongping{
+                    span{
+                        margin-right: 2px;
+                        background-position: 0 -26px;
+                        &.on{
+                            background-position: 0px 0px;
+                        }
+                    }
+                }
+                &.kouwei,&.server{
+                    span{
+                        margin-right: 8px;
+                        background-position: 0 -72px;
+                        &.on{
+                            background-position: 0px -50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    textarea{
+        padding: 5px;
+        font-size: 0.8em;
+        .outline();
+    }
+    p{
+        font-size: 0.8em;
+    }
+}
+/*
+ *我的评论页面样式 
+ */
+.delete_editor{
+    float: right;
+    margin-left: 10px;
+    height: 42px;
+    a{
+        display: inline-block;
+        color: #fff !important;
+        line-height: 42em;
+        vertical-align: middle !important;
+        i{
+            font-size: 1.8em;
+            vertical-align: middle;
+        }
+    }
+}
+
