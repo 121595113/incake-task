@@ -426,9 +426,9 @@
 				$('.list div').removeClass('on');
 				$(this).addClass('on');
 			});
-			var Touchstart="ontouchstart" in window ? "touchstart":"mousestart",
+			var Touchstart="ontouchstart" in window ? "touchstart":"mousedown",
 				Touchmove="ontouchmove" in window ? "touchmove":"mousemove",
-				Touchend="ontouchend" in window ? "touchend":"mouseend";
+				Touchend="ontouchend" in window ? "touchend":"mouseup";
 			$('.drag').bind(Touchstart,function(){
 				var w=$('.drag').val();
 				$('.progress>div').css('width',w + '%')
