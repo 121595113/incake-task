@@ -308,6 +308,8 @@ ul {
   font-size: 1.2em;
 }
 .dialog_container .dialog_footer {
+  position: relative;
+  z-index: 9999;
   text-align: center;
   margin-bottom: 24px;
 }
