@@ -12,6 +12,10 @@ ul{
     max-width: 750px;
     margin: 0 auto;
     overflow-y: auto;
+    header{
+        position: relative;
+        z-index: 10;
+    }
     header,.voice_banner{
         img{
             width: 100%;
@@ -19,7 +23,8 @@ ul{
         }
     }
     .voice_content{
-        min-height: 300px;
+        min-height: 310px;
+        max-height: 340px;
         position: relative;
         overflow: hidden;
         &:after{

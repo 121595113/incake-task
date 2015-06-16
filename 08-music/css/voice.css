@@ -17,13 +17,18 @@ ul {
   margin: 0 auto;
   overflow-y: auto;
 }
+.voice_container header {
+  position: relative;
+  z-index: 10;
+}
 .voice_container header img,
 .voice_container .voice_banner img {
   width: 100%;
   vertical-align: top;
 }
 .voice_container .voice_content {
-  min-height: 300px;
+  min-height: 310px;
+  max-height: 340px;
   position: relative;
   overflow: hidden;
 }
@@ -371,6 +376,7 @@ ul {
   border-radius: 4px;
   background: #fff;
   border: 1px solid #e5e5e5;
+  /*新增拖动组件*/
 }
 .bgmusic .kongjian .progress > div {
   position: absolute;
@@ -393,7 +399,6 @@ ul {
   border-radius: 50%;
   background: #999;
 }
-/*新增拖动组件*/
 .bgmusic .kongjian .progress .drag {
   position: absolute;
   top: -2px;
@@ -513,4 +518,3 @@ ul {
   font-size: 0.65em;
   margin-left: 10px;
 }
-/*# sourceMappingURL=voice.css.map */
