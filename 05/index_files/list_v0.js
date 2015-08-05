@@ -1,25 +1,4 @@
 ﻿
-//var zhifu = function () {
-//    //var DefrayManner = escape($("input[name='DefrayManner']:checked").val());
-//    var DefrayManner = $("input[name='DefrayManner']:checked").val();
-//    $.ajax({
-//        url: "../WebPage/SaveInfo.aspx", dataType: "json", type: "post", timeout: "10000",
-//        data: { "type": "_pay", "_DefrayManner": DefrayManner, "_orderID": $("#orderid").val() },
-//        success: function (data) {
-//            if (data.msg == "1") {
-//                var url = data.url;
-//                location.href = url;
-//            }
-//            else {
-//                alert("服务器请求超时间，请重试！");
-//            }
-//        },
-//        error: function () {
-//            alert("网络错误！");
-//        }
-//    });
-//}
-
 //2.13-2.21 当天配送时间为两小时
 function changetime() {
     var peisongdate = $("#txt_Day").val();
@@ -310,7 +289,7 @@ var edit_Aaddress = function () {
                 }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -366,7 +345,7 @@ function Load_A() {
             }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -392,7 +371,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -447,7 +426,7 @@ function Delete_AddRess(AddRessID) {
             }
         },
         error: function () {
-            alert("网络错误");
+//          alert("网络错误");
         }
     });
 }
@@ -464,7 +443,7 @@ function MoRen_AddRess(AddRessID) {
             }
         },
         error: function () {
-            alert("网络错误");
+//          alert("网络错误");
         }
     });
 }
@@ -481,7 +460,7 @@ function laodaddrealist() {
             }
         },
         error: function () {
-            alert("网络错误");
+//          alert("网络错误");
         }
     });
 }
@@ -503,7 +482,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -543,7 +522,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -611,7 +590,7 @@ $(function () {
                     } else { alert(data.msg); }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -647,7 +626,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -821,7 +800,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -909,7 +888,7 @@ var CancelOrder = function (opt) {
             } else { alert(data.msg); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1062,7 +1041,7 @@ var loadtime = function (waihuan) {
             }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1078,7 +1057,7 @@ var deleteshouhuo = function (ID) {
             else { alert("删除失败"); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1129,7 +1108,7 @@ var EditOrderShouHou = function () {
                 }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -1149,7 +1128,7 @@ var yunhuilist = function (ID, areaid) {
             else { alert("数据加载失败，请重试"); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1187,7 +1166,7 @@ var editshouhuo = function (ID) {
             //            else { alert("数据加载失败"); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1200,7 +1179,7 @@ var orderinvoicelist = function () {
             $("#invoicelist").html(data.msg)
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1216,7 +1195,7 @@ var deleteinvoice = function (ID) {
             else { alert("删除失败"); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1243,7 +1222,7 @@ var saveinvoice = function () {
                 }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -1261,7 +1240,7 @@ var editinvoice = function (ID) {
             else { alert("数据加载失败"); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1348,7 +1327,7 @@ var CheckCard = function (codetype) {
                 }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -1383,7 +1362,7 @@ var ordercardlist = function (codetype) {
             totalOrderPrice();
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1399,7 +1378,7 @@ var deletecard = function (temp) {
             else { alert(data.msg); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1449,7 +1428,7 @@ var changepos = function (defa) {
             else { alert(data.msg); }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1515,7 +1494,7 @@ var quanorderpage = function (npage) {
             $("#tb2").html(data.page);
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1562,7 +1541,7 @@ var changequan = function (id) {
             totalOrderPrice();
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1753,7 +1732,7 @@ var pay_online_order = function () {
             }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1871,7 +1850,7 @@ function Load_Ainvoice() {
             $("#add_fapiao").html(data.msg);
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1889,7 +1868,7 @@ function Del_invoice(ID) {
             }
         },
         error: function () {
-            alert("网络错误");
+//          alert("网络错误");
         }
     });
 }
@@ -1907,7 +1886,7 @@ function laodInvoicelist() {
             }
         },
         error: function () {
-            alert("网络错误");
+//          alert("网络错误");
         }
     });
 }
@@ -1952,7 +1931,7 @@ var saveuserInvoice = function () {
                 }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -2049,7 +2028,7 @@ var editmemorialday = function () {
                 }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -2099,7 +2078,7 @@ function Load_Amemorialday() {
             }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -2124,7 +2103,7 @@ function Del_memorialday(ID) {
             }
         },
         error: function () {
-            alert("网络错误");
+//          alert("网络错误");
         }
     });
 }
@@ -2142,7 +2121,7 @@ function laodMemorialdaylist() {
             }
         },
         error: function () {
-            alert("网络错误");
+//          alert("网络错误");
         }
     });
 }
@@ -2166,7 +2145,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -2239,7 +2218,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -2312,7 +2291,7 @@ function checkjifen(ID) {
             }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -2336,7 +2315,7 @@ $(function () {
                 $("#ahtml").html("确定");
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
                 $("#ahtml").html("确定");
             }
         });
@@ -2378,7 +2357,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -2406,7 +2385,7 @@ function CheckEmail() {
             }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -2424,7 +2403,7 @@ $(function () {
                 }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     });
@@ -2509,7 +2488,7 @@ $(function () {
                     }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -2540,7 +2519,7 @@ function CheckDaoGuo() {
             }
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -2570,7 +2549,7 @@ $(function () {
                     else { alert(data.msg) }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }

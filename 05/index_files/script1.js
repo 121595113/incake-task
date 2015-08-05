@@ -432,7 +432,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     })
@@ -460,7 +460,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     })
@@ -509,7 +509,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -544,7 +544,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     })
@@ -646,7 +646,7 @@ $(function () {
                     } else { alert(data.msg); }
                 },
                 error: function () {
-                    alert("网络错误！");
+//                  alert("网络错误！");
                 }
             });
         }
@@ -687,7 +687,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     })
@@ -708,7 +708,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     })
@@ -821,7 +821,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -854,7 +854,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     }
@@ -1088,7 +1088,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     };
@@ -1115,7 +1115,7 @@ $(function () {
                 } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     };
@@ -1129,7 +1129,7 @@ var carNum = function () {
             $num = $(".page .header .fn_right .car").html(data.msg);
         },
         error: function () {
-            alert("网络错误！");
+//          alert("网络错误！");
         }
     });
 }
@@ -1573,7 +1573,7 @@ $(function () {
                 //                } else { alert(data.msg); }
             },
             error: function () {
-                alert("网络错误！");
+//              alert("网络错误！");
             }
         });
     });

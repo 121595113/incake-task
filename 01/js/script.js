@@ -1569,7 +1569,7 @@ window.onload = function() {
 			clearInterval(animateId);
 		}
 	}
-	figure.onmouseover = function() {
+	figure.onmouseenter = function() {
 		clearTimeout(autoId);
 		autoId = null;
 	}

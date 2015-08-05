@@ -41,46 +41,7 @@ var Scroll_right = function () {			//右边
     $(".play_banner ul.con li").eq($scroll_index).addClass("on").siblings("li").removeClass("on");
 };
 
-var loaded = function() {
-        imgPlay = new iScroll("sl_img_play", {
-            vScroll: false,
-            //不允许垂直滚动  
-            // snap: true,
-            momentum: false,
-            hScrollbar: false,
-            onScrollStart: function(){
-                $startX = this.x;
-            },
-            onScrollMove : function(){
-                clearInterval($mov);
-            },
-            onScrollEnd: function() {
-                $endX = this.x;
-                $newW = $(".play_banner ul.con li").width();
 
-                if ( $startX > $endX ) {
-                    //左边动作
-                    Scroll_left();
-
-                } if ( $startX < $endX ) {
-                    // console.log($scroll_index)
-                    if ($scroll_index > 0) {
-                        //右边动作
-                        Scroll_right();
-                    }
-                }
-
-                $mov = setInterval(function() {
-                    $newW = $(".play_banner ul.con li").width();
-                    Scroll_left();
-                }, 5000);
-            }
-        });
-    };
-
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(loaded, 200);
-    }, false);
 //iScroll方法 end
 
 var focusImgPlay = function() {
